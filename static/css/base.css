@@ -1,8 +1,60 @@
+:root {
+    --facebook-blue: #3b5998;
+    --twitter-blue: #00acee;
+    --instagram-purple: #833AB4;
+    --youtube-red: #FF0000;
+    --pinterest-red: #c8232c;
+}
+
 html {
     height: 100%;
 }
 
 body {
-    background: salmon;
     font-family: 'Times New Roman', Times, serif;
+}
+
+.main-page-content {
+    padding-bottom: 4em;
+    padding-top: 4em;
+}
+
+a>div {
+    color: black;
+}
+
+/* header --------------------------------------------------------------------------------------*/
+header {
+    background: slategrey;
+}
+
+/* footer --------------------------------------------------------------------------------------*/
+
+footer {
+    background: slategrey;
+}
+
+.fa-facebook-square:hover {
+    cursor: pointer;
+    color: var(--facebook-blue);
+}
+
+.fa-twitter-square:hover {
+    cursor: pointer;
+    color: var(--twitter-blue);
+}
+
+.fa-instagram-square:hover {
+    cursor: pointer;
+    color: var(--instagram-purple);
+}
+
+.fa-youtube-square:hover {
+    cursor: pointer;
+    color: var(--youtube-red);
+}
+
+.fa-pinterest-square:hover {
+    cursor: pointer;
+    color: var(--pinterest-red);
 }
