@@ -12,6 +12,7 @@ html {
 
 body {
     font-family: 'Times New Roman', Times, serif;
+    width: 100%;
 }
 
 .main-page-content {
@@ -57,4 +58,10 @@ footer {
 .fa-pinterest-square:hover {
     cursor: pointer;
     color: var(--pinterest-red);
+}
+
+/* home page --------------------------------------------------------- */
+
+.home-carousel-image {
+    cursor: pointer;
 }

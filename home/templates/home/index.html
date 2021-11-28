@@ -2,6 +2,63 @@
 {% load static %}
 
 {% block content %}
+
+<div class="row mx-5 my-5">
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="#" class="home-carousel-image">
+      <img src="{{ MEDIA_URL }}media/images/carousel-fiction.jpg" class="d-block w-100" alt="...">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Fiction Book Clubs</h5>
+        <p>This month's best in crime, science-fiction and more...</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href="#" class="home-carousel-image">
+      <img src="{{ MEDIA_URL }}media/images/carousel-non-fiction.jpg" class="d-block w-100" alt="...">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Non-Fiction Book Clubs</h5>
+        <p>The top picks for biographies and nature books amongst others...</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href="#" class="home-carousel-image"> </a>
+      <img src="{{ MEDIA_URL }}media/images/carousel-children.jpg" class="d-block w-100" alt="...">
+      </a>  
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Child/Teen Book Clubs</h5>
+        <p>The best books this month for your kids whatever age they may be...</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href="#" class="home-carousel-image"> </a>
+      <img src="{{ MEDIA_URL }}media/images/carousel-bestsellers.jpg" class="d-block w-100" alt="...">
+      </a>  
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Bestsellers</h5>
+        <p>Browse our collection of best selling titles</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
 <h2 class="about-home-title text-center">What is the E-Book Club?</h2>
 <div class="row">
     <div class="col-4"><h3>Access to the best books from different genres at a reduced price</h3></div>
