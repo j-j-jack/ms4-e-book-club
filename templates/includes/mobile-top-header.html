@@ -1,22 +1,16 @@
 <div class="row d-lg-none">
 <div class="col-2">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </nav>
+<button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 </div>
-
-
-<div class="col-2">
-    <a href="#" id="mobile-search" data-toggle="collapse" data-target="#collapseExample" aria-haspopup="true" aria-expanded="false">
-        <div class="text-center">
+ 
+  <div class="col-2">
+    <div class="text-center" id="fake-search-icon">
             <div><i class="fas fa-search fa-lg"></i></div>
             <p class="my-0">Search</p>
         </div>
-    </a>
 </div>
-
 
 <div class="col-2 offset-1">
           <a href="{% url 'home' %}">
@@ -24,9 +18,8 @@
           </a>
 </div>
 
-
 <div class="col-2 offset-1">
-    <a href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
             <p class="my-0">My Account</p>
@@ -44,7 +37,7 @@
             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
         {% endif %}
     </div>
-    </div>
+</div>
 
 
 <div class="col-2">
@@ -61,11 +54,10 @@
         </div>
     </a>
 </div>
-
 </div>
 
-
-<div class="collapse d-lg-none border-0 w-100 p-3 rounded-0 my-0" id="collapseExample" aria-labelledby="mobile-search">
+<div style="display: none;" class="row w-100 d-lg-none h-0" id='search-dropdown'>
+    <div class="border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="">
             <div class="input-group w-100">
                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -79,3 +71,9 @@
             </div>
         </form>
     </div>
+    </div>
+
+<nav class="navbar navbar-expand-lg navbar-light w-100">
+    <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
