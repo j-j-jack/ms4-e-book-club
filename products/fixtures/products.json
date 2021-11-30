@@ -1,0 +1,32 @@
+[
+   {
+      "pk":1,
+      "model":"products.product",
+      "fields":{
+         "name":"Kidnapped",
+         "author":"Robert Louis Stevenson",
+         "description":"Robert Louis Stevenson's classic, swashbuckling novel about a young boy who is forced to go to sea and who is then caught up in high drama, daring adventure and political intrigue.<br>Part of the Macmillan Collector’s Library; a series of stunning, clothbound, pocket-sized classics with gold foiled edges and ribbon markers. These beautiful books make perfect gifts or a treat for any book lover. This edition is introduced by Louise Welsh and features black and white illustrations.<br>Headstrong David Balfour, orphaned at seventeen, sets out from the Scottish Lowlands to seek his fortune in Edinburgh. Betrayed by his wealthy Uncle Ebenezer, he is carried away to sea to be sold into slavery in the Carolinas. On board, he secures a timely alliance with Jacobite adventurer Alan Breck, and together they make an epic escape across the western Highlands. Inspired by real events, Kidnapped is a swashbuckling adventure of bizarre encounters, political assassination and wild carousings with Robert Louis Stevenson’s unique counterpoint of low morals and high comedy threaded throughout.",
+         "price":2.50,
+         "category":1,
+         "image":"images/action/1.jpg",
+         "book_of_month":false,
+         "sales_count":25, 
+         "pdf": "pdfs/theroux-the-keyhole.pdf"
+      }
+   },
+   {
+      "pk":2,
+      "model":"products.product",
+      "fields":{
+         "name":"Theroux The Keyhole",
+         "author":"Louis Theroux",
+         "description":"Come round to Louis Theroux’s house where the much-loved TV documentary-maker, podcaster and bestselling author of Gotta Get Theroux This finds himself in unexpected danger...<br>Like millions of others, Louis’ plans were mothballed by the onset of Covid. Unable to escape to the porn sets, prisons and maximum-security psychiatric units that are his usual journalistic beat, he began reporting on a location even more full of pitfalls and hostile objects of inquiry: his own home during a pandemic.<br>Theroux the Keyhole is an honest, hilarious and ultimately heartwarming diary of the weirdness of family life in Covid World. A wife intolerant of his obsession with Joe Wicks’ daily workouts. Two teenage sons, inseparable from their videogames, for whom he is increasingly 'cringe'. A five-year-old happily spamming out videos on his own new TikTok account while on holiday with his oblivious family.<br>Louis also describes how he launches his podcast, Grounded, finally gets to the US to film a new Joe Exotic documentary and aims his sights on the latest incarnation of the far right in a world becoming radicalized by social media. Theroux the Keyhole is Louis at his insightful best, as he faces unforeseen new challenges and wonders why it took a pandemic for him to learn that what really matters in life is right in front of him.",
+         "price":2.50,
+         "category":2,
+         "image":"images/biography/2.jpg",
+         "book_of_month":true,
+         "sales_count":78,
+         "pdf": "pdfs/kidnapped.pdf" 
+      }
+   }  
+]
