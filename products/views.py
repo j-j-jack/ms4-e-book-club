@@ -15,6 +15,7 @@ def products(request):
 
     products = Product.objects.all()
     query = None
+    categories = None
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -32,7 +33,8 @@ def products(request):
 
     context = {
         "products": products,
-        "search_term": query
+        "search_term": query,
+        'current_categories': categories,
     }
     return render(request, 'products/fiction.html', context)
 
