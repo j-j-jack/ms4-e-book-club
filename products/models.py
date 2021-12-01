@@ -3,6 +3,9 @@ from django.db.models.fields.json import JSONField
 
 
 class Category(models.Model):
+    class Meta:
+        verbose_name_plural = "Categories"
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
     books = JSONField(null=True, blank=True)
@@ -15,6 +18,10 @@ class Category(models.Model):
 
 
 class WiderCategory(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Wider Categories"
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
     books = JSONField(null=True, blank=True)
@@ -31,7 +38,7 @@ class Product(models.Model):
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     author = models.CharField(max_length=254)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     book_of_month = models.BooleanField(blank=True, default=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(
