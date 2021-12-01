@@ -11,13 +11,13 @@
                 Fiction
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="fiction-dropdown">
-                <a href="{% url 'products' %}" class="dropdown-item ">All Titles</a>
-                <a href="" class="dropdown-item ">Action/Adventure</a>
-                <a href="" class="dropdown-item ">Comedy</a>
-                <a href="" class="dropdown-item">Crime</a>
-                <a href="" class="dropdown-item">Horror</a>
-                <a href="" class="dropdown-item ">Romance</a>
-                <a href="" class="dropdown-item">Science-Fiction</a>
+                <a href="{% url 'products' %}?category=action,comedy,crime,horror,romance,sci_fi" class="dropdown-item ">All Titles</a>
+                <a href="{% url 'products' %}?category=action" class="dropdown-item ">Action/Adventure</a>
+                <a href="{% url 'products' %}?category=comedy" class="dropdown-item ">Comedy</a>
+                <a href="{% url 'products' %}?category=crime" class="dropdown-item">Crime</a>
+                <a href="{% url 'products' %}?category=horror" class="dropdown-item">Horror</a>
+                <a href="{% url 'products' %}?category=romance" class="dropdown-item ">Romance</a>
+                <a href="{% url 'products' %}?category=sci_fi" class="dropdown-item">Science-Fiction</a>
             </div>
         </li>
 
@@ -26,12 +26,12 @@
                 Non-Fiction
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="non-fiction-dropdown">
-                <a href="" class="dropdown-item ">All Titles</a>
-                <a href="" class="dropdown-item ">Biographies</a>
-                <a href="" class="dropdown-item ">History/Politics</a>
-                <a href="" class="dropdown-item">Hobbies/How to</a>
-                <a href="" class="dropdown-item">Science/Nature</a>
-                <a href="" class="dropdown-item">Self-Help/Spirituality</a>
+                <a href="{% url 'products' %}?category=biographies,history,hobbies,science,self_help" class="dropdown-item ">All Titles</a>
+                <a href="{% url 'products' %}?category=biographies" class="dropdown-item ">Biographies</a>
+                <a href="{% url 'products' %}?category=history" class="dropdown-item ">History/Politics</a>
+                <a href="{% url 'products' %}?category=hobbies" class="dropdown-item">Hobbies/How to</a>
+                <a href="{% url 'products' %}?category=science" class="dropdown-item">Science/Nature</a>
+                <a href="{% url 'products' %}?category=self_help" class="dropdown-item">Self-Help/Spirituality</a>
             </div>
         </li>
 
@@ -40,12 +40,12 @@
                 Child/Teen
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="child-dropdown">
-                <a href="" class="dropdown-item ">All Titles</a>
-                <a href="" class="dropdown-item ">3-5 Years</a>
-                <a href="" class="dropdown-item ">6-8 Years</a>
-                <a href="" class="dropdown-item">9-12 Years</a>
-                <a href="" class="dropdown-item">12-15 Years</a>
-                <a href="" class="dropdown-item">Young Adult</a>
+                <a href="{% url 'products' %}?category=three_to_five,six_to_eight,nine_to_twelve,twelve_to_fifteen,young_adult" class="dropdown-item ">All Titles</a>
+                <a href="{% url 'products' %}?category=three_to_five" class="dropdown-item ">3-5 Years</a>
+                <a href="{% url 'products' %}?category=six_to_eight" class="dropdown-item ">6-8 Years</a>
+                <a href="{% url 'products' %}?category=nine_to_twelve" class="dropdown-item">9-12 Years</a>
+                <a href="{% url 'products' %}?category=twelve_to_fifteen" class="dropdown-item">12-15 Years</a>
+                <a href="{% url 'products' %}?category=young_adult" class="dropdown-item">Young Adult</a>
             </div>
         </li>
 
