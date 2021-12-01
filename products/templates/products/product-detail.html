@@ -35,8 +35,7 @@
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
-                    <p id="displayed-description" class="mt-3"></p>
-                    <div id="hidden-description">{{ product.description }}</div>
+                    <p class="mt-3">{{ product.description|linebreaks  }}</p>
                 </div>
             </div>
         </div>
