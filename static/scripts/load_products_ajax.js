@@ -1,19 +1,41 @@
-{% extends "base.html" %}
-{% load static %}
+$(document).ready(function () {
+  $.noConflict();
+  let loadRound = 0;
+  jQuery("#load-more").click(function () {
+    loadRound += 1;
+    jQuery.ajax({
+      url: "",
+      type: "get",
+      data: {
+        load_round: loadRound,
+      },
+      success: function (response) {
+        try {
+          jsonResponse = JSON.parse(response.items);
+          console.log(jsonResponse);
+          for (item in jsonResponse) {
+            bookName = jsonResponse[item].fields.name;
+            bookAuthor = jsonResponse[item].fields.author;
+            bookImage = jsonResponse[item].fields.image;
+            bookPrice = jsonResponse[item].fields.price;
+            bookId = jsonResponse[item].pk;
+            bookCategory = jsonResponse[item].fields.category;
+            console.log(bookCategory);
+            jQuery("#ajax-response").append(`${bookName}<br>`);
+            jQuery("#ajax-response").append(`${bookAuthor}<br>`);
+            jQuery("#ajax-response").append(`${bookCategory}<br>`);
+            jQuery("#ajax-response").append(`${bookPrice}<br>`);
+            jQuery("#ajax-response").append(`${bookId}<br>`);
+          }
+        } catch {
+          console.log("oops that didn't work!");
+        }
+      },
+    });
+  });
+});
 
-
-{% block extra_js %}
-    <script src="{% static 'scripts/load_products_ajax.js' %}"></script>
-{% endblock %}
-{% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
-                <hr class="w-50 mb-1">
-            </div>
-        </div>
-        <div class="row">
+let template = `
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
@@ -35,7 +57,7 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold">\${{ product.price }}</p>
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -75,9 +97,4 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-            </div>
-        </div>
-        <div class="row" id="ajax-response"></div>
-        <button style="text-align: center;" id="load-more">Load More...</button>
-    </div>
-{% endblock %}
+            </div>`;

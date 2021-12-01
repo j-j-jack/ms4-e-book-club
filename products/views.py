@@ -3,6 +3,8 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from .models import Product, Category
 from django.db.models import Q
+from django. http import JsonResponse
+from django.core import serializers
 # Create your views here.
 
 from django.shortcuts import render
@@ -11,9 +13,17 @@ from django.shortcuts import render
 
 
 def products(request):
-    """ A view to return the index page """
+    """ A view to return the products page """
 
-    products = Product.objects.all()
+    load_round = 0
+    is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+    if is_ajax:
+        load_round = int(request.GET.get('load_round'))*2
+        response_items = Product.objects.all()[load_round: load_round+3]
+        response_items = serializers.serialize('json', response_items)
+        return JsonResponse({'items': response_items}, status=200)
+
+    products = Product.objects.all()[load_round: load_round+2]
     query = None
     categories = None
     if request.GET:
