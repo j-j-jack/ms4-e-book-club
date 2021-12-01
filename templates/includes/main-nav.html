@@ -2,7 +2,7 @@
     <ul class="navbar-nav w-auto mx-auto">
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}">
                 Best-Sellers
             </a>
         </li>
@@ -11,7 +11,7 @@
                 Fiction
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="fiction-dropdown">
-                <a href="{% url 'fiction' %}" class="dropdown-item ">All Titles</a>
+                <a href="{% url 'products' %}" class="dropdown-item ">All Titles</a>
                 <a href="" class="dropdown-item ">Action/Adventure</a>
                 <a href="" class="dropdown-item ">Comedy</a>
                 <a href="" class="dropdown-item">Crime</a>

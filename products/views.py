@@ -1,6 +1,8 @@
-from django.contrib import admin
-from django.shortcuts import get_object_or_404, render
+from django.contrib import admin, messages
+from django.shortcuts import get_object_or_404, render, redirect
+from django.urls import reverse
 from .models import Product
+from django.db.models import Q
 # Create your views here.
 
 from django.shortcuts import render
@@ -8,12 +10,24 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def fiction(request):
+def products(request):
     """ A view to return the index page """
 
     products = Product.objects.all()
+    query = None
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(
+                    request, "You didn't enter any search criteria!")
+                return redirect('products')
+        queries = Q(name__icontains=query) | Q(description__icontains=query)
+        products = products.filter(queries)
+
     context = {
-        "products": products
+        "products": products,
+        "search_term": query
     }
     return render(request, 'products/fiction.html', context)
 
