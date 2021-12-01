@@ -3,8 +3,8 @@
       "pk":1,
       "model":"products.category",
       "fields":{
-         "name":"Action/Adventure",
-         "friendly_name":"action",
+         "name":"action",
+         "friendly_name":"Action/Adventure",
          "books": [{"titles": [10]}]
       }
    },
@@ -12,8 +12,8 @@
       "pk":2,
       "model":"products.category",
       "fields":{
-         "name":"Comedy",
-         "friendly_name":"comedy",
+         "name":"comedy",
+         "friendly_name":"Comedy",
          "books": [{"titles": [5]}]
       }
    },
@@ -21,8 +21,8 @@
       "pk":3,
       "model":"products.category",
       "fields":{
-         "name":"Crime",
-         "friendly_name":"crime",
+         "name":"crime",
+         "friendly_name":"Crime",
          "books": [{"titles": [3]}]
       }
    },
@@ -30,8 +30,8 @@
       "pk":4,
       "model":"products.category",
       "fields":{
-         "name":"Horror",
-         "friendly_name":"horror",
+         "name":"horror",
+         "friendly_name":"Horror",
          "books": [{"titles": [999]}]
       }
    },
@@ -39,8 +39,8 @@
       "pk":5,
       "model":"products.category",
       "fields":{
-         "name":"Romance",
-         "friendly_name":"romance",
+         "name":"romance",
+         "friendly_name":"Romance",
          "books": [{"titles": [999]}]
       }
    },
@@ -48,8 +48,8 @@
       "pk":6,
       "model":"products.category",
       "fields":{
-         "name":"Science-Fiction",
-         "friendly_name":"sci_fi",
+         "name":"sci_fi",
+         "friendly_name":"Science-Fiction",
          "books": [{"titles": [999]}]
       }
    },
@@ -57,8 +57,8 @@
       "pk":7,
       "model":"products.category",
       "fields":{
-         "name":"Biographies",
-         "friendly_name":"biographies",
+         "name":"biographies",
+         "friendly_name":"Biographies",
          "books": [{"titles": [6]}]
       }
    },
@@ -66,8 +66,8 @@
       "pk":8,
       "model":"products.category",
       "fields":{
-         "name":"History/Politics",
-         "friendly_name":"history",
+         "name":"history",
+         "friendly_name":"History/Politics",
          "books": [{"titles": [7, 9]}]
       }
    },
@@ -75,8 +75,8 @@
       "pk":9,
       "model":"products.category",
       "fields":{
-         "name":"Hobbies/How-to",
-         "friendly_name":"hobbies",
+         "name":"hobbies",
+         "friendly_name":"Hobbies/How-to",
          "books": [{"titles": [1, 4]}]
       }
    },
@@ -84,8 +84,8 @@
       "pk":10,
       "model":"products.category",
       "fields":{
-         "name":"Science/Nature",
-         "friendly_name":"science",
+         "name":"science",
+         "friendly_name":"Science/Nature",
          "books": [{"titles": [999]}]
       }
    },
@@ -93,8 +93,8 @@
       "pk":11,
       "model":"products.category",
       "fields":{
-         "name":"Self-Help/Spirituality",
-         "friendly_name":"self_help",
+         "name":"self_help",
+         "friendly_name":"Self-Help/Spirituality",
          "books": [{"titles": [999]}]
       }
    },
@@ -102,8 +102,8 @@
       "pk":12,
       "model":"products.category",
       "fields":{
-         "name":"3-5 Years",
-         "friendly_name":"three_to_five",
+         "name":"three_to_five",
+         "friendly_name":"3-5 Years",
          "books": [{"titles": [8]}]
       }
    },
@@ -111,8 +111,8 @@
       "pk":13,
       "model":"products.category",
       "fields":{
-         "name":"6-8 Years",
-         "friendly_name":"six_to_eight",
+         "name":"six_to_eight",
+         "friendly_name":"6-8 Years",
          "books": [{"titles": [2]}]
       }
    },
@@ -120,8 +120,8 @@
       "pk":14,
       "model":"products.category",
       "fields":{
-         "name":"9-12 Years",
-         "friendly_name":"nine_to_twelve",
+         "name":"nine_to_twelve",
+         "friendly_name":"9-12 Years",
          "books": [{"titles": [999]}]
       }
    },
@@ -129,8 +129,8 @@
       "pk":15,
       "model":"products.category",
       "fields":{
-         "name":"12-15 Years",
-         "friendly_name":"twelve_to_fifteen",
+         "name":"twelve_to_fifteen",
+         "friendly_name":"12-15 Years",
          "books": [{"titles": [999]}]
       }
    },
@@ -138,8 +138,8 @@
       "pk":16,
       "model":"products.category",
       "fields":{
-         "name":"Young Adult",
-         "friendly_name":"young_adult",
+         "name":"young_adult",
+         "friendly_name":"Young Adult",
          "books": [{"titles": [999]}]
       }
    }
