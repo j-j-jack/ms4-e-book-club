@@ -17,13 +17,7 @@ def products(request):
 
     load_round = 0
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
-    if is_ajax:
-        load_round = int(request.GET.get('load_round'))*2
-        response_items = Product.objects.all()[load_round: load_round+3]
-        response_items = serializers.serialize('json', response_items)
-        return JsonResponse({'items': response_items}, status=200)
-
-    products = Product.objects.all()[load_round: load_round+2]
+    products = Product.objects.all()
     query = None
     categories = None
     if request.GET:
@@ -41,10 +35,19 @@ def products(request):
                 description__icontains=query)
             products = products.filter(queries)
 
+    if is_ajax:
+        load_round = int(request.GET.get('load_round'))
+        response_items = products[load_round*3: (load_round*3)+3]
+        response_items = serializers.serialize('json', response_items)
+        return JsonResponse({'items': response_items}, status=200)
+    #products = products[0: 3]
+    all_categories = Category.objects.all()
+    all_categories = serializers.serialize('json', all_categories)
     context = {
         "products": products,
         "search_term": query,
         'current_categories': categories,
+        'all_categories': all_categories,
     }
     return render(request, 'products/fiction.html', context)
 
