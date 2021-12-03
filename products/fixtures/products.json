@@ -148,5 +148,155 @@
          "sales_count":23, 
          "pdf": "pdfs/The-Land-Beyond-The-Sea.pdf"
    }
+},
+{
+      "pk":11,
+      "model":"products.product",
+      "fields":{
+         "name":"Lightning Falls",
+         "author":"Amy Wilson",
+         "description":"Lighting Falls is a fantastical story of ghosts and friendship from Amy Wilson, 'the rising star of children's fantasy'.\n\nValerie has been living at Lightning Falls nearly all her life. She’s perfectly happy helping Meg and the rest of the family to haunt the guests who come to stay there at the crumbling Ghost House. One night, she sees a strange boy, Joe, up on the viaduct. There she discovers that beneath the river is a bridge – one that will take her to the world of Orbis, which Joe claims is her real home.\n\nA world that is under threat. Plunged into a dangerous adventure, as the link between the two worlds begins to crumble, Valerie is forced to confront the truth about herself...",
+         "price":2.50,
+         "category":14,
+         "image":"images/book-covers/11.jpg",
+         "book_of_month":false,
+         "sales_count":211, 
+         "pdf": "pdfs/Lightning-Falls.pdf"
+   }
+},
+{
+"pk":12,
+      "model":"products.product",
+      "fields":{
+         "name":"The Spear",
+         "author":"James Herbert",
+         "description":"The Spear is a gripping supernatural thriller by the master of horror, James Herbert.\n\nA young Mossad agent is found dead and private detective Harry Steadman is asked to investigate. On the hunt for a sinister arms dealer, however, what he discovers is a conspiracy of unfathomable horror. Neo-nazi cultists want to unleash an ancient and demonic power. A power so terrible it threatens the world itself...",
+         "price":2.50,
+         "category":4,
+         "image":"images/book-covers/12.jpg",
+         "book_of_month":false,
+         "sales_count":56, 
+         "pdf": "pdfs/The-Spear.pdf"
+   }
+},
+{
+"pk":13,
+      "model":"products.product",
+      "fields":{
+         "name":"Inner Spark",
+         "author":"Kristin Vikjord",
+         "description":"Kristin Vikjord presents a practical toolkit of exercises to help find, regain and nurture your inner spark. Drawing on her experiences as a Clinical Psychologist and yoga and mindfulness facilitator, Kristin combines these complementary, integrative therapies for a book that has the scientific mind of a psychologist and the heart and soul of yoga teacher.\n\nIn Inner Spark, Kristin offers practical activities that match up to the three sections of the book and explains how pathways in the brain work, showing how, and crucially why, it's important for anyone navigating a difficult time, physically or mentally, to have a toolkit for reconnection. Kristin Vikjord has effectively harnessed the long Scandinavian winters to stoke her own inner spark and created this guide that will help readers embrace the challenges of modern life, from burnout to navigating new parenthood.",
+         "price":2.50,
+         "category":11,
+         "image":"images/book-covers/13.jpg",
+         "book_of_month":false,
+         "sales_count":48, 
+         "pdf": "pdfs/Inner-Spark.pdf"
+   }
+},
+{
+"pk":14,
+      "model":"products.product",
+      "fields":{
+         "name":"The Hitchhiker's Guide to the Galaxy",
+         "author":"Douglas Adams",
+         "description":"An international phenomenon and pop-culture classic, The Hitchhiker's Guide to the Galaxy has been a radio show, TV series, novel, stage play, comic book and film. Following the galactic (mis)adventures of Arthur Dent, Hitchhiker’s in its various incarnations has captured the imaginations of curious minds around the world...\n\nIt's an ordinary Thursday lunchtime for Arthur Dent until his house gets demolished. The Earth follows shortly afterwards to make way for a new hyperspace express route, and his best friend has just announced that he's an alien. At this moment, they're hurtling through space with nothing but their towels and an innocuous-looking book inscribed, in large friendly letters, with the words: DON'T PANIC.\n\nThe weekend has only just begun...",
+         "price":2.50,
+         "category":6,
+         "image":"images/book-covers/14.jpg",
+         "book_of_month":false,
+         "sales_count":178, 
+         "pdf": "pdfs/The-Hitchhikers-Guide-To-The-Galaxy.pdf"
+   }
+},
+{
+"pk":15,
+      "model":"products.product",
+      "fields":{
+         "name":"Boy Meets Ghoul",
+         "author":"Birdie Milano",
+         "description":"It’s October half-term, and Dylan Kershaw’s dreams of a reunion with Leo, the gorgeous boy he met over the summer, are dashed when his sports-mad dad whisks him off to football camp in Manchester instead. What’s worse, dancer Leo seems to be too busy practicing his pirouettes to care. At least Dylan’s best friend Kayla is along for the trip, on a quest to win exclusive tickets to see her favourite band, the Deathsplash Nightmares.\n\nIt all looks set to be a tedious trip, until Dylan's long-time crush Freddie Alton shows up at football camp and Kayla discovers that the Nightmares are staying in the very same hotel as they are...",
+         "price":2.50,
+         "category":15,
+         "image":"images/book-covers/15.jpg",
+         "book_of_month":false,
+         "sales_count":217, 
+         "pdf": "pdfs/Boy-Meets-Ghoul.pdf"
+   }
+},
+{
+"pk":16,
+      "model":"products.product",
+      "fields":{
+         "name":"The Winter of Second Chances",
+         "author":"Jenny Bayliss",
+         "description":"Annie Sharpe has it all – an acclaimed restaurant she owns with her handsome husband Max, and two gorgeous grown-up sons. But after one indiscretion too many, she leaves behind the only life she’s ever known.\n\nIn search of a fresh start, Annie takes up a position as a caretaker of Saltwater Nook, a creaky but charming beach house on Kent’s beautiful, wild coastline. The village community is an eccentric but tightknit bunch, and Annie is swept up in a whirlwind of their traditional festive celebrations, from pumpkin carving to bonfires on the beach. It soon feels like home – she even reopens the long-dormant seafront café.\n\nThe only thorns in her side are John, the owner’s rugged but totally unreasonable nephew who has his own agenda for the house, and a persistent Max, intent on winning her back.\n\nSalwater Nook has been the perfect escape, but Annie can’t run from her problems forever. Will she give her first love a second chance? Or step into the promise of a new life?",
+         "price":2.50,
+         "category":5,
+         "image":"images/book-covers/16.jpg",
+         "book_of_month":false,
+         "sales_count":132, 
+         "pdf": "pdfs/The-Winter-Of-Second-Chances.pdf"
+   }
+},
+{
+"pk":17,
+      "model":"products.product",
+      "fields":{
+         "name":"Twenty Thousand Leagues Under the Sea",
+         "author":"Jules Verne",
+         "description":"Three adventurers set out to kill a sea monster, but all is not as it seems. Out in the vast expanse of the Pacific they find not a beast but a submarine - the Nautilus, an advanced craft captained by the enigmatic Captain Nemo. Captured and hauled aboard, they accompany him through coral reefs, shipwrecks, and ancient ruins. There they hunt sharks, and battle giant squid, not realising that the greatest danger is Nemo himself, who will stop at nothing in his quest for vengeance.\n\nBeautifully illustrated by the French painter Édouard Riou, who worked with Jules Verne on six of his novels, this Macmillan Collector's Library edition of Twenty Thousand Leagues Under the Sea also includes an afterword by author David Stuart Davies.\n\nDesigned to appeal to the booklover, the Macmillan Collector's Library is a series of beautiful gift editions of much loved classic titles. Macmillan Collector's Library are books to love and treasure.",
+         "price":2.50,
+         "category":1,
+         "image":"images/book-covers/17.jpg",
+         "book_of_month":false,
+         "sales_count":76, 
+         "pdf": "pdfs/Twenty-Thousand-Leagues-Under-The-Sea.pdf"
+   }
+},
+{
+"pk":18,
+      "model":"products.product",
+      "fields":{
+         "name":"The Upstairs Room",
+         "author":"Kate Murray-Browne",
+         "description":"In Kate Murray-Browne's debut, Eleanor and Richard have stretched themselves to the limit to buy the perfect home. But the cracks are already starting to show. Eleanor is unnerved by the eerie atmosphere in the house and she is convinced it is making her ill. Their two young daughters are restless and unsettled. Richard, on the other hand, is more preoccupied with Zoe, their alluring young lodger, who is also struggling to feel at home.\n\nAs Eleanor's symptoms intensify, she becomes determined to unravel the mystery of the family who lived in the house before them. Who were the Ashworths, and why is the name Emily written hundreds of times on the walls of the upstairs room?",
+         "price":2.50,
+         "category":4,
+         "image":"images/book-covers/18.jpg",
+         "book_of_month":false,
+         "sales_count":140, 
+         "pdf": "pdfs/The-Upstairs-Room.pdf"
+   }
+},
+{
+"pk":19,
+      "model":"products.product",
+      "fields":{
+         "name":"Danubia",
+         "author":"Simon Winder",
+         "description":"For centuries much of Europe was in the hands of the very peculiar Habsburg family. An unstable mixture of wizards, obsessives, melancholics, bores, musicians and warriors, they saw off – through luck, guile and sheer mulishness – any number of rivals, until finally packing up in 1918. From their principal lairs along the Danube they ruled most of Central Europe and Germany and interfered everywhere – indeed the history of Europe hardly makes sense without them.\n\nDanubia plunges the reader into a maelstrom of alchemy, skeletons, jewels, bear-moats, unfortunate marriages and a guinea-pig village. Full of music, piracy, religion and fighting, it is the history of a dynasty, but it is at least as much about the people they ruled, who spoke many different languages, lived in a vast range of landscapes, believed in many rival gods and often showed a marked ingratitude towards their oddball ruler in Vienna. Joining Germania and Lotharingia in Simon Winder's endlessly fascinating retelling of European history, Danubia is a hilarious, eccentric and witty saga.",
+         "price":2.50,
+         "category":8,
+         "image":"images/book-covers/19.jpg",
+         "book_of_month":false,
+         "sales_count":33, 
+         "pdf": "pdfs/Danubia.pdf"
+   }
+},
+{
+"pk":20,
+      "model":"products.product",
+      "fields":{
+         "name":"The Three Musketeers",
+         "author":"Alexandre Dumas",
+         "description":"It is 1625 and France is under threat. D’Artagnan, a young nobleman, sets off to Paris to seek his fortune as a member of the King's Guard and befriends three musketeers - the mysterious Athos, ambitious and romantic Aramis, and bumbling Porthos. Together the friends must use all their guile and ingenuity to outwit the dastardly schemes of Cardinal Richelieu and the glamorous spy, Milady.\n\nAs fresh and entertaining today as when it was first written, Alexandre Dumas's The Three Musketeers is a gripping adventure story of daring sword fights, romances, espionage and murder.\n\nThis sensitively abridged Macmillan Collector’s Library edition of The Three Musketeers features an afterword by playwright, screenwriter and actor, Peter Harness.\n\nDesigned to appeal to the booklover, the Macmillan Collector's Library is a series of beautiful gift editions of much loved classic titles. Macmillan Collector's Library are books to love and treasure.",
+         "price":2.50,
+         "category":1,
+         "image":"images/book-covers/20.jpg",
+         "book_of_month":false,
+         "sales_count":154, 
+         "pdf": "pdfs/The-Three-Musketeers.pdf"
+   }
 }
 ]
