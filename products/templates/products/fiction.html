@@ -79,7 +79,13 @@
         </div>
     
         <div class="container-fluid" id="ajax-response"></div>
-        <button style="text-align: center;" id="load-more">Load More...</button>
-
+        {% if products|length > 9 %}
+        <div class="row text-center" id='load-more-container'>
+            <div class="col">
+          <button style="text-align: center;" id="load-more">Load More...</button>
+          </div>
+          </div>
+        {% endif %}
+        
     <div id="all-categories" style="display: none">{{ all_categories }}</div>
 {% endblock %}
