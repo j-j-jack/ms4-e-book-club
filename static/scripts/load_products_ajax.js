@@ -67,7 +67,7 @@ $(document).ready(function () {
               bookRating == null ||
               bookRating == ""
             ) {
-              bookRating = "no rating";
+              bookRating = "No Rating";
             }
 
             try {
@@ -127,13 +127,13 @@ $(document).ready(function () {
                                                 </a>
                                                 `;
               } else {
-                template += `<p>
-                                                <i class="fas fa-tag mr-1"></i>uncategorised
-                                                </p>"
+                template += `
+                <small class="text-muted"><i class="fas fa-tag mr-1"></i>Uncategorised</small>
+                                                
                                                 `;
               }
               template += `</p>
-                                            ${bookRating}${item}
+                                            <small class="text-muted">${bookRating}</small>
                                         </div>
                                     </div>
                                 </div>

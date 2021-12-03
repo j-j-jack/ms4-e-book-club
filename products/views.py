@@ -56,7 +56,10 @@ def product_detail(request, product_id):
     """ A view to show an individual product """
 
     product = get_object_or_404(Product, pk=product_id)
+    all_categories = Category.objects.all()
+    all_categories = serializers.serialize('json', all_categories)
     context = {
-        "product": product
+        "product": product,
+        'all_categories': all_categories,
     }
     return render(request, 'products/product-detail.html', context)
