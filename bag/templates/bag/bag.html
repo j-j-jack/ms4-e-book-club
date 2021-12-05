@@ -45,6 +45,9 @@
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
+                                    <td>
+                                        <button class="remove-item btn btn-black rounded-0 text-uppercase mt-5" id='{{ item.product.id }}'>Remove from Bag</button>
+                                    </td>
                                 </tr>
                             {% endfor %}
                             <tr>
@@ -82,4 +85,24 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+  console.log("hi");
+  $(".remove-item").click(function () {
+    console.log("hi");
+    var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).attr("id");
+    console.log(itemId);
+    var url = `/bag/remove/${itemId}/`;
+    var data = { csrfmiddlewaretoken: csrfToken };
+
+    $.post(url, data).done(function () {
+      location.reload();
+    });
+  });
+  $("#what-the-hell").click(function (e) {
+    console.log("hello");
+  });
+});
+    </script>
 {% endblock %}
