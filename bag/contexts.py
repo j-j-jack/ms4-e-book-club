@@ -17,6 +17,7 @@ def bag_contents(request):
         product_count += 1
         bag_items.append({
             'item_id': item_id,
+            'item_id_as_int': int(item_id),
             'quantity': quantity,
             'product': product,
         })

@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.contrib import admin, messages
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
@@ -7,7 +8,6 @@ from django. http import JsonResponse
 from django.core import serializers
 # Create your views here.
 
-from django.shortcuts import render
 
 # Create your views here.
 
@@ -58,8 +58,16 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     all_categories = Category.objects.all()
     all_categories = serializers.serialize('json', all_categories)
+
+    in_bag = False
+    if request.session['bag']:
+        for item in request.session['bag']:
+            if int(item) == product.id:
+                in_bag = True
+
     context = {
         "product": product,
         'all_categories': all_categories,
+        'in_bag': in_bag,
     }
     return render(request, 'products/product-detail.html', context)
