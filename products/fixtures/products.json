@@ -298,5 +298,605 @@
          "sales_count":154, 
          "pdf": "pdfs/The-Three-Musketeers.pdf"
    }
+},
+{
+"pk":21,
+      "model":"products.product",
+      "fields":{
+         "name":"Miss You",
+         "author":"Kate Eberlen",
+         "description":"Get to know Tess and Gus in Kate Eberlen's first novel, Miss You, perfect for fans of David Nicholls and Jojo Moyes.\n\nTess and Gus are meant to be. They just haven't met properly yet. And perhaps they never will . . .\n\nToday is the first day of the rest of your life is the motto on a plate in the kitchen at home, and Tess can’t get it out of her head, even though she’s in Florence for a final, idyllic holiday before university.\n\nGus and his parents are also on holiday in Florence – and, for one day, the paths of these two eighteen-year-olds will criss-cross before they each return to England.\n\nOver the course of the next sixteen years, life and love will offer them very different challenges. Separated by distance and chance, there’s no way the two of them are ever going to meet each other properly... or is there?",
+         "price":2.50,
+         "category":5,
+         "image":"images/book-covers/21.jpg",
+         "book_of_month":false,
+         "sales_count":27, 
+         "pdf": "pdfs/Miss-You.pdf"
+   }
+},
+{
+"pk":22,
+      "model":"products.product",
+      "fields":{
+         "name":"Freebooter",
+         "author":"Tim Severin",
+         "description":"Hector Lynch, wanted by the authorities in London for piracy, has come to St Mary's Island, near Madagascar, on his search for the elusive Libertalia - a settlement where it is said that all are allowed to live freely.\n\nHere, he meets Captain Henry Avery, captain of the freebooter Fancy, which is sailing north through the Indian Ocean in search of a huge haul of gold. Avery requires a navigator, and persuades Hector and his friends Jacques and Jezreel to join the voyage, with the promise that they should be free to leave if they come across the fabled Libertalia on their travels.\n\nAlthough Hector is reluctant to return once more to a life of piracy, his desperation to find a place he can finally settle with his wife Maria draws him in. The Fancy joins forces with other notorious pirate ships, including Thomas Tew's Amity, and as they sail up through the Arabian Sea, they encounter a convoy of the Grand Mogul's ships, including the Ganj-i-Sawa'i, the 'Exceeding Treasure', laden with riches. Soon, Hector finds himself caught up in one of the most deadly plunders in history...",
+         "price":2.50,
+         "category":1,
+         "image":"images/book-covers/22.jpg",
+         "book_of_month":false,
+         "sales_count":230, 
+         "pdf": "pdfs/Freebooter.pdf"
+   }
+},
+{
+"pk":23,
+      "model":"products.product",
+      "fields":{
+         "name":"Dracula",
+         "author":"Bram Stoker",
+         "description":"Sensual, dark and thrilling, Bram Stoker's Dracula remains the seminal work of Gothic fiction, and in this elegant Macmillan Collector's Library edition, which includes an illuminating afterword by Jonty Claypole, readers can experience the horror and excitement as never before.\n\nWhen Jonathan Harker is summoned to Transylvania to finalize a property deal for the mysterious Count Dracula, he stumbles upon an ancient evil he is unprepared to face. When that evil escapes to England, the entire nation is suddenly under threat and only an aged vampire hunter, Professor Abraham Van Helsing, can put a stop to the bloodshed.\n\nDesigned to appeal to the booklover, the Macmillan Collector's Library is a series of beautiful gift editions of much loved classic titles. Macmillan Collector's Library are books to love and treasure.",
+         "price":2.50,
+         "category":4,
+         "image":"images/book-covers/23.jpg",
+         "book_of_month":false,
+         "sales_count":154, 
+         "pdf": "pdfs/Dracula.pdf"
+   }
+},
+{
+"pk":24,
+      "model":"products.product",
+      "fields":{
+         "name":"City of Saints and Madmen",
+         "author":"Jeff VanderMeer",
+         "description":"From Jeff VanderMeer, an author praised by writers such as Laren Beukes, China Miéville and Michael Moorcock, City of Saints and Madmen is by turns sensuous and terrifying. This collection of four linked novellas is the perfect introduction to VanderMeer’s vividly imagined world.\n\nIn the city of Ambergris, a would-be suitor discovers a sunlit street can become a killing ground in the blink of an eye. An artist receives an invitation to a beheading and finds himself enchanted. And a patient in a mental institution is convinced he’s imagined a city called Ambergris, invented its every last detail, and that he’s really from a place called Chicago. Ambergris is a cruelly beautiful metropolis – a haven for artists and thieves, for composers and murderers. And once there, anything can happen.\n\nThese tales of Ambergris include the World Fantasy Award-winning novella, The Transformation of Martin Lake.",
+         "price":2.50,
+         "category":6,
+         "image":"images/book-covers/24.jpg",
+         "book_of_month":false,
+         "sales_count":148, 
+         "pdf": "pdfs/City-Of-Saints-And-Madmen.pdf"
+   }
+},
+{
+"pk":25,
+      "model":"products.product",
+      "fields":{
+         "name":"Robin",
+         "author":"Dave Itzkoff",
+         "description":"From his rapid-fire stand-up comedy riffs to his breakout role in Mork & Mindy and his Academy Award-winning performance in Good Will Hunting, Robin Williams was a singularly innovative and beloved entertainer. He often came across as a man possessed, holding forth on culture and politics while mixing in personal revelations – all with mercurial, tongue-twisting intensity as he inhabited and shed one character after another with lightning speed.\n\nBut as Dave Itzkoff shows in this revelatory biography, Williams’s comic brilliance masked a deep well of conflicting emotions and self-doubt, which he drew upon in his comedy and in celebrated films like Dead Poets Society; Good Morning, Vietnam; The Fisher King; Aladdin; and Mrs Doubtfire, where he showcased his limitless gift for improvisation to bring to life a wide range of characters. And in Good Will Hunting he gave an intense and controlled performance that revealed the true range of his talent.\n\nRobin by Dave Itzkoff shows how Williams struggled mightily with addiction and depression – topics he discussed openly while performing and during interviews – and with a debilitating condition at the end of his life that affected him in ways his fans never knew. Drawing on more than a hundred original interviews with family, friends and colleagues, as well as extensive archival research, Robin is a fresh and original look at a man whose work touched so many lives.",
+         "price":2.50,
+         "category":7,
+         "image":"images/book-covers/25.jpg",
+         "book_of_month":false,
+         "sales_count":156, 
+         "pdf": "pdfs/Robin.pdf"
+   }
+},
+{
+"pk":26,
+      "model":"products.product",
+      "fields":{
+         "name":"A Gambling Man",
+         "author":"David Baldacci",
+         "description":"Evoking the golden age of crime writing with its 1940s California-setting, David Baldacci's latest thriller is a must-read for fans of his previous books and lovers of historical crime thrillers. Set amongst the gamblers and gangsters of the seedy-underbelly of America's casinos and the second instalment in his new series starring ex-jailbird Aloysius Archer, A Gambling Man will transport you straight to the smoke-filled burlesque clubs and slot machines of Reno and Bay Town.",
+         "price":2.50,
+         "category":3,
+         "image":"images/book-covers/26.jpg",
+         "book_of_month":false,
+         "sales_count":80, 
+         "pdf": "pdfs/A-Gambling-Man.pdf"
+   }
+},
+{
+"pk":27,
+      "model":"products.product",
+      "fields":{
+         "name":"The Kingdom",
+         "author":"Jess Rothenberg",
+         "description":"Welcome to the Kingdom, a dazzling fantasy theme park where 'happily ever after' is not just a promise, but a rule . . .\n\nIt's a fairytale which ends in murder as the one of the 'Fantasists' goes renegade. Ana, a half-human, half-android princess, is tasked with entertaining visitors and making wishes come true but now she's on trial, after finding herself experiencing emotions and romantic feelings against all her programming.",
+         "price":2.50,
+         "category":16,
+         "image":"images/book-covers/27.jpg",
+         "book_of_month":false,
+         "sales_count":76, 
+         "pdf": "pdfs/The-Kingdom.pdf"
+   }
+},
+{
+"pk":28,
+      "model":"products.product",
+      "fields":{
+         "name":"Kidnapped",
+         "author":"Robert Louis Stevenson",
+         "description":"Robert Louis Stevenson's classic, swashbuckling novel about a young boy who is forced to go to sea and who is then caught up in high drama, daring adventure and political intrigue.\n\nPart of the Macmillan Collector’s Library; a series of stunning, clothbound, pocket-sized classics with gold foiled edges and ribbon markers. These beautiful books make perfect gifts or a treat for any book lover. This edition is introduced by Louise Welsh and features black and white illustrations.\n\nHeadstrong David Balfour, orphaned at seventeen, sets out from the Scottish Lowlands to seek his fortune in Edinburgh. Betrayed by his wealthy Uncle Ebenezer, he is carried away to sea to be sold into slavery in the Carolinas. On board, he secures a timely alliance with Jacobite adventurer Alan Breck, and together they make an epic escape across the western Highlands. Inspired by real events, Kidnapped is a swashbuckling adventure of bizarre encounters, political assassination and wild carousings with Robert Louis Stevenson’s unique counterpoint of low morals and high comedy threaded throughout.",
+         "price":2.50,
+         "category":1,
+         "image":"images/book-covers/28.jpg",
+         "book_of_month":false,
+         "sales_count":132, 
+         "pdf": "pdfs/Kidnapped.pdf"
+   }
+},
+{
+"pk":29,
+      "model":"products.product",
+      "fields":{
+         "name":"10 Blind Dates",
+         "author":"Ashley Elston",
+         "description":"Would you let your family play matchmaker to help you get over a broken heart?\n\nAshley Elston's 10 Blind Dates is the perfect Christmas treat: delicious, warm, funny, escapist YA romance.\n\nSophie wants one thing for Christmas – time with her boyfriend Griffin. So when her parents plan a trip to visit her sister over the holiday, Sophie begs to be left behind with her grandparents and her boisterous extended family. But she and Griffin break up and she's devastated.\n\nSophie’s grandmother, hating to see her so upset, devises a (not so) brilliant plan – to distract her from heartbreak. Over the next ten days, different family members will set Sophie up on ten different blind dates, which doesn't sound awkward at all . . .\n\nWhen Griffin turns up unexpectedly, it makes Sophie more confused than ever. Because maybe, just maybe, she’s started to have feelings for someone else. Someone who is definitely not available.\n\nFilm rights have been bought by Matt Kaplan and Ace Antertainment, the team behind hit Netflix YA movie Jenny Han's To All The Boys I've Loved Before. Everything Everything screenwriter J. Mills Goodloe is attached to adapt the screenplay.",
+         "price":2.50,
+         "category":15,
+         "image":"images/book-covers/29.jpg",
+         "book_of_month":false,
+         "sales_count":160, 
+         "pdf": "pdfs/10-Blind-Dates.pdf"
+   }
+},
+{
+"pk":30,
+      "model":"products.product",
+      "fields":{
+         "name":"Vegetables",
+         "author":"Roger Phillips",
+         "description":"Beautiful and comprehensive, Vegetables is a must-have for all gardeners, by acclaimed authors Roger Phillips and Martyn Rix.\n\nWhether you are a complete novice or an experienced gardener, Vegetables contains a stunning array of produce, in full colour photography, that can be grown in gardens of all sizes, allotments and even in windowsill pots. The book features over 500 vegetables that can be cultivated in a temperate climate, from the familiar carrot and spinach to the exotic jicama and sacred lotus.\n\nRevised and updated, this is an indispensable guide for growers, the authoritative text contains fascinating details of the history and development of each species and information on characteristics, cultivation, when to harvest, and pests and diseases – as well as tips for cooking the more unusual varieties.",
+         "price":2.50,
+         "category":9,
+         "image":"images/book-covers/30.jpg",
+         "book_of_month":false,
+         "sales_count":143, 
+         "pdf": "pdfs/Vegetables.pdf"
+   }
+},
+{
+"pk":31,
+      "model":"products.product",
+      "fields":{
+         "name":"Ember Queen",
+         "author":"Laura Sebastian",
+         "description":"The Ash Princess is dead. Long live the Queen.\n\nPrincess Theodosia was a prisoner in her own country for a decade, made to wear a crown of ash. But there was fire in her blood and she escaped, gathering a misfit army of rebels behind her.\n\nNow they have a new and terrifying enemy – the Kaiserin. Possessed of magic no one understands, she is determined to burn down anything and anyone in her way. As the Kaiserin's power grows stronger and her beloved Prinz Søren is taken hostage, Theo is forced to make a terrible choice – will she overcome her heart to liberate her enslaved people and finally reclaim her rightful place as Queen?",
+         "price":2.50,
+         "category":16,
+         "image":"images/book-covers/31.jpg",
+         "book_of_month":false,
+         "sales_count":138, 
+         "pdf": "pdfs/Ember-Queen.pdf"
+   }
+},
+{
+"pk":32,
+      "model":"products.product",
+      "fields":{
+         "name":"Madonna",
+         "author":"J. Randy Taraborrelli",
+         "description":"For more than three decades, Madonna has been generating headlines and topping charts. Now J. Randy Taraborrelli has written the definitive biography of one of the richest and most successful pop stars in the world, whose music has constantly evolved and who has remained relevant even as she hits her sixtieth year.\n\nFrom the driven, ambitious young woman struggling to get a break in New York to the outrageous pop diva and more spiritual mother, the changing faces of Madonna are revealed. We see her relationships with men like Basquiat, Tupac, Prince and Warren Beatty, and what happened in her marriages to Sean Penn and Guy Ritchie. We see her embracing motherhood. And we see her today with five children, still recording and touring, finding happiness with much younger boyfriends, defiantly living life on her own terms.\n\nMadonna is based on decades of research and exclusive interviews with people speaking of her publicly for the first time – including friends, business associates and even family members. J. Randy Taraborrelli has also interviewed the star herself on numerous occasions and he draws on first-hand experiences to bring Madonna to life as not merely a sensational tabloid delight, but as a flesh-and-blood woman with human foibles and weaknesses, as well as great strengths and ambitions.",
+         "price":2.50,
+         "category":7,
+         "image":"images/book-covers/32.jpg",
+         "book_of_month":false,
+         "sales_count":108, 
+         "pdf": "pdfs/Madonna.pdf"
+   }
+},
+{
+"pk":33,
+      "model":"products.product",
+      "fields":{
+         "name":"Art of Mindfulness",
+         "author":"Emma Farrarons",
+         "description":"From Emma Farrarons, the bestselling author of The Mindfulness Colouring Book, comes a pocket-sized creative art therapy book to soothe anxiety and eliminate stress.\n\nIn her trademark chic and sophisticated style, Emma Farrarons offers beautiful templates for you to colour and complete with your own hands. Offering more than colouring in, there are drawings to imitate in perfect symmetry, patterns to create, lettering to copy and pages of guided sketching and doodling. Art of Mindfulness contains everything you can do with a pen and paper to achieve a creative mindful moment during a busy day.\n\nMaking the most of art-making as a mindful activity, and small enough to carry around in your bag, Art of Mindfulness is your perfect antidote to the stresses of modern living. So pick up a pen and lose yourself in this pocket-sized book of peace and calm.",
+         "price":2.50,
+         "category":11,
+         "image":"images/book-covers/33.jpg",
+         "book_of_month":false,
+         "sales_count":50, 
+         "pdf": "pdfs/Art-Of-Mindfulness.pdf"
+   }
+},
+{
+"pk":34,
+      "model":"products.product",
+      "fields":{
+         "name":"War Doctor",
+         "author":"David Nott",
+         "description":"A powerful and intensely moving memoir by an NHS surgeon who volunteered in war zones, operating under the most extreme circumstances.\n\nFor more than twenty-five years, David Nott has taken unpaid leave from his job as a general and vascular surgeon with the NHS to volunteer in some of the world’s most dangerous war zones. From Sarajevo under siege in 1993, to clandestine hospitals in rebel-held eastern Aleppo, he has carried out life-saving operations and field surgery in the most challenging conditions, and with none of the resources of a major London teaching hospital.\n\nThe conflicts he has worked in form a chronology of twenty-first-century combat: Afghanistan, Sierra Leone, Liberia, Darfur, Congo, Iraq, Yemen, Libya, Gaza and Syria. But he has also volunteered in areas blighted by natural disasters, such as the earthquakes in Haiti and Nepal.\n\nDriven both by compassion and passion, the desire to help others and the thrill of extreme personal danger, he is now widely acknowledged to be the most experienced trauma surgeon in the world. But as time went on, David Nott began to realize that flying into a catastrophe – whether war or natural disaster – was not enough. Doctors on the ground needed to learn how to treat the appalling injuries that war inflicts upon its victims. Since 2015, the foundation he set up with his wife, Elly, has disseminated the knowledge he has gained, training other doctors in the art of saving lives threatened by bombs and bullets.",
+         "price":2.50,
+         "category":7,
+         "image":"images/book-covers/34.jpg",
+         "book_of_month":false,
+         "sales_count":207, 
+         "pdf": "pdfs/War-Doctor.pdf"
+   }
+},
+{
+"pk":35,
+      "model":"products.product",
+      "fields":{
+         "name":"Hope the Whale",
+         "author":"Pan Macmillan",
+         "description":"Follow Hope the blue whale on her epic journey across the oceans, in this uplifting tale, inspired by the story of the real Hope the whale – one of the Natural History Museum's most loved exhibits.\n\nTold through the eyes of one little boy, this enchanting story reimagines Hope's life. As every year, he looks out for Hope, on her annual journey from the icy seas of the arctic, to the warm tropics.\n\nBeautifully illustrated by Laura Chamberlain, this is a stunning picture book about the special connection between one little boy, and one of the planet's most magnificent creatures.\n\nHope the Whale includes an intricate fold-out, non-fiction spread at the back, about the real Hope the whale, as well as further facts on blue whales.",
+         "price":2.50,
+         "category":12,
+         "image":"images/book-covers/35.jpg",
+         "book_of_month":false,
+         "sales_count":184, 
+         "pdf": "pdfs/Hope-The-Whale.pdf"
+   }
+},
+{
+"pk":36,
+      "model":"products.product",
+      "fields":{
+         "name":"The Little Old Lady Who Struck Lucky Again!",
+         "author":"Catharina Ingelman-Sundberg",
+         "description":"The little old lady is back! This time, Martha Andersson and her friends – the League of Pensioners – have left behind their dreary care home in Stockholm and are enjoying the bright lights of Las Vegas.\n\nThis is their opportunity for a new lease of life and they plan to make the most of it. But before long, they are up to their old tricks and with ingenious tactics, a pair of false teeth and a wheelchair each, they plot to outwit the security system at one of the casinos.\n\nAs their antics become more and more daring, Martha and her friends head back to Sweden full of ideas for more money making schemes. However, they aren't the only ones planning on stealing bucket loads of cash and soon find themselves pitted against a gang of dangerous criminals.\n\nCan the group of elderly friends work together to outsmart the younger robbers and get away with their biggest heist yet? Or will this job be a step too far for The League of Pensioners?",
+         "price":2.50,
+         "category":2,
+         "image":"images/book-covers/36.jpg",
+         "book_of_month":false,
+         "sales_count":238, 
+         "pdf": "pdfs/The-Little-Old-Lady-Who-Struck-Lucky-Again.pdf"
+   }
+},
+{
+"pk":37,
+      "model":"products.product",
+      "fields":{
+         "name":"Embassytown",
+         "author":"China Miéville",
+         "description":"Winner of the Locus Award for Best Science Fiction Novel, China Miéville's astonishing Embassytown is an intelligent and immersive exploration of language in an alien world.\n\nEmbassytown: a city of contradictions on the outskirts of the universe.\n\nAvice is an immerser, a traveller on the immer, the sea of space and time below the everyday, now returned to her birth planet. Here on Arieka, humans are not the only intelligent life, and Avice has a rare bond with the natives, the enigmatic Hosts - who cannot lie.\n\nOnly a tiny cadre of unique human Ambassadors can speak Language, and connect the two communities. But an unimaginable new arrival has come to Embassytown. And when this Ambassador speaks, everything changes.\n\nCatastrophe looms. Avice knows the only hope is for her to speak directly to the alien Hosts.\n\nAnd that is impossible.",
+         "price":2.50,
+         "category":6,
+         "image":"images/book-covers/37.jpg",
+         "book_of_month":false,
+         "sales_count":67, 
+         "pdf": "pdfs/Embassytown.pdf"
+   }
+},
+{
+"pk":38,
+      "model":"products.product",
+      "fields":{
+         "name":"Daughters of Night",
+         "author":"Laura Shepherd-Robinson",
+         "description":"This historical crime fiction novel is the second from Laura Shepherd-Robinson, following her award-winning debut Blood & Sugar. Set in London in 1782, it’s the story of Caroline Corsham, who is determined to seek justice for a string of murders of high-class prostitutes – crimes that the police are all too happy to ignore. As she delves deeper into the darkest, hidden corners of Georgian society, Caroline soon finds that much more than her reputation is at stake...",
+         "price":2.50,
+         "category":3,
+         "image":"images/book-covers/38.jpg",
+         "book_of_month":false,
+         "sales_count":148, 
+         "pdf": "pdfs/Daughters-Of-Night.pdf"
+   }
+},
+{
+"pk":39,
+      "model":"products.product",
+      "fields":{
+         "name":"The Devil's Labyrinth",
+         "author":"John Saul",
+         "description":"Teri McIntyre has enrolled her 15-year-old son at St Isaac's Catholic boarding school, hoping this venerable institution will have a calming influence on him. But Ryan arrives to find the school awash with rumours of violent death, mysterious disappearances, and a growing incidence of disturbing behavior within its hallowed halls.\n\nThings begin to change after Father Sebastian joins the faculty, bent on an extraordinary mission to prove the power of exorcism. Willing or not, St. Isaac's most troubled students become pawns in Father Sebastian's one-man war against evil -- a war so surprisingly effective that Rome itself starts taking notice.\n\nBut as Ryan is drawn ever more deeply into Father Sebastian's ministrations, he witnesses with mounting dread the transformations of his fellow pupils, and his certainty grows that it is forces of darkness, not divinity, which are at work here. For evil is not being cast out . . . instead, something unholy is being summoned. Something whose hour has finally come to bring hell unto earth.",
+         "price":2.50,
+         "category":4,
+         "image":"images/book-covers/39.jpg",
+         "book_of_month":false,
+         "sales_count":96, 
+         "pdf": "pdfs/The-Devils-Labyrinth.pdf"
+   }
+},
+{
+"pk":40,
+      "model":"products.product",
+      "fields":{
+         "name":"Twisted Metal",
+         "author":"Tony Ballantyne",
+         "description":"On a world of intelligent robots who seem to have forgotten their own distant past, it is a time of war as the soldiers of Artemis City set out to conquer everything within range on the continent of Shull, killing or converting every robot they capture to their philosophy, while viewing their own wire-based minds as nothing but metal to be used or recycled for the cause.\n\nElsewhere, the more individualistic robots of Turing City believe they are something more than metal, but when the Artemisian robot Kavan sets out on a determined crusade to prove himself, even Turing City can't stand against him. Increasingly tied up with Kavan's destiny is Karel, a Turing robot with elements of Artemis's philosophy already woven into his mind ... as well as Karel's wife Susan, and their recently created child..\n\nFollowing the inevitable violence and destruction, Artemisian ambition focuses elsewhere and a journey begins towards the frozen kingdoms of the north ... and towards the truth about the legendary 'Book of Robots', a text which may finally explain the real history of this strange world ...\n\nIn a completely alien but brilliantly realized landscape, here is a powerful story of superb action, barbaric cruelty and intense emotional impact.",
+         "price":2.50,
+         "category":6,
+         "image":"images/book-covers/40.jpg",
+         "book_of_month":false,
+         "sales_count":181, 
+         "pdf": "pdfs/Twisted-Metal.pdf"
+   }
+},
+{
+"pk":41,
+      "model":"products.product",
+      "fields":{
+         "name":"The Rise and Fall of the Dinosaurs",
+         "author":"Steve Brusatte",
+         "description":"66 million years ago the dinosaurs were wiped from the face of the earth. Today, Dr. Steve Brusatte, one of the leading scientists of a new generation of dinosaur hunters, armed with cutting edge technology, is piecing together the complete story of how the dinosaurs ruled the earth for 150 million years.\n\nThe world of the dinosaurs has fascinated on book and screen for decades – from early science fiction classics like The Lost World, to Godzilla terrorizing the streets of Tokyo, and the monsters of Jurassic Park. But what if we got it wrong? In The Rise and Fall of the Dinosaurs, top dinosaur expert Brusatte, tells the real story of how dinosaurs rose to dominate the planet. Using the fossil clues that have been gathered using state of the art technology, Brusatte follows these magnificent creatures from their beginnings in the Early Triassic period, through the Jurassic period to their final days in the Cretaceous and the legacy that they left behind.\n\nAlong the way, Brusatte introduces us to modern day dinosaur hunters and gives an insight into what it’s like to be a paleontologist. The Rise and Fall of the Dinosaurs is full of thrilling accounts of some of his personal discoveries, including primitive human-sized tyrannosaurs, monstrous carnivores even larger than T. rex, and feathered raptor dinosaurs preserved in lava from China.\n\nAt a time when Homo sapiens has existed for less than 200,000 years and we are already talking about planetary extinction, The Rise and Fall of the Dinosaurs is a timely reminder of what humans can learn from the magnificent creatures who ruled the earth before us.",
+         "price":2.50,
+         "category":6,
+         "image":"images/book-covers/41.jpg",
+         "book_of_month":false,
+         "sales_count":50, 
+         "pdf": "pdfs/The-Rise-And-Fall-Of-The-Dinosaurs.pdf"
+   }
+},
+{
+"pk":42,
+      "model":"products.product",
+      "fields":{
+         "name":"Riccardino",
+         "author":"Andrea Camilleri",
+         "description":"The twenty-eighth and final novel in the thrilling, wickedly funny Inspector Montalbano Mysteries series by bestselling author Andrea Camilleri, will be published 14 October 2021.\n\nIn the highly anticipated final instalment of Camilleri's bestselling series, Inspector Montalbano receives a strange phone call early in the morning, from a caller by the name of Riccardino who claims to be expecting Montalbano's imminent arrival. But later that day, Montalbano learns of a brutal slaying in broad daylight, and while the assassin is unknown the victim's name is Riccardino – and the Inspector's troubles are only just beginning...\n\nExquisitely crafted by one of Europe's greatest crime fiction writers, Riccardino is a series finale that is not to be missed...",
+         "price":2.50,
+         "category":3,
+         "image":"images/book-covers/42.jpg",
+         "book_of_month":false,
+         "sales_count":243, 
+         "pdf": "pdfs/Riccardino.pdf"
+   }
+},
+{
+"pk":43,
+      "model":"products.product",
+      "fields":{
+         "name":"Pride and Prejudice",
+         "author":"Jane Austen",
+         "description":"Jane Austen's best-loved novel is an unforgettable story about the inaccuracy of first impressions, the power of reason, and above all the strange dynamics of human relationships and emotions.\n\nPart of the Macmillan Collector’s Library; a series of stunning, clothbound, pocket sized classics with gold foiled edges and ribbon markers. These beautiful books make perfect gifts or a treat for any book lover. This edition is illustrated by Hugh Thomson and features an afterword by author and critic, Henry Hitchings.\n\nA tour de force of wit and sparkling dialogue, Pride and Prejudice shows how the headstrong Elizabeth Bennet and the aristocratic Mr Darcy must have their pride humbled and their prejudices dissolved before they can acknowledge their love for each other.",
+         "price":2.50,
+         "category":5,
+         "image":"images/book-covers/43.jpg",
+         "book_of_month":false,
+         "sales_count":142, 
+         "pdf": "pdfs/Pride-And-Prejudice.pdf"
+   }
+},
+{
+"pk":44,
+      "model":"products.product",
+      "fields":{
+         "name":"Beautiful Broken Things",
+         "author":"Sara Barnard",
+         "description":"I was brave\nShe was reckless\nWe were trouble\n\nBest friends Caddy and Rosie are inseparable. Their differences have brought them closer, but as she turns sixteen Caddy begins to wish she could be a bit more like Rosie – confident, funny and interesting. Then Suzanne comes into their lives: beautiful, damaged, exciting and mysterious, and things get a whole lot more complicated. As Suzanne's past is revealed and her present begins to unravel, Caddy begins to see how much fun a little trouble can be. But the course of both friendship and recovery is rougher than either girl realizes, and Caddy is about to learn that downward spirals have a momentum of their own.",
+         "price":2.50,
+         "category":15,
+         "image":"images/book-covers/44.jpg",
+         "book_of_month":false,
+         "sales_count":5, 
+         "pdf": "pdfs/Beautiful-Broken-Things.pdf"
+   }
+},
+{
+"pk":45,
+      "model":"products.product",
+      "fields":{
+         "name":"No One Gets Out Alive",
+         "author":"Adam Nevill",
+         "description":"Darkness lives within...\n\nCash-strapped, working for agencies and living in shared accommodation, Stephanie Booth feels she can fall no further. So when she takes a new room at the right price, she believes her luck has finally turned. But 82 Edgware Road is not what it appears to be.\n\nIt’s not only the eerie atmosphere of the vast, neglected house, or the disturbing attitude of her new landlord, Knacker McGuire, that makes her uneasy – it’s the whispers behind the fireplace, the scratching beneath floors, the footsteps in the dark, and the young women weeping in neighbouring rooms. And when Knacker’s cousin Fergal arrives, the danger goes vertical.\n\nBut this is merely a beginning, a gateway to horrors beyond Stephanie’s worst nightmares. And in a house where no one listens to the screams, will she ever get out alive?",
+         "price":2.50,
+         "category":4,
+         "image":"images/book-covers/45.jpg",
+         "book_of_month":false,
+         "sales_count":146, 
+         "pdf": "pdfs/The-Upstairs-Room.pdf"
+   }
+},
+{
+"pk":46,
+      "model":"products.product",
+      "fields":{
+         "name":"Gilded Cage",
+         "author":"Vic James",
+         "description":"From the bestselling author of Sanctuary comes a thrilling Orwellian vision of Britain, with a rebellious Hunger Games heart. Gilded Cage is the astonishing debut novel by Vic James, and the first title in her electrifying The Dark Gifts Trilogy.\n\nA modern Britain.\n\nAn age-old cruelty.\n\nBritain's magically skilled aristocracy compels all commoners to serve them for ten years – and now it's the Hadleys' turn. Abi Hadley is assigned to England's most ruthless noble family. The secrets she uncovers could win her freedom – or break her heart. Her brother Luke is enslaved in a brutal factory town, where new friends' ideals might cost him everything.\n\nThen while the elite vie for power, a young aristocrat plots to remake the world with his dark gifts. As Britain moves from anger to defiance, all three must take sides. And the consequences of their choices will change everything, forever.",
+         "price":2.50,
+         "category":16,
+         "image":"images/book-covers/46.jpg",
+         "book_of_month":false,
+         "sales_count":7, 
+         "pdf": "pdfs/Gilded-Cage.pdf"
+   }
+},
+{
+"pk":47,
+      "model":"products.product",
+      "fields":{
+         "name":"Kat Wolfe on Thin Ice",
+         "author":"Lauren St John",
+         "description":"Join Kat Wolfe and her best friend Harper Lamb on the winter holiday of a lifetime in Kat Wolfe on Thin Ice – full of mystery, intrigue, snow and huskies, by bestselling author Lauren St John!\n\nKat and Harper can’t wait to join their parents on a winter vacation in a mountain cabin in the US. But a series of misadventures result in them being in the wrong place at the wrong time. Alone.\n\nWhen Kat discovers that an argument she witnessed in New York City holds the key to a major crime, she's certain that it’s only a matter of time until the culprits come looking for her.\n\nWith a snow storm moving in and no way out, all that stands between the girls and disaster are a team of eight huskies and one impossible raccoon.",
+         "price":2.50,
+         "category":14,
+         "image":"images/book-covers/47.jpg",
+         "book_of_month":false,
+         "sales_count":170, 
+         "pdf": "pdfs/Kat-Wolfe-On-Thin-Ice.pdf"
+   }
+},
+{
+"pk":48,
+      "model":"products.product",
+      "fields":{
+         "name":"Thebes",
+         "author":"Paul Cartledge",
+         "description":"Continuously inhabited for five millennia, and at one point the most powerful city in Ancient Greece, Thebes has been overshadowed by its better-known rivals, Athens and Sparta.\n\nAccording to myth, the city was founded when Kadmos sowed dragon’s teeth into the ground and warriors sprang forth, ready not only to build the fledgling city but to defend it from all-comers. It was Hercules’ birthplace and the home of the Sphinx, whose riddle Oedipus solved, winning the Theban crown and the king’s widow in marriage, little knowing that the widow was his mother, Jocasta.\n\nThe city’s history is every bit as rich as its mythic origins, from siding with the Persian invaders when their emperor, Xerxes, set out to conquer Aegean Greece, to siding with Sparta – like Thebes an oligarchy – to defeat Pericles’ democratic Athens, to being utterly destroyed on the orders of Alexander the Great.\n\nIn Thebes: The Forgotten City of Ancient Greece, the acclaimed classical historian Paul Cartledge brings the city vividly to life, and argues that it is central to our understanding of the ancient Greeks’ achievements – whether politically or culturally – and thus to our own culture and civilization.",
+         "price":2.50,
+         "category":8,
+         "image":"images/book-covers/48.jpg",
+         "book_of_month":false,
+         "sales_count":60, 
+         "pdf": "pdfs/Thebes.pdf"
+   }
+},
+{
+"pk":49,
+      "model":"products.product",
+      "fields":{
+         "name":"The Fire Fox",
+         "author":"Alexandra Page",
+         "description":"An uplifting, magical book perfect for sharing at bedtime that will leave children feeling warm, cosy and loved.\n\nFreya and her mum have gone to a little cabin to get away for a while. The light has gone out of their lives since Freya's dad passed away. Freya isn't sure about going sledging, but when she meets a magical fox in the snow, she can't help but follow him into the forest – and on to a thrilling adventure.\n\nA heartwarming bedtime story inspired by the Finnish Saami myth of the revontulet, or fox fires – the sparks that fly from the fur of a mystical fox to become the Northern Lights.\n\nThe Fire Fox is a gloriously illustrated, beautifully written story about the nurturing light of love that can't be dimmed, written by debut author Alexandra Page and illustrated by the exciting talent Stef Murphy. This enchanting picture book with its touching story of sadness, hope, love and joy begs to be read again and again.",
+         "price":2.50,
+         "category":12,
+         "image":"images/book-covers/49.jpg",
+         "book_of_month":false,
+         "sales_count":216, 
+         "pdf": "pdfs/The-Fire-Fox.pdf"
+   }
+},
+{
+"pk":50,
+      "model":"products.product",
+      "fields":{
+         "name":"The Woolly Bear Caterpillar",
+         "author":"Julia Donaldson",
+         "description":"From Julia Donaldson, bestselling author of The Gruffalo, and award-winning illustrator Yuval Zommer, comes a charming minibeast Cinderella story.\n\nCrawling through the garden, the little Woolly Bear Caterpillar wonders what kind of moth she will become. Bonny and bright, stunning and smart, but not kind, the other caterpillars laugh at the small, plain Woolly Bear. There is one thing that they are sure of: Woolly Bear could never be as dramatic and beautiful as them! But could one little caterpillar be about to undergo a truly terrific transformation?\n\nrilliantly written and stunningly illustrated this engaging picture book comes complete with a non-fiction mini book about caterpillars and moths written by a nature specialist.",
+         "price":2.50,
+         "category":12,
+         "image":"images/book-covers/50.jpg",
+         "book_of_month":false,
+         "sales_count":8, 
+         "pdf": "pdfs/The-Woolly-Bear-Caterpillar.pdf"
+   }
+},
+{
+"pk":51,
+      "model":"products.product",
+      "fields":{
+         "name":"Midnight in the Snow",
+         "author":"Karen Swan",
+         "description":"Award-winning director Clover Phillips is riding high when she encounters Kit Foley; a surfer and snowboarder as well-known for controversy as he is for winning championships.\n\nInvolved in an accident that had devastating consequences for a bitter rival, Kit has never spoken about what really happened that day. Determined to find out the truth, Clover heads to the snowy wilderness of the Austrian Alps, sharing a romantic winter wonderland with a man who can’t stand her.\n\nBut as she delves deeper, Clover finds herself both drawn to Kit, and even more convinced he’s hiding something. Is Kit Foley really as cold as he seems?",
+         "price":2.50,
+         "category":5,
+         "image":"images/book-covers/51.jpg",
+         "book_of_month":false,
+         "sales_count":69, 
+         "pdf": "pdfs/Midnight-In-The-Snow.pdf"
+   }
+},
+{
+"pk":52,
+      "model":"products.product",
+      "fields":{
+         "name":"The Cook of the Halcyon",
+         "author":"Andrea Camilleri",
+         "description":"In the twenty-seventh book in Andrea Camilleri’s crime fiction series, Inspector Montalbano is called on to investigate a murder and a suicide which leads him to the Halcyon, a mysterious ship that visits Vigàta’s port each day. On board, he finds very few crewmen, no passengers and a stern large enough to land a helicopter . . . \n\nMeanwhile, a rare trip to visit Livia may put the inspector’s position as the head of the commissariat in jeopardy.",
+         "price":2.50,
+         "category":3,
+         "image":"images/book-covers/52.jpg",
+         "book_of_month":false,
+         "sales_count":22, 
+         "pdf": "pdfs/The-Cook-Of-The-Halcyon.pdf"
+   }
+},
+{
+"pk":53,
+      "model":"products.product",
+      "fields":{
+         "name":"Dreamless",
+         "author":"Josephine Angelini",
+         "description":"A story of love, destiny and feuding families with extraordinary powers, descended from the heroes of ancient Greece, Dreamless is the second book in the heartstopping Starcrossed series by Josephine Angelini.\n\nTasked with descending to the underworld and killing the Furies, Helen must endure torture as she wanders aimlessly through hell in her dreams. Although she still trains with the Delos clan, Helen and Lucas are coming to terms with the fact that they cannot be together. Distraught, Helen meets another person down in the shadowy underworld: Orion, descended from Adonis and with the power to control desire, he is the heir to the house of Rome. He's also kind of hot. Confused by her conflicting emotions but glad to have an ally in hell, Helen begins to realize the enormity of her task...",
+         "price":2.50,
+         "category":15,
+         "image":"images/book-covers/53.jpg",
+         "book_of_month":false,
+         "sales_count":114, 
+         "pdf": "pdfs/Dreamless.pdf"
+   }
+},
+{
+"pk":54,
+      "model":"products.product",
+      "fields":{
+         "name":"The Walker in the Shadows",
+         "author":"Barbara Michaels",
+         "description":"Ghosts, a mysterious diary and a harrowing of a family split by the American Civil War sit at the heart of The Walker in the Shadows, a haunting Gothic romance by New York Times bestseller Barbara Michaels.\n\nThe house next door to Pat Robbins – eerily identical to the home she shares with her teenage son, Mark – has been empty for years. And it’s not surprising, as there’s a feeling of darkness radiating from the house that seems to scare everyone away.\n\nBut now new tenants are moving in: friendly Josef and his lovely daughter, Kathy, who has stolen Mark's heart on first glance. But something is not right – something old and secret is lurking in the shadows, something that fresh paint and new furnishings cannot mask or exorcise. There is evil alive in the heart of the house next door – and it means to feed on the fears of two families...",
+         "price":2.50,
+         "category":4,
+         "image":"images/book-covers/54.jpg",
+         "book_of_month":false,
+         "sales_count":213, 
+         "pdf": "pdfs/The-Walker-In-The-Shadows.pdf"
+   }
+},
+{
+"pk":55,
+      "model":"products.product",
+      "fields":{
+         "name":"Ten to Zen",
+         "author":"Owen O'Kane",
+         "description":"Ten to Zen is a simple, effective and fuss-free guide to help you start your day in the right headspace to prepare for the challenges it may bring.\n\nEach morning most of us will spend about ten minutes in the shower, ten minutes making and eating breakfast but no time at all clearing our minds. Ten to Zen uses a combination of four therapeutic models – Mindfulness, Cognitive Behavioural Therapy, Psychotherapy and Eye Movement Desensitization and Reprocessing (EMDR) therapy – in a simple, easy-to-follow programme.\n\nYou will learn:\n- How to settle your mind quickly\n- How to focus and retrain your brain on dealing with stress\n- How to restructure unhelpful patterns of thinking\n- How to develop ways of communicating that are more effective\n\nTen to Zen was developed by Owen O'Kane to encourage new principles for living based on his experience as a psychotherapist and his many years of caring for the dying in the field of palliative care, which has hugely influenced how he works and how he views life.",
+         "price":2.50,
+         "category":11,
+         "image":"images/book-covers/55.jpg",
+         "book_of_month":false,
+         "sales_count":213, 
+         "pdf": "pdfs/Ten-To-Zen.pdf"
+   }
+},
+{
+"pk":56,
+      "model":"products.product",
+      "fields":{
+         "name":"Stress Less, Accomplish More",
+         "author":"Emily Fletcher",
+         "description":"Achieve more with this fifteen-minute meditation programme.\n\nIn Stress Less, Accomplish More Emily Fletcher shares an ancient meditation technique designed for busy lives. The focus of the practice is stress relief, mental clarity and improved productivity, so it's perfect for the fast pace of modern life. This style of meditation was developed specifically for people with a lot of demands on their time – those with busy jobs, lives and families – and so it has been designed to work anywhere, anytime. All you need is somewhere to sit, a little training and a few minutes to yourself.\n\nThroughout the book, Emily explains what meditation is, how you do it and the many exciting ways that it can change your life. Stress Less, Accomplish More destigmatises meditation for the average person, making it attractive, understandable and easy to implement for all. This book has a very simple message: do less – without the stress – and accomplish more.\n\nEmily Fletcher is a leading expert in meditation for high performance and has taught meditation to executives at global corporations like Google, Barclays and Viacom as well as busy parents, NBA players, Oscar winners, entrepreneurs and everyone in between.",
+         "price":2.50,
+         "category":11,
+         "image":"images/book-covers/56.jpg",
+         "book_of_month":false,
+         "sales_count":129, 
+         "pdf": "pdfs/Stress-Less-Accomplish-More.pdf"
+   }
+},
+{
+"pk":57,
+      "model":"products.product",
+      "fields":{
+         "name":"A Dinosaur Ate My Sister",
+         "author":"Pooja Puri",
+         "description":"This brilliantly illustrated, laugh-out-loud, wacky adventure through time by Pooja Puri is the perfect blend of The Hitchhiker's Guide to the Galaxy and Jurassic Park.\n\nBefore you start reading, there are a few things you should know:\n1. I, Esha Verma, am a genius inventor extraordinaire.\n2. There is nothing I cannot invent. This includes words.\n3. I did not mean to send my sister back to the Age of the Dinosaurs. That was HER OWN FAULT (Mum and Dad, if you’re reading this, please take note).\n\nEsha Verma, her snotty apprentice Broccoli and his cunning pet tortoise have a dream. They are going to win the legendary Brain Trophy – the ultimate inventing prize. This year's entry: A TIME MACHINE.\n\nBut the day before the competition, Esha's IGNORAMUS big sister hijacks the time machine and is lost in the Cretaceous age.\n\nWith help from a new recruit for The Office of Time, Esha and Broccoli will have to face hungry dinosaurs, mysterious black holes and malfunctioning inventions to get them back in time.\n\nThe Marcus Rashford Book Club is a collaboration between Marcus Rashford and Macmillan Children's Books, inspiring children to develop a love of reading and literacy as a life skill.",
+         "price":2.50,
+         "category":11,
+         "image":"images/book-covers/57.jpg",
+         "book_of_month":false,
+         "sales_count":197, 
+         "pdf": "pdfs/A-Dinosaur-Ate-My-Sister.pdf"
+   }
+},
+{
+"pk":58,
+      "model":"products.product",
+      "fields":{
+         "name":"The Knackered Mother's Wine Guide",
+         "author":"Helen McGinn",
+         "description":"Do you frequently panic in the wine aisle and end up reaching for the same old thing. Every. Single. Time?\nHave you found yourself picking the bottle with the nicest-looking label?\nDo you automatically pick the second-cheapest wine on the list?\nAre you looking to extend your wine horizons beyond Pinot Grigio?\n\nYou need The Knackered Mother’s Wine Guide.\n\nCome and explore the wonderful world of wine with drinks expert Helen McGinn. With tips on how to make the right wine choices for every occasion, from children’s parties (because adults need something fizzy too) to planning a wedding or matching wine with food, this book will help you to choose with confidence.\n\nLearn what to look for in the discount deals and discover the can’t-go-wrong crowd-pleasers, perfect reds to go with your Sunday roast, the best wine to drink with chocolate, plus some unexpected suggestions for your next night in. Wine is about far more than just what's in the glass (although that's important too); it brings us together and helps us to find a moment to stop, connect and share stories. This crash-course guide will help you know what to look for in fridge-door whites, store cupboard reds so that you can make the most of time spent together to raise a glass for a special occasion, or wind-down when the kids have finally gone to bed.\n\nBecause life's too short to drink bad wine.",
+         "price":2.50,
+         "category":9,
+         "image":"images/book-covers/58.jpg",
+         "book_of_month":false,
+         "sales_count":162, 
+         "pdf": "pdfs/The-Knackered-Mothers-Wine-Guide.pdf"
+   }
+},
+{
+"pk":59,
+      "model":"products.product",
+      "fields":{
+         "name":"Journey to the River Sea: Illustrated Edition",
+         "author":"Eva Ibbotson",
+         "description":"A gorgeous 20th anniversary hardback jacketed gift edition of Eva Ibbotson's award-winning, bestselling classic adventure. Fully illustrated in colour throughout by Katie Hickey.\n\n'The most perfect children's book . . . captivatingly told, funny and moving' – Nicolette Jones, Sunday Times\n\nA joyous Amazon adventure set in the lush nature of Brazil, Journey to the River Sea is filled with mystery and extraordinary characters. It's perfect for girls and boys of 9+.\n\nMaia, an orphan, can't wait to reach her distant relatives a thousand miles up the Amazon. She imagines a loving family with whom she will share great adventures. Instead she finds two spiteful cousins who see the jungle as the enemy and refuse to go outdoors. But the wonders of the rainforest more than make up for the hideous twins and their parents.\n\nAnd when Maia meets a mysterious boy who lives alone on the wild river shores, she begins a spectacular journey to the heart of an extraordinary and beautiful new world.",
+         "price":2.50,
+         "category":13,
+         "image":"images/book-covers/59.jpg",
+         "book_of_month":false,
+         "sales_count":68, 
+         "pdf": "pdfs/Journey-To-The-River-Sea-Illustrated-Edition.pdf"
+   }
+},
+{
+"pk":60,
+      "model":"products.product",
+      "fields":{
+         "name":"Write It All Down",
+         "author":"Cathy Rentzenbrink",
+         "description":"Why do we want to write and what stops us?\nHow does the urge to express ourselves fight with the worry that no-one will care or that we will get in trouble?\nHow do we identify and overcome everything that gets in our way so we can start making work?\n\nSunday Times bestselling author Cathy Rentzenbrink shows you how to tackle all this and more in Write It All Down, a guide to putting your life on the page. This is a kind, encouraging and stimulating book that explores the nature of memoir writing and offers helpful guidance on how to write your life on paper. Rentzenbrink will help you to discover the pleasure and solace to be found in writing; the profound satisfaction of wrestling a story onto a page and seeing the events of your life transformed through the experience of writing the self.\n\nPerfect for both seasoned writers as well as writing amateurs and everyone in between, this helpful handbook will steer you through the philosophical and practical challenges of writing the self. Intertwined with reflections, anecdotes and exercises, Write It All Down is at once an intimate and enjoyable narrative and an invitation to share your story.",
+         "price":2.50,
+         "category":11,
+         "image":"images/book-covers/60.jpg",
+         "book_of_month":false,
+         "sales_count":33, 
+         "pdf": "pdfs/Journey-To-The-River-Sea-Illustrated-Edition.pdf"
+   }
 }
 ]
