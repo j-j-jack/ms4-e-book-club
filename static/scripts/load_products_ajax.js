@@ -1,5 +1,4 @@
-$(document).ready(function () {
-  $.noConflict();
+jQuery(document).ready(function () {
   let loadRound = 0;
   let allCategories = jQuery("#all-categories").text();
   allCategories = JSON.parse(allCategories);
@@ -16,7 +15,6 @@ $(document).ready(function () {
           let bookName;
           let bookImage;
           let bookRating;
-          let bookCategory;
           let bookCategoryName;
           let bookCategoryFriendlyName;
           let bookId;

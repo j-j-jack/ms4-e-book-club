@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  $("#fake-search-icon").click(function () {
-    $("#search-dropdown").toggle();
+jQuery(document).ready(function () {
+  jQuery("#fake-search-icon").click(function () {
+    jQuery("#search-dropdown").toggle();
   });
 });
