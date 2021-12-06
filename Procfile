@@ -1,1 +1,1 @@
-web:gunicorn e_book_club.wsgi:application
+web: gunicorn e_book_club.wsgi:application
