@@ -1,0 +1,1 @@
+web: gunicorn e_book_club.wsgi:application
