@@ -60,7 +60,7 @@ def product_detail(request, product_id):
     all_categories = serializers.serialize('json', all_categories)
 
     in_bag = False
-    if request.session['bag']:
+    if 'bag' in request.session:
         for item in request.session['bag']:
             if int(item) == product.id:
                 in_bag = True
