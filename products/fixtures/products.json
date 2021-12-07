@@ -898,5 +898,455 @@
          "sales_count":33, 
          "pdf": "pdfs/Journey-To-The-River-Sea-Illustrated-Edition.pdf"
    }
+},
+{
+"pk":61,
+      "model":"products.product",
+      "fields":{
+         "name":"Beasts in My Belfry",
+         "author":"Gerald Durrell",
+         "description":"At the age of two I made up my mind quite firmly and unequivocally that the only thing I wanted to do was study animals. Nothing else interested me.\n\nBeasts in My Belfry is a charming account of Gerald Durrell's first job in 1945 as a student keeper at Whipsnade Zoo. Over a year, we encounter a typically absurd cast – including Albert the lion, who's a dab hand at ventriloquism, and Teddy the brown bear, with whom the young Durrell sings duets. With notebook and pen in hand, the eager young Durrell observes his co-workers and animal charges alike. Whether getting dirty mucking out the buffalo enclosure or attempting to cajole a jitter-bugging gnu into a transportation crate, life at the zoo is certainly never boring.",
+         "price":2.50,
+         "category":10,
+         "image":"images/book-covers/61.jpg",
+         "book_of_month":false,
+         "sales_count":150, 
+         "pdf": "pdfs/Beasts-In-My-Belfry.pdf"
+   }
+},
+{
+"pk":62,
+      "model":"products.product",
+      "fields":{
+         "name":"Almost Midnight: Two Festive Short Stories",
+         "author":"Rainbow Rowell",
+         "description":"Almost Midnight: Two Festive Short Stories by New York Times bestselling author Rainbow Rowell contains two wintery short stories, decorated throughout with gorgeous black and white illustrations by Simini Blocker.\n\n'Midnights' is the story of Noel and Mags, who meet at the same New Year's Eve party every year and fall a little more in love each time . . .\n\n'Kindred Spirits' is about Elena, who decides to queue to see the new Star Wars movie and meets Gabe, a fellow fan.\n\n'Midnights' was previously published as part of the My True Love Gave to Me anthology, edited by Stephanie Perkins and 'Kindred Spirits' was previously published as a World Book Day title.",
+         "price":2.50,
+         "category":15,
+         "image":"images/book-covers/62.jpg",
+         "book_of_month":false,
+         "sales_count":71, 
+         "pdf": "pdfs/Almost-Midnight-Two-Festive-Short-Stories.pdf"
+   }
+},
+{
+"pk":63,
+      "model":"products.product",
+      "fields":{
+         "name":"The Ultimate Family Business Survival Guide",
+         "author":"Priyanka Gupta Zielinski",
+         "description":"Family businesses are vital to the health of a nation’s economy, but distresses such as economic downturns and the Covid-19 pandemic can put them at grave existential risk.\n\nDrawing from her dynamic experience working with her family-owned company MPIL Steel Structures Ltd, Priyanka Gupta Zielinski presents a unique manual to help family businesses thrive, even in times of crisis. Central to it is a survival toolkit – featuring a metaphorical multipurpose hat, a flashlight, a superhero cape, a Swiss Army knife and a parachute – which prepares business owners to face any challenge head on. The book also reveals how the improvisational style of family enterprises can be leveraged better for sustainability, while identifying in their close-knit structure and community-driven approach avenues for meaningful social change.\n\nReplete with anecdotes and effective strategies – with an occasional Haryanvi idiom thrown into the mix – The Ultimate Family Business Survival Guide is a must-read for family business and MSME owners everywhere.",
+         "price":2.50,
+         "category":9,
+         "image":"images/book-covers/63.jpg",
+         "book_of_month":false,
+         "sales_count":76, 
+         "pdf": "pdfs/The-Ultimate-Family-Business-Survival-Guide.pdf"
+   }
+},
+{
+"pk":64,
+      "model":"products.product",
+      "fields":{
+         "name":"Me",
+         "author":"Elton John",
+         "description":"In his first and only official autobiography, music icon Elton John reveals the truth about his extraordinary life. Me is the joyously funny, honest and moving story of the most enduringly successful singer/songwriter of all time.\n\nChristened Reginald Dwight, he was a shy boy with Buddy Holly glasses who grew up in the London suburb of Pinner and dreamed of becoming a pop star. By the age of twenty-three, he was performing his first gig in America, facing an astonished audience in his bright yellow dungarees, a star-spangled T-shirt and boots with wings. Elton John had arrived and the music world would never be the same again.\n\nHis life has been full of drama, from the early rejection of his work with songwriting partner Bernie Taupin to spinning out of control as a chart-topping superstar; from half-heartedly trying to drown himself in his LA swimming pool to disco-dancing with the Queen; from friendships with John Lennon, Freddie Mercury and George Michael to setting up his AIDS Foundation. All the while, Elton was hiding a drug addiction that would grip him for over a decade.\n\nIn Me Elton also writes powerfully about getting clean and changing his life, about finding love with David Furnish and becoming a father. In a voice that is warm, humble and open, this is Elton on his music and his relationships, his passions and his mistakes. This is a story that will stay with you, by a living legend.",
+         "price":2.50,
+         "category":7,
+         "image":"images/book-covers/64.jpg",
+         "book_of_month":false,
+         "sales_count":241, 
+         "pdf": "pdfs/Me.pdf"
+   }
+},
+{
+"pk":65,
+      "model":"products.product",
+      "fields":{
+         "name":"Genesis",
+         "author":"Brendan Reichs",
+         "description":"Noah Livingston knows he is destined to survive.\n\nThe sixty-four members of his class are trapped in a place where morals have no meaning and zero rules apply.\n\nMin Wilder knows that survival alone isn't enough.\n\nIn a violent world where brute force passes for leadership, Min's instincts rebel against allowing others to decide who lives and who dies. She's ready to fight for what she believes in. And against whoever might stand in her way.\n\nFrom Brendan Reichs, co-author of the Virals series with Kathy Reichs, comes Genesis the nail-biting sequel to Nemesis - a fast-paced, high concept thriller perfect for fans of The 100 and The Maze Runner.",
+         "price":2.50,
+         "category":16,
+         "image":"images/book-covers/65.jpg",
+         "book_of_month":false,
+         "sales_count":191, 
+         "pdf": "pdfs/Genesis.pdf"
+   }
+},
+{
+"pk":66,
+      "model":"products.product",
+      "fields":{
+         "name":"Confessions of a Forty-Something F##k Up",
+         "author":"Alexandra Potter",
+         "description":"A novel for any woman who wonders how the hell she got here, and why life isn't quite how she imagined it was going to be. And who is desperately trying to figure it all out when everyone around them is making gluten-free brownies.\n\nMeet Nell.\n\nHer life is a mess.\n\nIn a world of perfect Instagram lives, she feels like a f**k up. But when she starts a secret podcast and forms an unlikely friendship with Cricket, an eighty-something widow, things begin to change. Because Nell is determined. This time next year things will be very different. But first, she has a confession...",
+         "price":2.50,
+         "category":2,
+         "image":"images/book-covers/66.jpg",
+         "book_of_month":false,
+         "sales_count":223, 
+         "pdf": "pdfs/Confessions-Of-A-Forty-Something-Fk-Up.pdf"
+   }
+},
+{
+"pk":67,
+      "model":"products.product",
+      "fields":{
+         "name":"The Heron's Cry",
+         "author":"Ann Cleeves",
+         "description":"It's an idyllic hot summer in North Devon when Detective Matthew Venn gets the call to come to the home of a group of artists – there has been a murder. Dr Nigel Yeo has been stabbed, and the weapon is one of his glassblower daughter's vases. As Matthew attempts to solve the killing of a good man, someone else in the community is slain in a similar way. The key to murders lies disturbingly close to home, in a web of lies which Matthew must attempt to untangle. The latest in the bestselling series featuring Detective Matthew Venn.",
+         "price":2.50,
+         "category":3,
+         "image":"images/book-covers/67.jpg",
+         "book_of_month":false,
+         "sales_count":202, 
+         "pdf": "pdfs/The-Herons-Cry.pdf"
+   }
+},
+{
+"pk":68,
+      "model":"products.product",
+      "fields":{
+         "name":"Colt of the Clouds",
+         "author":"Kallie George",
+         "description":"Journey to the clouds and back in Colt of the Clouds, the breathtaking second Winged Horse Race adventure from Kallie George, illustrated by Lucy Eldridge.\n\nEver since Pippa and her beloved horse, Zephyr, were banished from the slopes of Mount Olympus, they’ve tried to adjust to living a normal life on the ground. But when Pippa rescues a winged colt, she knows she must take return him to the land of the gods and goddesses. Up on Olympus, however, disaster awaits. The gods and goddesses are at war, and all of the winged horses have disappeared.\n\nWith the help of a new friend, Hero, Pippa takes on a task few mortals would dare: to find the winged horses and end the war. Join the winged horses in this fast-paced story of loyalty, friendship and bravery.",
+         "price":2.50,
+         "category":13,
+         "image":"images/book-covers/68.jpg",
+         "book_of_month":false,
+         "sales_count":79, 
+         "pdf": "pdfs/Colt-Of-The-Clouds.pdf"
+   }
+},
+{
+"pk":69,
+      "model":"products.product",
+      "fields":{
+         "name":"The Lost City",
+         "author":"Amanda Hocking",
+         "description":"Welcome to a world in the shadow of our own, a fairytale land where the dangers are very real . . . In this first book in the Omte Origins trilogy, Amanda Hocking creates a fantastic adventure in her much-loved Trylle universe.\n\nCan she unlock the secrets of her past?\n\nUlla Tulin was abandoned in an isolated Kanin town as a baby. Taken in by strangers and raised hidden away like many half-blood trolls, she has never stopped searching for her parents, or wondering about them.\n\nWhen Ulla hears of a project to help half-blood trolls, in the beautiful city of Merellä, she seizes the chance to discover her true heritage. She enlists the help of Pan Soriano, who is both handsome and resourceful – a half-human with telekinesis powers. And she must also contend with Eliana, a mysterious girl who claims she’s being pursued. Though Ulla suspects there’s rather more to the story.\n\nUlla and Pan work to unravel the truth about themselves and Eliana. But in the process, they realize that someone – or something – is determined to stop them. And they face a force that will do anything to keep certain secrets.",
+         "price":2.50,
+         "category":15,
+         "image":"images/book-covers/69.jpg",
+         "book_of_month":false,
+         "sales_count":118, 
+         "pdf": "pdfs/The-Lost-City.pdf"
+   }
+},
+{
+"pk":70,
+      "model":"products.product",
+      "fields":{
+         "name":"The Warship",
+         "author":"Neal Asher",
+         "description":"In this second volume of Rise of the Jain, Neal Asher takes us on a thrilling ride into interstellar politics and impending war.\n\nTheir nemesis lies in wait...\n\nOrlandine has destroyed the alien Jain super-soldier by deploying an actual black hole. And now that same weapon hoovers up clouds of lethal Jain technology, swarming within the deadly accretion disc’s event horizon. All seems just as she planned. Yet behind her back, forces incite rebellion on her home world, planning her assassination.\n\nEarth Central, humanity’s ruling intelligence, knows Orlandine was tricked into releasing her weapon, and fears the Jain are behind it. The prador king knows this too – and both foes gather fleets of warships to surround the disc.\n\nThe alien Client is returning to the accretion disc to save the last of her kind, buried on a ship deep within it. She upgrades her vast weapons platform in preparation, and she’ll need it. Her nemesis also waits within the disc’s swirling dusts – and the Jain have committed genocide before.",
+         "price":2.50,
+         "category":6,
+         "image":"images/book-covers/70.jpg",
+         "book_of_month":false,
+         "sales_count":194, 
+         "pdf": "pdfs/The-Warship.pdf"
+   }
+},
+{
+"pk":71,
+      "model":"products.product",
+      "fields":{
+         "name":"The Apartment",
+         "author":"S. L. Grey",
+         "description":"From S. L. Grey comes this suspenseful psychological thriller.\n\nMark and Steph are struggling to move on with their lives after armed robbers broke into their home and brutalized them. Shaken, they decide to get away and leave their troubles behind. A house swap in Paris with a couple they meet online, the Petits, seems to provide the perfect escape. But upon arriving for a week's luxurious break, they find themselves in a festering, run-down apartment. And when Steph attempts to contact the Petits, she gets no answer.\n\nMark and Steph try to make the most of the trip, but they are unable to relax. After a series of increasingly unsettling events, they decide to return home. Yet when they arrive, neither of them can shake the feeling that there's now something sinister about their own house. As time passes, Mark is terrorized by a series of unsettling visions. But is it all in his imagination or is there a far more worrying explanation...?",
+         "price":2.50,
+         "category":4,
+         "image":"images/book-covers/71.jpg",
+         "book_of_month":false,
+         "sales_count":1, 
+         "pdf": "pdfs/The-Apartment.pdf"
+   }
+},
+{
+"pk":72,
+      "model":"products.product",
+      "fields":{
+         "name":"All We Are Saying",
+         "author":"John Lennon, Yoko Ono & David Sheff",
+         "description":"The last major interview with John Lennon and Yoko Ono, conducted by New York Times bestselling author David Sheff, featuring a new introduction that reflects on the fortieth anniversary of Lennon's death.\n\nOriginally published in Playboy in 1981 just after John Lennon's assassination, All We Are Saying is a rich, vivid, complete interview with Lennon and Yoko Ono, covering art, creativity, the music business, childhood beginnings, privacy, how the Beatles broke up, how Lennon and McCartney collaborated (or didn't) on songs, parenthood, money, feminism, religion, and insecurity. Of course, at the heart of the conversation is the deep romantic and spiritual bond between Lennon and Ono.\n\nSheff's insightful questions set the tone for Lennon's responses and his presence sets the scene, as he goes through the kitchen door of Lennon and Yoko's apartment in the Dakota and observes moments at Lennon's famous white piano and the rock star's work at the stove, making them grilled cheese sandwiches. Sheff's new introduction looks at his forty-year-old interview afresh, and examines how what he learned from Lennon has resonated with him as a man and a parent. This is a knockout interview: unguarded, wide-ranging, alternately frisky and intense.",
+         "price":2.50,
+         "category":7,
+         "image":"images/book-covers/72.jpg",
+         "book_of_month":false,
+         "sales_count":57, 
+         "pdf": "pdfs/All-We-Are-Saying.pdf"
+   }
+},
+{
+"pk":73,
+      "model":"products.product",
+      "fields":{
+         "name":"The Smartest Giant in Town 20th Anniversary Edition",
+         "author":"Julia Donaldson",
+         "description":"Meet the kindest giant around and all his animal friends in this special twentieth anniversary edition of the bestselling story The Smartest Giant in Town by Julia Donaldson and Axel Scheffler, featuring the much-loved original story plus special bonus content.\n\nGeorge wished he wasn't the scruffiest giant in town. So when he sees a new shop selling giant-sized clothes, he decides it's time for a new look: smart trousers, smart shirt, stripy tie and shiny shoes. Now he's the smartest giant in town... until he bumps into some animals who desperately need his help – and his clothes!\n\nThe Smartest Giant in Town 20th Anniversary Edition features the classic story by Julia Donaldson and Axel Scheffler, creators of The Gruffalo, as well as extra-special bonus content including a letter from the author and some early sketches from the illustrator to celebrate the anniversary year.",
+         "price":2.50,
+         "category":12,
+         "image":"images/book-covers/73.jpg",
+         "book_of_month":false,
+         "sales_count":117, 
+         "pdf": "pdfs/The-Smartest-Giant-In-Town-20th-Anniversary-Edition.pdf"
+   }
+},
+{
+"pk":74,
+      "model":"products.product",
+      "fields":{
+         "name":"Sabotage on the Solar Express",
+         "author":"M. G. Leonard",
+         "description":"Ride into danger with Hal and Uncle Nat on the fifth breathtaking Adventures on Trains Mystery, Sabotage on the Solar Express, from bestselling award-winners M. G. Leonard and Sam Sedgman. Perfect for readers of 8 to 12 and brilliantly illustrated in black and white throughout by Elisa Paganelli.\n\nBillionaire train enthusiast August Reza has invited Harrison Beck and Uncle Nat to travel on the maiden voyage of the winning design of his Reza’s Rocket competition. Australian child genius Boaz won with his hybrid locomotive, driven by hydrogen fuel cells and solar power. But during the journey from Alice Springs to Darwin, someone onboard sabotages the train, hurtling passengers into a heart-stopping thrill-ride across the Australian Outback. Can Hal find the saboteur and stop the runaway train before disaster strikes?",
+         "price":2.50,
+         "category":14,
+         "image":"images/book-covers/74.jpg",
+         "book_of_month":false,
+         "sales_count":75, 
+         "pdf": "pdfs/Sabotage-On-The-Solar-Express.pdf"
+   }
+},
+{
+"pk":75,
+      "model":"products.product",
+      "fields":{
+         "name":"Posh Pup and Other Puppy Stories",
+         "author":"Jenny Dale",
+         "description":"Dogs - big or small, pedigree or mutt - Neil, Emily and Sarah Parker love them all. And there are dogs of every kind at their home, the busy King Street Kennels - the perfect venue for doggy adventures and misadventures of all kinds!\n\nIn this special summer Puppy Patrol collection from Jenny Dale meet three of the coolest pups around in Posh Pup, Teacher's Pet and Tug of Love. Featuring stories about a terrier, a Dalmatian and a golden Labrador, these canine adventures are sure to put you in the summer spirit!",
+         "price":2.50,
+         "category":13,
+         "image":"images/book-covers/75.jpg",
+         "book_of_month":false,
+         "sales_count":180, 
+         "pdf": "pdfs/Posh-Pup-And-Other-Puppy-Stories.pdf"
+   }
+},
+{
+"pk":76,
+      "model":"products.product",
+      "fields":{
+         "name":"Exhalation",
+         "author":"Ted Chiang",
+         "description":"From the acclaimed author of Stories of Your Life and Others – the basis for the Academy Award nominated film Arrival – comes a groundbreaking second collection of short fiction: nine stunningly original, provocative, and poignant stories. These are tales that tackle some of humanity’s oldest questions along with new quandaries that only Ted Chiang could imagine.\n\nIn ‘The Merchant and the Alchemist’s Gate’, a portal through time forces a fabric-seller in ancient Baghdad to grapple with past errors and the temptation of second chances. In the epistolary ‘Exhalation’, an alien scientist makes a shocking discovery with ramifications not just for his own people, but for all of reality. In ‘Anxiety is the Dizziness of Freedom’, the ability to glimpse into alternate universes necessitates a radically new examination of the concepts of choice and free will.\n\nIn Exhalation, Ted Chiang addresses the most fundamental of issues – What is the nature of the universe? What does it mean to be human? – alongside others that no one else has even imagined. And, each in its own way, the stories prove that complex and thoughtful science fiction can rise to new heights of beauty, meaning, and compassion.",
+         "price":2.50,
+         "category":6,
+         "image":"images/book-covers/76.jpg",
+         "book_of_month":false,
+         "sales_count":119, 
+         "pdf": "pdfs/Exhalation.pdf"
+   }
+},
+{
+"pk":77,
+      "model":"products.product",
+      "fields":{
+         "name":"Losing Earth",
+         "author":"Nathaniel Rich",
+         "description":"By 1979, we knew all that we know now about the science of climate change – what was happening, why it was happening, and how to stop it. Over the next ten years, we had the very real opportunity to stop it. Obviously, we failed. Nathaniel Rich tells the essential story of why and how, thanks to the actions of politicians and businessmen, that failure came about. It is crucial to an understanding of where we are today.",
+         "price":2.50,
+         "category":10,
+         "image":"images/book-covers/77.jpg",
+         "book_of_month":false,
+         "sales_count":61, 
+         "pdf": "pdfs/Losing-Earth.pdf"
+   }
+},
+{
+"pk":78,
+      "model":"products.product",
+      "fields":{
+         "name":"Mark My Words",
+         "author":"Muhammad Khan",
+         "description":"Is the truth as simple as black and white? Mark My Words is the searing novel from Branford Boase Award-winner and 2020 World Book Day author Muhammad Khan, asking who you can trust when all you see is lies.\n\nFifteen-year-old Dua Iqbal has always had trouble minding her own business. With a silver-tongue and an inquisitive nature, a career in journalism seems fated. When her school merges with another, Dua seizes her chance and sets up a rival newspaper, exposing the controversial stories that teachers and the kids who rule the school would rather keep buried.\n\nDua's investigations are digging up things she shouldn't get involved with about family, friends and her community and as exams rattle towards her, she needs to make some hard decisions about when to leave things alone. But when she discovers that some kids at school are being blamed for selling drugs when the real perpetrator is right in front of their noses, she can't keep quiet any longer.",
+         "price":2.50,
+         "category":16,
+         "image":"images/book-covers/78.jpg",
+         "book_of_month":false,
+         "sales_count":185, 
+         "pdf": "pdfs/Mark-My-Words.pdf"
+   }
+},
+{
+"pk":79,
+      "model":"products.product",
+      "fields":{
+         "name":"The Monsters of Rookhaven",
+         "author":"Pádraig Kenny",
+         "description":"Sometimes the monsters take us. Sometimes we become the monsters.\n\nMirabelle has always known she is a monster. When the glamour protecting her unusual family from the human world is torn and an orphaned brother and sister stumble upon Rookhaven, Mirabelle soon discovers that friendship can be found in the outside world.\n\nBut as something far more sinister comes to threaten them all, it quickly becomes clear that the true monsters aren't necessarily the ones you can see.\n\nA thought-provoking, chilling and beautifully written novel, Pádraig Kenny's The Monsters of Rookhhaven, stunningly illustrated by Edward Bettison, explores difference and empathy through the eyes of characters you won't want to let go.",
+         "price":2.50,
+         "category":14,
+         "image":"images/book-covers/79.jpg",
+         "book_of_month":false,
+         "sales_count":235, 
+         "pdf": "pdfs/The-Monsters-Of-Rookhaven.pdf"
+   }
+},
+{
+"pk":80,
+      "model":"products.product",
+      "fields":{
+         "name":"A (Very) Short History of Life On Earth",
+         "author":"Henry Gee",
+         "description":"For billions of years, Earth was an inhospitably alien place – covered with churning seas, slowly crafting its landscape by way of incessant volcanic eruptions, the atmosphere in a constant state of chemical flux. And yet, despite facing literally every conceivable setback that living organisms could encounter, life has been extinguished and picked itself up to evolve again. Life has learned and adapted and continued through the billions of years that followed. It has weathered fire and ice. Slimes begat sponges, who through billions of years of complex evolution and adaptation grew a backbone, braved the unknown of pitiless shores, and sought an existence beyond the sea.\n\nFrom that first foray to the spread of early hominids who later became Homo sapiens, life has persisted, undaunted. A (Very) Short History of Life is an enlightening story of survival, of persistence, illuminating the delicate balance within which life has always existed, and continues to exist today. It is our planet like you’ve never seen it before.\n\nLife teems through Henry Gee’s lyrical prose – colossal supercontinents drift, collide, and coalesce, fashioning the face of the planet as we know it today. Creatures are engagingly personified, from ‘gregarious’ bacteria populating the seas to duelling dinosaurs in the Triassic period to magnificent mammals with the future in their (newly evolved) grasp. Those long extinct, almost alien early life forms are resurrected in evocative detail. Life’s evolutionary steps – from the development of a digestive system to the awe of creatures taking to the skies in flight – are conveyed with an alluring, up-close intimacy.",
+         "price":2.50,
+         "category":10,
+         "image":"images/book-covers/80.jpg",
+         "book_of_month":false,
+         "sales_count":206, 
+         "pdf": "pdfs/A-Very-Short-History-Of-Life-On-Earth.pdf"
+   }
+},
+{
+"pk":81,
+      "model":"products.product",
+      "fields":{
+         "name":"The Prince of the Skies",
+         "author":"Antonio Iturbe",
+         "description":"From the bestselling author of The Librarian of Auschwitz, Antonio Iturbe, comes a captivating historical novel based on a true story – the extraordinary life and mysterious death of Antoine de Saint-Exupéry, author of The Little Prince.\n\nWriter. Romantic. Pilot. Hero.\n\nAll Antoine de Saint Exupéry wants to do is be a pilot. But flying is a dangerous dream and one that sets him at odds with his aristocratic background and the woman he loves. Despite attempts to keep him grounded, Antoine is determined to venture forwards into the unknown. Together with his friends, Jean and Henri, he will pioneer new mail routes across the globe and help change the future of aviation. In the midst of his adventures, Antoine also begins to weave a children's story that is destined to touch the lives of millions of readers around the world. A story called The Little Prince . . . Fame and fortune may have finally found Antoine, but as the shadow of the Second World War begins to threaten Europe, he's left to wonder whether his greatest adventure is yet to come...",
+         "price":2.50,
+         "category":1,
+         "image":"images/book-covers/81.jpg",
+         "book_of_month":false,
+         "sales_count":57, 
+         "pdf": "pdfs/The-Prince-Of-The-Skies.pdf"
+   }
+},
+{
+"pk":82,
+      "model":"products.product",
+      "fields":{
+         "name":"The Space Between the Stars",
+         "author":"Anne Corlett",
+         "description":"Set in a universe devastated by a deadly virus, The Space between the Stars by Anne Corlett is an enthralling novel of love, the choices we make, and what it means to be human. It's also a dramatic road-trip across the stars, as a woman journeys across a plague-ravaged universe to the place she once called home, and the man she once loved.\n\nHow far would you travel to find your way home?\n\nJamie Allenby wakes, alone, and realizes her fever has broken. But could everyone she knows be dead? Months earlier, Jamie had left her partner Daniel, mourning the miscarriage of their baby. She’d just had to get away, so took a job on a distant planet. Then the virus hit.\n\nJamie survived as it swept through our far-flung colonies. Now she feels desperate and isolated, until she receives a garbled message from Earth. If someone from her past is still alive – perhaps Daniel – she knows she must find a way to return.\n\nShe meets others seeking Earth, and their ill-matched group will travel across space to achieve their dream. But they’ll clash with survivors intent on repeating humanity’s past mistakes, threatening their precious fresh start. Jamie will also get a second chance at happiness. But can she escape her troubled past, to embrace a hopeful future?",
+         "price":2.50,
+         "category":6,
+         "image":"images/book-covers/82.jpg",
+         "book_of_month":false,
+         "sales_count":188, 
+         "pdf": "pdfs/The-Space-Between-The-Stars.pdf"
+   }
+},
+{
+"pk":83,
+      "model":"products.product",
+      "fields":{
+         "name":"Unbeaten",
+         "author":"Mike Stanton",
+         "description":"Rocky Marciano accomplished a feat that eluded legendary champions like Joe Louis, Jack Dempsey, Muhammad Ali, and Mike Tyson: he never lost a professional fight. When he retired in 1956, his record was a perfect 49-0.\n\nUnbeaten is the revelatory biography of one of the greatest heavyweights of all time. Marciano rose from abject poverty and a life of petty crime to become heavyweight champion and one of the most famous faces of his era. He dominated boxing in the decade following the Second World War with a devastating punch, which he nicknamed the ‘Suzie Q’.\n\nBut perfection came at a price.\n\nPulitzer Prize-winner Mike Stanton tells the story of Marciano’s pursuit of greatness through the era of guys and dolls, hustlers and gamblers, glamorous celebrities and notorious mobsters. But boxing had its dark side, particularly at a time when Mafia mob bosses like Blinky Palermo and Frankie Carbo wielded immense power behind the scenes.\n\nMarciano retired while still in his prime, weighed down by the mob’s influence in the sport he loved. For the last decade of his life, he wandered America, disillusioned, untrusting, hiding his money, cheating on his wife, consorting with the mobsters he had loathed for corrupting his sport, until his death in a plane crash in 1969, the night before his 46th birthday.\n\nUnbeaten by Mike Stanton is the story of a remarkable champion, a sport that was rotten to its core, and a country that may have expected too much from its heroes.",
+         "price":2.50,
+         "category":7,
+         "image":"images/book-covers/83.jpg",
+         "book_of_month":false,
+         "sales_count":111, 
+         "pdf": "pdfs/Unbeaten.pdf"
+   }
+},
+{
+"pk":84,
+      "model":"products.product",
+      "fields":{
+         "name":"A Not Quite Perfect Family",
+         "author":"Claire Sandy",
+         "description":"Funny, feisty and all-too-true, A Not Quite Perfect Family by Claire Sandy is for anyone who loves their family so much they’d just like a weekend away from them.\n\nFern Carlile has a lot on her plate. It’s a good thing she loves her big, imperfectly perfect family, because she’s the one who washes their pants, de-fleas the dog and runs her own business. A hearty meal is the one thing that brings the Carliles together – but over the course of a year, the various courses also pull them apart.\n\nAround the table sits an eight-year-old militant feminist, a pair of teenage accidental parents, and a cantankerous OAP. Fern’s husband needs an extra seat for his spectacular midlife crisis.\n\nWill Fern’s marriage be over by the time coffee is served? Perhaps she’ll give in and have the hot new dish that looks so tempting. Decisions, decisions...",
+         "price":2.50,
+         "category":2,
+         "image":"images/book-covers/84.jpg",
+         "book_of_month":false,
+         "sales_count":59, 
+         "pdf": "pdfs/A-Not-Quite-Perfect-Family.pdf"
+   }
+},
+{
+"pk":85,
+      "model":"products.product",
+      "fields":{
+         "name":"Shards of Earth",
+         "author":"Adrian Tchaikovsky",
+         "description":"Shards of Earth is the first high-octane instalment in the Final Architecture trilogy.\n\nThe war is over.\nIts heroes forgotten.\nUntil one chance discovery...\n\nIdris has neither aged nor slept since they remade his mind in the war. And one of humanity’s heroes now scrapes by on a freelance salvage vessel, to avoid the attention of greater powers.\n\nEighty years ago, Earth was destroyed by an alien enemy. Many escaped, but millions more died. So mankind created enhanced humans ­such as Idris - who could communicate mind-to-mind with our aggressors. Then these ‘Architects’ simply disappeared and Idris and his kind became obsolete.\n\nNow, Idris and his crew have something strange, abandoned in space. It’s clearly the work of the Architects – but are they really returning? And if so, why? Hunted by gangsters, cults and governments, Idris and his crew race across the galaxy as they search for answers. For they now possess something of incalculable value, and many would kill to obtain it.",
+         "price":2.50,
+         "category":6,
+         "image":"images/book-covers/85.jpg",
+         "book_of_month":false,
+         "sales_count":33, 
+         "pdf": "pdfs/Shards-Of-Earth.pdf"
+   }
+},
+{
+"pk":86,
+      "model":"products.product",
+      "fields":{
+         "name":"Bridget Jones's Diary (And Other Writing)",
+         "author":"Helen Fielding",
+         "description":"Bridget Jones’s Diary turns 25 this year. Winner of the 1997 British Book of the Year, and named by the Guardian as one of the ten books which best defines the 20th Century, the book has gone on to become a multi-million copy selling international phenomenon, spawning three blockbuster movies, a whole new literary genre, a lexicon of ‘smug marrieds’, ‘singletons’, ‘emotional f***wittage’ and ‘mummy pants’, and the familiar cry of ‘I am Bridget Jones’.\n\nThis special bumper anniversary compendium also features an introduction and commentary from Helen Fielding, and over 100 pages of rare material taken from 25 years of her writing.",
+         "price":2.50,
+         "category":2,
+         "image":"images/book-covers/86.jpg",
+         "book_of_month":false,
+         "sales_count":145, 
+         "pdf": "pdfs/Bridget-Joness-Diary-And-Other-Writing.pdf"
+   }
+},
+{
+"pk":87,
+      "model":"products.product",
+      "fields":{
+         "name":"The Ritual",
+         "author":"Adam Nevill",
+         "description":"From Britain's 'master of horror', Adam Nevill, comes The Ritual, winner of the August Derleth Award and perfect for fans of Stephen King. Now a major film with Rafe Spall.\n\nFour old university friends reunite for a hiking trip in the Scandinavian wilderness of the Arctic Circle. No longer young men, they have little left in common and tensions rise as they struggle to connect. Frustrated and tired they take a shortcut that turns their hike into a nightmare that could cost them their lives.\n\nLost, hungry and surrounded by forest untouched for millennia, they stumble across an isolated old house. Inside, they find the macabre remains of old rites and pagan sacrifices; ancient artefacts and unidentifiable bones. A place of dark ritual and home to a bestial presence that is still present in the ancient forest, and now they’re the prey.\n\nAs the four friends struggle toward salvation they discover that death doesn’t come easy among these ancient trees...",
+         "price":2.50,
+         "category":4,
+         "image":"images/book-covers/87.jpg",
+         "book_of_month":false,
+         "sales_count":145, 
+         "pdf": "pdfs/The-Ritual.pdf"
+   }
+},
+{
+"pk":88,
+      "model":"products.product",
+      "fields":{
+         "name":"Invisible",
+         "author":"Danielle Steel",
+         "description":"When destiny shines the spotlight on you, do you stay... or run?\n\nAntonia Adams is the product of a loveless marriage between a beautiful young model and a wealthy entrepreneur. As a child, she is abandoned in the chasm between them. Unprotected and unloved, she learns that the only way to feel safe is to draw as little attention as possible, to be invisible.\nIn her isolation, films are her escape, and she dreams of one day becoming a screenwriter. During a summer job at a Hollywood studio, she meets a famous filmmaker, and is invisible no longer. He wants to put her in a movie and make her a star. It is a dazzling opportunity but a terrifying one. Suddenly she is thrust into the public eye – even more so when they fall in love.\n\nAntonia never lets go of her true dream of becoming a filmmaker, but to make that leap she will have to expose herself in ways she never has before. When tragedy strikes, she must decide whether she will remain center stage or retreat to safety once more. Will she face her demons, or run and hide?",
+         "price":2.50,
+         "category":5,
+         "image":"images/book-covers/88.jpg",
+         "book_of_month":false,
+         "sales_count":244, 
+         "pdf": "pdfs/Invisible.pdf"
+   }
+},
+{
+"pk":89,
+      "model":"products.product",
+      "fields":{
+         "name":"Sometimes I Am Furious",
+         "author":"Timothy Knapman",
+         "description":"Sometimes I Am Furious is a hilarious and reassuring story about how tough it can be being – and having– a toddler, from bestselling duo Timothy Knapman and Joe Berger.\n\nLife is all fun and games when everything's going your way. But some days, suddenly, something becomes horribly UNFAIR. A melting ice cream, a too-tight t-shirt, a boy who doesn't share . . . it's enough to make you FURIOUS. But, as this little girl discovers, it's nothing that a deep breath, a happy song and a good cuddle can't sort out.\n\nA funny, friendly and relatable book for young children (and their parents) about big emotions and how to handle them.",
+         "price":2.50,
+         "category":12,
+         "image":"images/book-covers/89.jpg",
+         "book_of_month":false,
+         "sales_count":22, 
+         "pdf": "pdfs/Sometimes-I-Am-Furious.pdf"
+   }
+},
+{
+"pk":90,
+      "model":"products.product",
+      "fields":{
+         "name":"Shaping the World",
+         "author":"Liz Brownlee",
+         "description":"A beautiful gift anthology containing forty incredible shape poems in the shape of world shapers! Learn about about Amelia Earhart in a poem shaped like a plane, Maya Angelou in a poem shaped like a bird or Francis Drake in a poem shaped like a ship. Each poem is paired with a biography, quote and fascinating fact.\n\nIncludes poems about: Greta Thunberg, Maya Angelou, Socrates, Frances Glessner Lee, Elizabeth Blackwell, Florence Nightlingale, Anne Frank, Alexander Fleming, Marie Curie, Rosalind Franklin, Mary Anning, Jane Goodall, Archytas, Otto F Rohwedder Shauna, John Logie Baird, Benjamin Franklin, Thomas Edison, Rosa Parks, Ludwig van Beethoven, William Wordsworth, Nelson Mandela, Albert Einstein, Beatrice Tinsley, Ravi Shankar, Isaac Newton, John Muir, Valentina Tereshkova, Amelia Earhart, Sir Francis Drake, Junko Tabei, Rachel Carson, Samuel Johnson, William Shakespeare, Ursula Le Guin, Sir John Tenniel, Charlie Chaplin, Georgia O’Keeffe, Emmeline Pankhurst, Mahatma Ghandi and Malala Yousafzai.",
+         "price":2.50,
+         "category":13,
+         "image":"images/book-covers/90.jpg",
+         "book_of_month":false,
+         "sales_count":154, 
+         "pdf": "pdfs/Shaping-The-World.pdf"
+   }
 }
 ]
