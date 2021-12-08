@@ -69,3 +69,25 @@ footer {
 .home-page-latest-books-link {
     cursor: pointer;
 }
+
+/* messages ---------------------------------------------------------- */
+.message-container {
+    position: fixed;
+    z-index: 999999999;
+    top: 72px;
+    right: 17px;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.bag-notification-wrapper {
+    max-height: 100px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

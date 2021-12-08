@@ -15,12 +15,13 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
+    product = Product.objects.get(pk=item_id)
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
     bag[item_id] = 1
 
     request.session['bag'] = bag
-    print(request.session['bag'])
+    messages.success(request, f'Added {product.name} to your bag')
     return redirect(redirect_url)
 
 

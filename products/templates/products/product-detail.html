@@ -76,24 +76,17 @@
     {% endif %}
     
     <script>
-        $(document).ready(function () {
-  console.log("hi");
-  $(".remove-item").click(function () {
-    console.log("hi");
-    var csrfToken = "{{ csrf_token }}";
-    var itemId = $(this).attr("id");
-    console.log(itemId);
-    var url = `/bag/remove/${itemId}/`;
-    var data = { csrfmiddlewaretoken: csrfToken };
-
-    $.post(url, data).done(function () {
-      location.reload();
-    });
-  });
-  $("#what-the-hell").click(function (e) {
-    console.log("hello");
-  });
-});
+        jQuery(document).ready(function () {
+            jQuery(".remove-item").click(function () {
+                var csrfToken = "{{ csrf_token }}";
+                var itemId = jQuery(this).attr("id");
+                var url = `/bag/remove/${itemId}/`;
+                var data = { csrfmiddlewaretoken: csrfToken };
+                jQuery.post(url, data).done(function () {
+                    location.reload();
+                });
+            });
+        });
     </script>
 
 {% endblock %}
