@@ -1,6 +1,7 @@
 jQuery(document).ready(function () {
   let loadRound = 0;
   let allCategories = jQuery("#all-categories").text();
+  let mediaURL = jQuery("#media-url").text();
   allCategories = JSON.parse(allCategories);
   jQuery("#load-more").click(function () {
     loadRound += 1;
@@ -104,7 +105,7 @@ jQuery(document).ready(function () {
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 <a href="product_detail/${bookId}">
-                                    <img class="card-img-top img-fluid" src="/media/${bookImage}" alt="${bookName}">
+                                    <img class="card-img-top img-fluid" src="${mediaURL}${bookImage}" alt="${bookName}">
                                 </a>
                                 <div class="card-body pb-0">
                                     <p class="mb-0">${bookName}</p>
@@ -141,7 +142,7 @@ jQuery(document).ready(function () {
               template += `
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
-                                    <img class="card-img-top img-fluid" src="/media/images/noimage.png" alt="title not found">
+                                    <img class="card-img-top img-fluid" src="${mediaURL}images/noimage.png" alt="title not found">
                                 <div class="card-body pb-0">
                                     <p class="mb-0">Title not found</p>
                                 </div>

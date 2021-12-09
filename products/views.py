@@ -49,7 +49,7 @@ def products(request):
         'current_categories': categories,
         'all_categories': all_categories,
     }
-    return render(request, 'products/fiction.html', context)
+    return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
