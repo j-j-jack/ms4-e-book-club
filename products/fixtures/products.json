@@ -1348,5 +1348,155 @@
          "sales_count":154, 
          "pdf": "pdfs/Shaping-The-World.pdf"
    }
+},
+{
+"pk":91,
+      "model":"products.product",
+      "fields":{
+         "name":"We Free the Stars",
+         "author":"Hafsah Faizal",
+         "description":"The epic sequel to the bestselling TikTok sensation We Hunt the Flame!\n\nThis is YA fantasy at it's best. Lush, hopeful and devestating, We Free the Stars is Hafsah Faizal's spellbinding conclusion to the Sands of Arawiya duology. Perfect for fans of Leigh Bardugo's Shadow and Bone series.\n\nDarkness surged in his veins. Power bled from her bones.\n\nThe battle is over, but the war is just beginning. Low on resources and allies alike, Zafira and Nasir are determined to finish their mission; to restore magic to their kingdom.\n\nBut the land teems with the return of an ancient evil, and as Nasir fights to command the magic in his blood, Zafira battles a very different darkness. And yet, in spite of everything, they find themselves falling into a love they can't stand to lose.\n\nTime is running out and if order is to be restored, sacrifices will have to be made...",
+         "price":2.50,
+         "category":15,
+         "image":"images/book-covers/91.jpg",
+         "book_of_month":false,
+         "sales_count":246, 
+         "pdf": "pdfs/We-Free-The-Stars.pdf"
+   }
+},
+{
+"pk":92,
+      "model":"products.product",
+      "fields":{
+         "name":"Under Ground",
+         "author":"S. L. Grey",
+         "description":"They thought they were safe...\n\nThe Sanctum is a luxurious, self-sustaining survival condominium situated underground. It's a plush bolt-hole for the rich and paranoid – a place where they can wait out the apocalypse in style. When a devastating super-flu virus hits, several families race to reach The Sanctum. All have their own motivations for entering. All are hiding secrets.\n\nBut when the door locks and someone dies, they realize the greatest threat to their survival may not be above ground – it may already be inside...",
+         "price":2.50,
+         "category":4,
+         "image":"images/book-covers/92.jpg",
+         "book_of_month":false,
+         "sales_count":92, 
+         "pdf": "pdfs/Under-Ground.pdf"
+   }
+},
+{
+"pk":93,
+      "model":"products.product",
+      "fields":{
+         "name":"How to Survive a Pandemic",
+         "author":"Michael Greger MD",
+         "description":"A vital, timely text on the viruses that cause pandemics and how to face them, by the New York Times bestselling author of How Not to Die.\n\nAs the world grapples with the devastating impact of COVID-19, Dr Michael Greger reveals not only what we can do to protect ourselves and our loved ones during a pandemic, but also what human society must rectify to reduce the likelihood of even worse catastrophes in the future.\n\nFrom tuberculosis to bird flu and HIV to coronavirus, these infectious diseases share a common origin story: human interaction with animals. Otherwise known as zoonotic diseases for their passage from animals to humans, these pathogens – both pre-existing ones and those newly identified – emerge and re-emerge throughout history, sparking epidemics and pandemics that have resulted in millions of deaths around the world.\n\nHow did these diseases come about? And what – if anything – can we do to stop them and their fatal march into our countries, our homes, and our bodies? In How to Survive a Pandemic, Dr Michael Greger, physician and internationally-recognized expert on public health issues, delves into the origins of some of the deadliest pathogens the world has ever seen. Tracing their evolution from the past until today, Dr Greger spotlights emerging flu and coronaviruses as he examines where these pathogens originated, as well as the underlying conditions and significant human role that have exacerbated their lethal influence to large, and even global, levels.",
+         "price":2.50,
+         "category":9,
+         "image":"images/book-covers/93.jpg",
+         "book_of_month":false,
+         "sales_count":135, 
+         "pdf": "pdfs/How-To-Survive-A-Pandemic.pdf"
+   }
+},
+{
+"pk":94,
+      "model":"products.product",
+      "fields":{
+         "name":"The African Queen",
+         "author":"C. S. Forester",
+         "description":"Central Africa, 1914; Rose Sayer, a thirty-three year-old English woman, is left alone when her missionary brother dies. Her only route out is aboard The African Queen, a steam-powered launch captained by Cockney mechanic, Charlie Alnutt. Determined to do her bit for the war effort and to avenge her brother, Rose persuades Charlie that they should attack the German gunboat, the Königin Luise. And so begins a most unlikely alliance and love affair, as Charlie and Rose venture down the treacherous Ulanga river encountering danger and adventure at every turn.\n\nThis beautiful Macmillan Collector's Library edition of The African Queen by C. S. Forester features an introduction by the award-winning author and journalist, Giles Foden.\n\nDesigned to appeal to the booklover, the Macmillan Collector's Library is a series of beautiful gift editions of much loved classic titles. Macmillan Collector's Library are books to love and treasure.",
+         "price":2.50,
+         "category":1,
+         "image":"images/book-covers/94.jpg",
+         "book_of_month":false,
+         "sales_count":130, 
+         "pdf": "pdfs/The-African-Queen.pdf"
+   }
+},
+{
+"pk":95,
+      "model":"products.product",
+      "fields":{
+         "name":"Sentient",
+         "author":"Jackie Higgins",
+         "description":"Sentient assembles a menagerie of zoological creatures – from land, air, sea and all four corners of the globe – to understand what it means to be human. Through their eyes, ears, skins, tongues and noses, the furred, finned and feathered reveal how we sense and make sense of the world, as well as the untold scientific revolution stirring in the field of human perception.\n\nThe harlequin mantis shrimp can throw a punch that can fracture aquarium walls but, more importantly, it has the ability to see a vast range of colours. The ears of the great grey owl have such unparalleled range and sensitivity that they can hear twenty decibels lower than the human ear. The star-nosed mole barely fills a human hand, seldom ventures above ground and poses little threat unless you are an earthworm, but its miraculous nose allows it to catch those worms at astonishing speed – as little as one hundred and twenty milliseconds. Here, too, we meet the four-eyed spookfish and its dark vision; the vampire bat and its remarkable powers of touch; the bloodhound and its hundreds of millions of scent receptors, as well as the bar-tailed godwit, the common octopus, giant peacocks, cheetahs and golden orb-weaving spiders. Each of these extraordinary creatures illustrates the sensory powers that lie dormant within us.\n\nIn this captivating book, Jackie Higgins explores this evolutionary heritage and, in doing so, enables us to subconsciously engage with the world in ways we never knew possible.",
+         "price":2.50,
+         "category":10,
+         "image":"images/book-covers/95.jpg",
+         "book_of_month":false,
+         "sales_count":88, 
+         "pdf": "pdfs/Sentient.pdf"
+   }
+},
+{
+"pk":96,
+      "model":"products.product",
+      "fields":{
+         "name":"Peter Pan and Wendy",
+         "author":"J. M. Barrie",
+         "description":"This edition of J. M. Barrie's Peter Pan and Wendy was originally retold by May Byron for little people, with the approval of the author. It is a thrilling adventure for all ages; the story of the boy who refuses to grow up is a tale that never gets old. It follows the Darling children – Wendy, John and Michael – who befriend the magical Peter and are whisked away to the Never-Land, where the villainous Captain Hook and the brave Lost Boys await.\n\nMabel Lucie Attwell's gentle illustrations and distinctive style have been the nursery staple of generations of children. Her illustrated edition of May Byron's abridged Peter Pan and Wendy was first published in 1921. Macmillan is proud to return Mabel Lucie Attwell's interpretation to print.\n\nWith a beautiful foiled cover, this edition features black-and-white line illustrations and makes the perfect gift for children, and adults who refuse to grow up.",
+         "price":2.50,
+         "category":13,
+         "image":"images/book-covers/96.jpg",
+         "book_of_month":false,
+         "sales_count":72, 
+         "pdf": "pdfs/Peter-Pan-And-Wendy.pdf"
+   }
+},
+{
+"pk":97,
+      "model":"products.product",
+      "fields":{
+         "name":"Jane Eyre",
+         "author":"Charlotte Bronte",
+         "description":"The orphaned Jane Eyre is no beauty but her plain appearance belies an indomitable spirit, sharp wit and great courage. As a child she suffers under cruel guardians, harsh schooling and a rigid social order but when she goes to Thornfield Hall to work as a governess for the mysterious Mr Rochester, the stage is set for one of literature's most enduring romances.\n\nA beloved classic and undisputed masterpiece, Charlotte Brontë's Jane Eyre explores class, society, love and religion through the eyes of one of fiction's most unique and memorable female protagonists.\n\nThis beautiful Macmillan Collector's Library edition features an afterword by Sam Gilpin.\n\nDesigned to appeal to the booklover, the Macmillan Collector's Library is a series of beautiful gift editions of much loved classic titles. Macmillan Collector's Library are books to love and treasure.",
+         "price":2.50,
+         "category":5,
+         "image":"images/book-covers/97.jpg",
+         "book_of_month":false,
+         "sales_count":202, 
+         "pdf": "pdfs/Jane-Eyre.pdf"
+   }
+},
+{
+"pk":98,
+      "model":"products.product",
+      "fields":{
+         "name":"Arlo The Lion Who Couldn't Sleep",
+         "author":"Catherine Rayner",
+         "description":"Arlo The Lion Who Couldn't Sleep is a beautifully illustrated story with a gentle mindfulness message from award-wining author-illustrator Catherine Rayner. Shortlisted for the Kate Greenaway Medal, it's an ideal bedtime book, and especially helpful for little ones who have trouble going to sleep.\n\nArlo the lion is exhausted. He just can't drop off, no matter what he tries. It's either too hot, or too cold; too loud or too quiet. But then he meets Owl. She can sleep through the day, which isn't easy when most other animals are awake! Will Arlo ever get any rest? Perhaps his new friend has some special tricks she can teach him.",
+         "price":2.50,
+         "category":12,
+         "image":"images/book-covers/98.jpg",
+         "book_of_month":false,
+         "sales_count":37, 
+         "pdf": "pdfs/Arlo-The-Lion-Who-Couldnt-Sleep.pdf"
+   }
+},
+{
+"pk":99,
+      "model":"products.product",
+      "fields":{
+         "name":"Any Way the Wind Blows",
+         "author":"Rainbow Rowell",
+         "description":"In Carry On, Simon Snow and his friends realized that everything they thought they understood about the world might be wrong. And in Wayward Son, they wondered whether everything they understood about themselves might be wrong.\n\nIn Any Way the Wind Blows, Simon and Baz and Penelope and Agatha have to decide how to move forward.\n\nFor Simon, that means deciding whether he still wants to be part of the World of Mages – and if he doesn't, what does that mean for his relationship with Baz? Meanwhile Baz is bouncing between two family crises and not finding any time to talk to anyone about his newfound vampire knowledge. Penelope would love to help, but she's smuggled an American Normal into London, and now she isn't sure what to do with him. And Agatha? Well, Agatha Wellbelove has had enough.\n\nAny Way the Wind Blows takes the gang back to England, back to Watford, and back to their families for their longest and most emotionally wrenching adventure yet.\n\nThis book is a finale. It tells secrets and answers questions and lays ghosts to rest.\n\nCarry On was conceived as a book about Chosen One stories; Any Way the Wind Blows is an ending about endings. About catharsis and closure, and how we choose to move on from the traumas and triumphs that try to define us.",
+         "price":2.50,
+         "category":15,
+         "image":"images/book-covers/99.jpg",
+         "book_of_month":false,
+         "sales_count":168, 
+         "pdf": "pdfs/Any-Way-The-Wind-Blows.pdf"
+   }
+},
+{
+"pk":100,
+      "model":"products.product",
+      "fields":{
+         "name":"She Has Her Mother's Laugh",
+         "author":"Carl Zimmer",
+         "description":"She Has Her Mother’s Laugh presents a profoundly original perspective on what we pass along from generation to generation. Charles Darwin played a crucial part in turning heredity into a scientific question, and yet he failed spectacularly to answer it. The birth of genetics in the early 1900s seemed to do precisely that. Gradually, people translated their old notions about heredity into a language of genes. As the technology for studying genes became cheaper, millions of people ordered genetic tests to link themselves to missing parents, to distant ancestors, to ethnic identities...\n\nBut, award-winning science writer Carl Zimmer argues, heredity isn’t just about genes that pass from parent to child. Heredity continues within our own bodies, as a single cell gives rise to trillions of cells that make up our bodies. We say we inherit genes from our ancestors but we inherit other things that matter as much or more to our lives, from microbes to technologies we use to make life more comfortable. We need a new definition of what heredity is and, through Carl Zimmer’s lucid exposition and storytelling, this resounding tour de force delivers it.\n\nWeaving together historical and current scientific research, his own experience with his two daughters, and the kind of original reporting expected of one of the world’s best science journalists, Zimmer ultimately unpacks urgent bioethical quandaries arising from new biomedical technologies, but also long-standing presumptions about who we really are and what we can pass on to future generations.",
+         "price":2.50,
+         "category":10,
+         "image":"images/book-covers/100.jpg",
+         "book_of_month":false,
+         "sales_count":24, 
+         "pdf": "pdfs/She-Has-Her-Mothers-Laugh.pdf"
+   }
 }
 ]
