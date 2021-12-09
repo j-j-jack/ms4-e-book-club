@@ -37,7 +37,7 @@ def products(request):
 
     if is_ajax:
         load_round = int(request.GET.get('load_round'))
-        response_items = products[load_round*3: (load_round*3)+3]
+        response_items = products[load_round*20: (load_round*20)+20]
         response_items = serializers.serialize('json', response_items)
         return JsonResponse({'items': response_items}, status=200)
     #products = products[0: 3]
