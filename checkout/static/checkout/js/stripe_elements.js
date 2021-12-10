@@ -1,13 +1,22 @@
 /*
     Core logic/payment flow for this comes from here:
     https://stripe.com/docs/payments/accept-a-payment
+
     CSS from here: 
     https://stripe.com/docs/stripe-js
 */
 jQuery(document).ready(function () {
-  var stripe_public_key = jQuery("#id_stripe_public_key").text().slice(1, -1);
-  var client_secret = jQuery("#id_client_secret").text().slice(1, -1);
-  var stripe = Stripe(stripe_public_key);
+  /*
+    Core logic/payment flow for this comes from here:
+    https://stripe.com/docs/payments/accept-a-payment
+
+    CSS from here: 
+    https://stripe.com/docs/stripe-js
+*/
+
+  var stripePublicKey = jQuery("#id_stripe_public_key").text().slice(1, -1);
+  var clientSecret = jQuery("#id_client_secret").text().slice(1, -1);
+  var stripe = Stripe(stripePublicKey);
   var elements = stripe.elements();
   var style = {
     base: {
@@ -26,7 +35,6 @@ jQuery(document).ready(function () {
   };
   var card = elements.create("card", { style: style });
   card.mount("#card-element");
-  console.log("script-working");
 
   // Handle realtime validation errors on the card element
   card.addEventListener("change", function (event) {
@@ -38,9 +46,41 @@ jQuery(document).ready(function () {
             </span>
             <span>${event.error.message}</span>
         `;
-      $(errorDiv).html(html);
+      jQuery(errorDiv).html(html);
     } else {
       errorDiv.textContent = "";
     }
+  });
+
+  // Handle form submit
+  var form = document.getElementById("payment-form");
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    card.update({ disabled: true });
+    jQuery("#submit-button").attr("disabled", true);
+    stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+        },
+      })
+      .then(function (result) {
+        if (result.error) {
+          var errorDiv = document.getElementById("card-errors");
+          var html = `
+                <span class="icon" role="alert">
+                <i class="fas fa-times"></i>
+                </span>
+                <span>${result.error.message}</span>`;
+          jQuery(errorDiv).html(html);
+          card.update({ disabled: false });
+          jQuery("#submit-button").attr("disabled", false);
+        } else {
+          if (result.paymentIntent.status === "succeeded") {
+            form.submit();
+          }
+        }
+      });
   });
 });
