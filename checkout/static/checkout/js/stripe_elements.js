@@ -61,28 +61,74 @@ jQuery(document).ready(function () {
     jQuery("#submit-button").attr("disabled", true);
     jQuery("#payment-form").fadeToggle(100);
     jQuery("#loading-overlay").fadeToggle(100);
-    stripe
-      .confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: card,
-        },
+
+    var saveInfo = Boolean(jQuery("#id-save-info").attr("checked"));
+    console.log(saveInfo);
+    // From using {% csrf_token %} in the form
+    var csrfToken = jQuery('input[name="csrfmiddlewaretoken"]').val();
+    var postData = {
+      csrfmiddlewaretoken: csrfToken,
+      client_secret: clientSecret,
+      save_info: saveInfo,
+    };
+    var url = "/checkout/cache_checkout_data/";
+
+    jQuery
+      .post(url, postData)
+      .done(function () {
+        stripe
+          .confirmCardPayment(clientSecret, {
+            payment_method: {
+              card: card,
+              billing_details: {
+                name: jQuery.trim(form.full_name.value),
+                phone: jQuery.trim(form.phone_number.value),
+                email: jQuery.trim(form.email.value),
+                address: {
+                  line1: jQuery.trim(form.street_address1.value),
+                  line2: jQuery.trim(form.street_address2.value),
+                  city: jQuery.trim(form.town_or_city.value),
+                  country: jQuery.trim(form.country.value),
+                  state: jQuery.trim(form.county.value),
+                },
+              },
+            },
+            shipping: {
+              name: jQuery.trim(form.full_name.value),
+              phone: jQuery.trim(form.phone_number.value),
+              address: {
+                line1: jQuery.trim(form.street_address1.value),
+                line2: jQuery.trim(form.street_address2.value),
+                city: jQuery.trim(form.town_or_city.value),
+                country: jQuery.trim(form.country.value),
+                postal_code: jQuery.trim(form.postcode.value),
+                state: jQuery.trim(form.county.value),
+              },
+            },
+          })
+          .then(function (result) {
+            if (result.error) {
+              var errorDiv = document.getElementById("card-errors");
+              var html = `
+                    <span class="icon" role="alert">
+                    <i class="fas fa-times"></i>
+                    </span>
+                    <span>${result.error.message}</span>`;
+              jQuery(errorDiv).html(html);
+              jQuery("#payment-form").fadeToggle(100);
+              jQuery("#loading-overlay").fadeToggle(100);
+              card.update({ disabled: false });
+              jQuery("#submit-button").attr("disabled", false);
+            } else {
+              if (result.paymentIntent.status === "succeeded") {
+                form.submit();
+              }
+            }
+          });
       })
-      .then(function (result) {
-        if (result.error) {
-          var errorDiv = document.getElementById("card-errors");
-          var html = `
-                <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-                </span>
-                <span>${result.error.message}</span>`;
-          jQuery(errorDiv).html(html);
-          card.update({ disabled: false });
-          jQuery("#submit-button").attr("disabled", false);
-        } else {
-          if (result.paymentIntent.status === "succeeded") {
-            form.submit();
-          }
-        }
+      .fail(function () {
+        // just reload the page, the error will be in django messages
+        location.reload();
       });
   });
 });
