@@ -59,6 +59,8 @@ jQuery(document).ready(function () {
     ev.preventDefault();
     card.update({ disabled: true });
     jQuery("#submit-button").attr("disabled", true);
+    jQuery("#payment-form").fadeToggle(100);
+    jQuery("#loading-overlay").fadeToggle(100);
     stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
