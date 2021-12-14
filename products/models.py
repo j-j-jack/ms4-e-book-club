@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.fields.json import JSONField
+from django.db.models import Avg
 
 
 class Category(models.Model):
@@ -42,8 +43,7 @@ class Product(models.Model):
     book_of_month = models.BooleanField(blank=True, default=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
-    reviews = models.JSONField(null=True, blank=True)
+        max_digits=3, decimal_places=2, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     sales_count = models.IntegerField(null=True, blank=True)
     currently_on_sale = models.BooleanField(blank=True, default=True)
@@ -51,3 +51,14 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def update_rating(self):
+        """
+        Update grand total each time a line item is added,
+        accounting for delivery costs.
+        """
+
+        self.rating = self.reviews.aggregate(
+            Avg('rating'))['rating__avg']
+        self.save()
+        print(self.rating)

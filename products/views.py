@@ -67,10 +67,12 @@ def product_detail(request, product_id):
             if int(item) == product.id:
                 in_bag = True
 
+    reviews = product.reviews.all()
     context = {
         "product": product,
         'all_categories': all_categories,
         'in_bag': in_bag,
+        'reviews': reviews,
     }
     return render(request, 'products/product-detail.html', context)
 
