@@ -29,6 +29,10 @@ a>div {
     color: white;
 }
 
+.text-black {
+    color: black;
+}
+
 /* header --------------------------------------------------------------------------------------*/
 header {
     background: slategrey;

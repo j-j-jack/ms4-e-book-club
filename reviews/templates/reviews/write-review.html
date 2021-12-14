@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
+{% endblock %}
 
+{% block extra_js %}
+<script src="{% static 'reviews/js/star-rating.js' %}"></script>
+{% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -17,8 +23,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
-                <h2 class="logo-font mb-4">Write a review</h2>
-                <h5 class="text-muted">Product</h5>
+                <h2 class="logo-font mb-4">Write a review for {{ product.name }}</h2>
                 <hr>
             </div>
         </div>
@@ -29,6 +34,14 @@
                     {% csrf_token %}
                     {% for field in form %}
                             {{ field | as_crispy_field }}
+                            {% if field.name == 'rating' %}
+                            <span class='text-black'>Rating: </span>
+                            <i class="star-rating star-1 fas fa-star fa-lg" data-star="1"></i>
+                            <i class="star-rating star-2 fas fa-star fa-lg" data-star="2"></i>
+                            <i class="star-rating star-3 fas fa-star fa-lg" data-star="3"></i>
+                            <i class="star-rating star-4 fas fa-star fa-lg" data-star="4"></i>
+                            <i class="star-rating star-5 fas fa-star fa-lg" data-star="5"></i>
+                            {% endif %}
                     {% endfor %}
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="">Cancel</a>

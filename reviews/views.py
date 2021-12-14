@@ -13,17 +13,17 @@ def write_review(request, product_id):
     """ Display the user's profile. """
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
-        form = ReviewForm(request.POST, instance=product)
+        form = ReviewForm(request.POST)
         if form.is_valid():
-            form.save(commit=False)
-            form.user = request.user
-            form.product = product
-            form.save()
-            messages.success(request, 'Successfully updated product!')
+            instance = form.save(commit=False)
+            instance.review_by = request.user
+            instance.product = product
+            instance.save()
+            messages.success(request, 'Your review was added!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request,
-                           ('Failed to update product. '
+                           ('Failed to add review. '
                             'Please ensure the form is valid.'))
     else:
         form = ReviewForm()

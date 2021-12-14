@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 
 class Review(models.Model):
     # use product.review_set to find reviews for product
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=True, on_delete=models.CASCADE)
     # use user.review_set to find if user wrote review for specific product
     review_by = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     title = CharField(max_length=100, null=False, blank=False)
