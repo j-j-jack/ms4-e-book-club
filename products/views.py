@@ -57,6 +57,8 @@ def products(request):
 def product_detail(request, product_id):
     """ A view to show an individual product """
 
+    load_round = 0
+    is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
     product = get_object_or_404(Product, pk=product_id)
     all_categories = Category.objects.all()
     all_categories = serializers.serialize('json', all_categories)
@@ -66,13 +68,22 @@ def product_detail(request, product_id):
         for item in request.session['bag']:
             if int(item) == product.id:
                 in_bag = True
-
     reviews = product.reviews.all()
+    load_more = False
+    if reviews.count() > 5:
+        load_more = True
+    reviews = product.reviews.all()[0: 5]
+    if is_ajax:
+        load_round = int(request.GET.get('load_round'))
+        response_items = product.reviews.all()[load_round*5: (load_round*5)+5]
+        response_items = serializers.serialize('json', response_items)
+        return JsonResponse({'items': response_items}, status=200)
     context = {
         "product": product,
         'all_categories': all_categories,
         'in_bag': in_bag,
         'reviews': reviews,
+        'load_more': load_more,
     }
     return render(request, 'products/product-detail.html', context)
 

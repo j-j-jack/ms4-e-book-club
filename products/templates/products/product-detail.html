@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block extra_js %}
+<script src="{% static 'scripts/load-reviews-ajax.js' %}"></script>
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -81,15 +86,29 @@
                     </form>
     {% endif %}
     <div class="row">
+    <div class="col">
+        <h3>Reviews</h3>
+    </div>
+    </div>
+
+    {% for review in reviews %}
+    <div class="row">
         <div class="col" id='review-container'>
-            {% for review in reviews %}
-                <h3>{{ review.title }}</h3>
+                <h4>{{ review.title }}</h4>
                 <p>{{ review.rating }}</p>
                 <p>{{ review.review_body }}</p>
-
-            {% endfor %}
+            
         </div>
     </div>
+    {% endfor %}
+    <div class="container-fluid p-0" id="ajax-response"></div>
+        {% if load_more %}
+        <div class="row text-center" id='load-more-container'>
+            <div class="col">
+          <button class="btn-black" style="text-align: center;" id="load-more">Load More...</button>
+          </div>
+          </div>
+        {% endif %}
 
     <script>
         jQuery(document).ready(function () {
