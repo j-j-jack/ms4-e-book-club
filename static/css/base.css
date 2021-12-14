@@ -24,6 +24,11 @@ a>div {
     color: black;
 }
 
+.btn-black {
+    background: black;
+    color: white;
+}
+
 /* header --------------------------------------------------------------------------------------*/
 header {
     background: slategrey;
