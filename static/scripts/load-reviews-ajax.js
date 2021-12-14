@@ -14,12 +14,11 @@ jQuery(document).ready(function () {
           let reviewRating;
           let reviewBody;
           jsonResponse = JSON.parse(response.items);
-          let template = `<div class="row">
-              <div class="col" id="review-container">`;
-
+          let template = ``;
           for (var item in jsonResponse) {
             let errorExists = false;
-
+            template = `<div class="row">
+              <div class="col" style="border-bottom: 1px solid black">`;
             try {
               reviewTitle = jsonResponse[item].fields.title;
               template += `<h4>${reviewTitle}</h4>`;
@@ -56,8 +55,8 @@ jQuery(document).ready(function () {
             } else {
               template = ``;
             }
+            jQuery("#ajax-response").append(template);
           }
-          jQuery("#ajax-response").append(template);
         } catch (err) {
           console.log(err.message);
         }

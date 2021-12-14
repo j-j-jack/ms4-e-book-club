@@ -93,7 +93,7 @@
 
     {% for review in reviews %}
     <div class="row">
-        <div class="col" id='review-container'>
+        <div style="border-bottom: 1px solid black" class="col">
                 <h4>{{ review.title }}</h4>
                 <p>{{ review.rating }}</p>
                 <p>{{ review.review_body }}</p>
@@ -102,6 +102,7 @@
     </div>
     {% endfor %}
     <div class="container-fluid p-0" id="ajax-response"></div>
+    <br>
         {% if load_more %}
         <div class="row text-center" id='load-more-container'>
             <div class="col">
