@@ -63,10 +63,6 @@ def product_detail(request, product_id):
     user_review = False
     try:
         user_review = product.reviews.get(review_by=request.user)
-        try:
-            print(user_review.pk)
-        except:
-            print(('that didn\'t work'))
     except:
         user_review = False
 
@@ -82,7 +78,6 @@ def product_detail(request, product_id):
     reviews = product.reviews.all()
     if user_review:
         reviews = product.reviews.all().exclude(pk=user_review.pk)
-        print('trying to exclude')
     load_more = False
     if reviews.count() > 5:
         load_more = True

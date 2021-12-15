@@ -48,7 +48,7 @@ def write_review(request, product_id):
 
 @login_required
 def edit_review(request, product_id):
-    """ Display the user's profile. """
+    """ Edit a user's review """
     # Code to secure the view. If the user tries to manually enter the url to review
     # a product they already have then they are redirected
     product = get_object_or_404(Product, pk=product_id)
@@ -76,3 +76,30 @@ def edit_review(request, product_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    """ Delete a review from the store """
+
+    owns_review = False
+    review = get_object_or_404(
+        Review, pk=review_id, review_by=request.user)
+    # for redirecting the user
+    product = review.product
+    try:
+        owns_review = get_object_or_404(
+            Review, pk=review_id, review_by=request.user)
+        print(owns_review)
+    except:
+        owns_review = False
+        print(owns_review)
+
+    if request.user.is_superuser or owns_review:
+        review.delete()
+        messages.success(request, 'Review deleted!')
+        return redirect(reverse('product_detail', args=[product.id]))
+    else:
+        messages.error(
+            request, 'Sorry,  you don\'t have permission to do that')
+        return redirect(reverse('product_detail', args=[product.id]))
