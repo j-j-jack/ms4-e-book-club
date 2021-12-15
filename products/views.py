@@ -60,11 +60,11 @@ def product_detail(request, product_id):
     load_round = 0
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
     product = get_object_or_404(Product, pk=product_id)
-    user_review = False
-    try:
-        user_review = product.reviews.get(review_by=request.user)
-    except:
-        user_review = False
+    user_review_exists = product.reviews.filter(
+        review_by=request.user).exists()
+    user_review = None
+    if user_review_exists:
+        user_review = product.reviews.filter(review_by=request.user).first()
 
     all_categories = Category.objects.all()
     all_categories = serializers.serialize('json', all_categories)
@@ -75,6 +75,8 @@ def product_detail(request, product_id):
             if int(item) == product.id:
                 in_bag = True
 
+    review_count = product.reviews.count()
+    print(review_count)
     reviews = product.reviews.all()
     if user_review:
         reviews = product.reviews.all().exclude(pk=user_review.pk)

@@ -3,18 +3,24 @@
       "pk":1,
       "model":"products.widercategory",
       "fields":{
-         "name":"action",
-         "friendly_name":"Action/Adventure",
-         "books": [{"titles": [1]}]
+         "name":"fiction",
+         "friendly_name":"fiction"
       }
    },
    {
       "pk":2,
       "model":"products.widercategory",
       "fields":{
-         "name":"biographies",
-         "friendly_name":"Biographies",
-         "books": [{"titles": [2]}]
+         "name":"non_fiction",
+         "friendly_name":"non-fiction"
+      }
+   },
+   {
+      "pk":4,
+      "model":"products.widercategory",
+      "fields":{
+         "name":"child_teen",
+         "friendly_name":"Child/Teen"
       }
    }
 ]

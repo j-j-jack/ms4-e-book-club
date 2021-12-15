@@ -11,7 +11,6 @@ class WiderCategory(models.Model):
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
-    books = JSONField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -49,11 +48,16 @@ class Product(models.Model):
         self.save()
         print(self.rating)
 
+    def get_name(self):
+        return self.name
+
 
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
 
+    wider_category = models.ForeignKey(
+        'WiderCategory', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -62,18 +66,3 @@ class Category(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
-
-
-class BookOfMonth(models.Model):
-    class Meta:
-        verbose_name_plural = "Book of Month"
-
-    category = models.OneToOneField(
-        'Category', null=True, blank=True, on_delete=models.CASCADE)
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
-    book = models.OneToOneField(
-        'Product', null=True, blank=True, on_delete=models.SET_NULL)
-
-    def __str__(self):
-        return self.name

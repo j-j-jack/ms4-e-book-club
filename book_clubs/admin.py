@@ -8,6 +8,8 @@ class BookOfMonthAdmin(admin.ModelAdmin):
     list_display = (
         "name",
         "friendly_name",
+        'book',
+        'category',
     )
 
 

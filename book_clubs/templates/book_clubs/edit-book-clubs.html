@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_js %}
+    <script src="{% static 'scripts/form-submission-ajax.js' %}"></script>
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <hr>
+                <h2 class="logo-font mb-4">Edit Book Clubs</h2>
+                <h5 class="text-muted">Edit Books of the month</h5>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                    
+                    {% for form in forms %}
+                    <form action = "" method="POST" id = "form{{forloop.counter}}">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{ field|as_crispy_field }}
+                    {% endfor %}
+                    </form>
+                    {% endfor %}
+                    <div class="text-right">
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Cancel</a>
+                        <button class="btn btn-black rounded-0" id="form-submission-button">Save Books</button>
+                    </div>
+                
+            </div>            
+        </div>
+    </div>
+{% endblock %}
