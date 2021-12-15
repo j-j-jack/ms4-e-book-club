@@ -63,6 +63,10 @@ def product_detail(request, product_id):
     user_review = False
     try:
         user_review = product.reviews.get(review_by=request.user)
+        try:
+            print(user_review.pk)
+        except:
+            print(('that didn\'t work'))
     except:
         user_review = False
 
@@ -74,14 +78,20 @@ def product_detail(request, product_id):
         for item in request.session['bag']:
             if int(item) == product.id:
                 in_bag = True
+
     reviews = product.reviews.all()
+    if user_review:
+        reviews = product.reviews.all().exclude(pk=user_review.pk)
+        print('trying to exclude')
     load_more = False
     if reviews.count() > 5:
         load_more = True
-    reviews = product.reviews.all()[0: 5]
+    reviews = reviews[0: 5]
     if is_ajax:
         load_round = int(request.GET.get('load_round'))
-        response_items = product.reviews.all()[load_round*5: (load_round*5)+5]
+        # exclude users own review if exists as it is at the top
+        response_items = product.reviews.all().exclude(pk=user_review.pk)[
+            load_round*5: (load_round*5)+5]
         response_items = serializers.serialize('json', response_items)
         return JsonResponse({'items': response_items}, status=200)
     context = {

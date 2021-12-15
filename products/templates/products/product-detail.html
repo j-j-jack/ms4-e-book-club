@@ -103,8 +103,11 @@
         <div style="border-bottom: 1px solid black" class="col">
                 <h5>{{ user_review.title }}</h5>
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ user_review.rating }} / 5</small>
-                <p>{{ user_review.review_body }}</p>
-            
+                <p class="mb-0">{{ user_review.review_body }}</p>
+                    <small>
+                        <a href="{% url 'edit_review' product.id %}">Edit</a> |
+                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                    </small>
         </div>
     </div>
     {% endif %}

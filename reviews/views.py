@@ -44,3 +44,35 @@ def write_review(request, product_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_review(request, product_id):
+    """ Display the user's profile. """
+    # Code to secure the view. If the user tries to manually enter the url to review
+    # a product they already have then they are redirected
+    product = get_object_or_404(Product, pk=product_id)
+    review = get_object_or_404(Review, product=product, review_by=request.user)
+    form = ReviewForm(request.POST, instance=review)
+    if request.method == 'POST':
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.review_by = request.user
+            instance.product = product
+            instance.save()
+            messages.success(request, 'Your review was updated!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request,
+                           ('Failed to update review. '
+                            'Please ensure the form is valid.'))
+    else:
+        form = ReviewForm(instance=review)
+
+    template = 'reviews/edit-review.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)
