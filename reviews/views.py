@@ -11,7 +11,16 @@ from django.contrib import messages
 @login_required
 def write_review(request, product_id):
     """ Display the user's profile. """
+    # Code to secure the view. If the user tries to manually enter the url to review
+    # a product they already have then they are redirected
     product = get_object_or_404(Product, pk=product_id)
+    try:
+        user_already_reviewed = product.reviews.get(review_by=request.user)
+    except:
+        user_already_reviewed = False
+    if user_already_reviewed:
+        messages.error(request, 'Oops you already reviewed this product')
+        return redirect(reverse('product_detail', args=[product.id]))
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():

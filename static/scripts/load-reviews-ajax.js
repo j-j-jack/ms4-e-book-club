@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
               <div class="col" style="border-bottom: 1px solid black">`;
             try {
               reviewTitle = jsonResponse[item].fields.title;
-              template += `<h4>${reviewTitle}</h4>`;
+              template += `<h5>${reviewTitle}</h5>`;
             } catch (err) {
               console.log(err.message);
             }
@@ -31,7 +31,7 @@ jQuery(document).ready(function () {
 
             try {
               reviewRating = jsonResponse[item].fields.rating;
-              template += `<p>${reviewRating}</p>`;
+              template += `<small class="text-muted"><i class="fas fa-star mr-1"></i> ${reviewRating} / 5</small>`;
             } catch (err) {
               console.log(err.message);
             }

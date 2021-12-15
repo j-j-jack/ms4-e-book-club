@@ -60,6 +60,12 @@ def product_detail(request, product_id):
     load_round = 0
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
     product = get_object_or_404(Product, pk=product_id)
+    user_review = False
+    try:
+        user_review = product.reviews.get(review_by=request.user)
+    except:
+        user_review = False
+
     all_categories = Category.objects.all()
     all_categories = serializers.serialize('json', all_categories)
 
@@ -84,6 +90,7 @@ def product_detail(request, product_id):
         'in_bag': in_bag,
         'reviews': reviews,
         'load_more': load_more,
+        'user_review': user_review,
     }
     return render(request, 'products/product-detail.html', context)
 

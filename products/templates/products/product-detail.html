@@ -85,22 +85,42 @@
                         </div>
                     </form>
     {% endif %}
-    <div class="row">
+    <div class="review-header mt-5 mb-2 row">
     <div class="col">
-        <h3>Reviews</h3>
+        <h2>Reviews</h2>
+        {% if not user_review %}
+         <button type="submit" class="write-review-button btn btn-black rounded-0 text-uppercase mt-2" onclick="location.href=`{% url 'write_review' product.id %}`">
+            Review this book
+        </button>
+        {% endif %}
     </div>
     </div>
 
+    {% if reviews %}
+    <!-- display user's review at the top for convenience -->
+    {% if user_review %}
+    <div class="row">
+        <div style="border-bottom: 1px solid black" class="col">
+                <h5>{{ user_review.title }}</h5>
+                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ user_review.rating }} / 5</small>
+                <p>{{ user_review.review_body }}</p>
+            
+        </div>
+    </div>
+    {% endif %}
     {% for review in reviews %}
     <div class="row">
         <div style="border-bottom: 1px solid black" class="col">
-                <h4>{{ review.title }}</h4>
-                <p>{{ review.rating }}</p>
+                <h5>{{ review.title }}</h5>
+                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ review.rating }} / 5</small>
                 <p>{{ review.review_body }}</p>
             
         </div>
     </div>
     {% endfor %}
+    {% else %}
+        <i>Nobody has reviewed this yet... Be the first!</i>
+    {% endif %}
     <div class="container-fluid p-0" id="ajax-response"></div>
     <br>
         {% if load_more %}

@@ -13,11 +13,11 @@ html {
 body {
     font-family: 'Times New Roman', Times, serif;
     width: 100%;
+    padding-top: 10em !important;
 }
 
 .main-page-content {
     padding-bottom: 4em;
-    padding-top: 4em;
 }
 
 a>div {
@@ -184,4 +184,15 @@ footer {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
+}
+
+/* Reviews section */
+
+.review-header {
+    position: relative;
+}
+
+.review-button {
+    position: absolute;
+    right: 2em;
 }
