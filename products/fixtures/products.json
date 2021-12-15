@@ -1,7 +1,7 @@
 [
    {
-      "pk":1,
       "model":"products.product",
+      "pk":1,
       "fields":{
          "name":"I Quit Sugar The Ultimate Chocolate Cookbook",
          "author":"Sarah Wilson",
@@ -9,7 +9,6 @@
          "price":2.50,
          "category":9,
          "image":"images/book-covers/1.jpg",
-         "book_of_month":false,
          "sales_count":103, 
          "pdf": "pdfs/I-Quit-Sugar-The-Ultimate-Chocolate-Cookbook.pdf"
       }
@@ -24,7 +23,6 @@
          "price":2.50,
          "category":13,
          "image":"images/book-covers/2.jpg",
-         "book_of_month":false,
          "sales_count":206, 
          "pdf": "pdfs/Chanda-and-the-Devious-Doubt.pdf"
       }
@@ -39,7 +37,6 @@
          "price":2.50,
          "category":3,
          "image":"images/book-covers/3.jpg",
-         "book_of_month":false,
          "sales_count":107, 
          "pdf": "pdfs/The-Killing-Tide.pdf"
       }
@@ -54,7 +51,6 @@
          "price":2.50,
          "category":9,
          "image":"images/book-covers/4.jpg",
-         "book_of_month":false,
          "sales_count":59, 
          "pdf": "pdfs/How-Not-to-Diet.pdf"
       }
@@ -69,7 +65,6 @@
          "price":2.50,
          "category":2,
          "image":"images/book-covers/5.jpg",
-         "book_of_month":false,
          "sales_count":45, 
          "pdf": "pdfs/Edward-Trencoms-Nose.pdf"
       }
@@ -84,7 +79,6 @@
          "price":2.50,
          "category":7,
          "image":"images/book-covers/6.jpg",
-         "book_of_month":false,
          "sales_count":177, 
          "pdf": "pdfs/The-Little-Red-Book-of-Klopp.pdf"
       }
@@ -99,7 +93,6 @@
          "price":2.50,
          "category":8,
          "image":"images/book-covers/7.jpg",
-         "book_of_month":false,
          "sales_count":14, 
          "pdf": "pdfs/Kremlin-Winter.pdf"
    }
@@ -114,7 +107,6 @@
          "price":2.50,
          "category":12,
          "image":"images/book-covers/8.jpg",
-         "book_of_month":false,
          "sales_count":94, 
          "pdf": "pdfs/My-Mum-Is-A-Lioness.pdf"
    }
@@ -129,7 +121,6 @@
          "price":2.50,
          "category":8,
          "image":"images/book-covers/9.jpg",
-         "book_of_month":false,
          "sales_count":245, 
          "pdf": "pdfs/In-The-Midst-Of-Civilized-Europe.pdf"
    }
@@ -144,7 +135,6 @@
          "price":2.50,
          "category":1,
          "image":"images/book-covers/10.jpg",
-         "book_of_month":false,
          "sales_count":23, 
          "pdf": "pdfs/The-Land-Beyond-The-Sea.pdf"
    }
@@ -159,7 +149,6 @@
          "price":2.50,
          "category":14,
          "image":"images/book-covers/11.jpg",
-         "book_of_month":false,
          "sales_count":211, 
          "pdf": "pdfs/Lightning-Falls.pdf"
    }
@@ -174,7 +163,6 @@
          "price":2.50,
          "category":4,
          "image":"images/book-covers/12.jpg",
-         "book_of_month":false,
          "sales_count":56, 
          "pdf": "pdfs/The-Spear.pdf"
    }
@@ -189,7 +177,6 @@
          "price":2.50,
          "category":11,
          "image":"images/book-covers/13.jpg",
-         "book_of_month":false,
          "sales_count":48, 
          "pdf": "pdfs/Inner-Spark.pdf"
    }
@@ -204,7 +191,6 @@
          "price":2.50,
          "category":6,
          "image":"images/book-covers/14.jpg",
-         "book_of_month":false,
          "sales_count":178, 
          "pdf": "pdfs/The-Hitchhikers-Guide-To-The-Galaxy.pdf"
    }
@@ -219,7 +205,6 @@
          "price":2.50,
          "category":15,
          "image":"images/book-covers/15.jpg",
-         "book_of_month":false,
          "sales_count":217, 
          "pdf": "pdfs/Boy-Meets-Ghoul.pdf"
    }
@@ -234,7 +219,6 @@
          "price":2.50,
          "category":5,
          "image":"images/book-covers/16.jpg",
-         "book_of_month":false,
          "sales_count":132, 
          "pdf": "pdfs/The-Winter-Of-Second-Chances.pdf"
    }
@@ -249,7 +233,6 @@
          "price":2.50,
          "category":1,
          "image":"images/book-covers/17.jpg",
-         "book_of_month":false,
          "sales_count":76, 
          "pdf": "pdfs/Twenty-Thousand-Leagues-Under-The-Sea.pdf"
    }
@@ -264,7 +247,6 @@
          "price":2.50,
          "category":4,
          "image":"images/book-covers/18.jpg",
-         "book_of_month":false,
          "sales_count":140, 
          "pdf": "pdfs/The-Upstairs-Room.pdf"
    }
@@ -279,7 +261,6 @@
          "price":2.50,
          "category":8,
          "image":"images/book-covers/19.jpg",
-         "book_of_month":false,
          "sales_count":33, 
          "pdf": "pdfs/Danubia.pdf"
    }
@@ -294,7 +275,6 @@
          "price":2.50,
          "category":1,
          "image":"images/book-covers/20.jpg",
-         "book_of_month":false,
          "sales_count":154, 
          "pdf": "pdfs/The-Three-Musketeers.pdf"
    }
@@ -309,7 +289,6 @@
          "price":2.50,
          "category":5,
          "image":"images/book-covers/21.jpg",
-         "book_of_month":false,
          "sales_count":27, 
          "pdf": "pdfs/Miss-You.pdf"
    }
@@ -324,7 +303,6 @@
          "price":2.50,
          "category":1,
          "image":"images/book-covers/22.jpg",
-         "book_of_month":false,
          "sales_count":230, 
          "pdf": "pdfs/Freebooter.pdf"
    }
@@ -339,7 +317,6 @@
          "price":2.50,
          "category":4,
          "image":"images/book-covers/23.jpg",
-         "book_of_month":false,
          "sales_count":154, 
          "pdf": "pdfs/Dracula.pdf"
    }
@@ -354,7 +331,6 @@
          "price":2.50,
          "category":6,
          "image":"images/book-covers/24.jpg",
-         "book_of_month":false,
          "sales_count":148, 
          "pdf": "pdfs/City-Of-Saints-And-Madmen.pdf"
    }
@@ -369,7 +345,6 @@
          "price":2.50,
          "category":7,
          "image":"images/book-covers/25.jpg",
-         "book_of_month":false,
          "sales_count":156, 
          "pdf": "pdfs/Robin.pdf"
    }
@@ -384,7 +359,6 @@
          "price":2.50,
          "category":3,
          "image":"images/book-covers/26.jpg",
-         "book_of_month":false,
          "sales_count":80, 
          "pdf": "pdfs/A-Gambling-Man.pdf"
    }
@@ -399,7 +373,6 @@
          "price":2.50,
          "category":16,
          "image":"images/book-covers/27.jpg",
-         "book_of_month":false,
          "sales_count":76, 
          "pdf": "pdfs/The-Kingdom.pdf"
    }
@@ -414,7 +387,6 @@
          "price":2.50,
          "category":1,
          "image":"images/book-covers/28.jpg",
-         "book_of_month":false,
          "sales_count":132, 
          "pdf": "pdfs/Kidnapped.pdf"
    }
@@ -429,7 +401,6 @@
          "price":2.50,
          "category":15,
          "image":"images/book-covers/29.jpg",
-         "book_of_month":false,
          "sales_count":160, 
          "pdf": "pdfs/10-Blind-Dates.pdf"
    }
@@ -444,7 +415,6 @@
          "price":2.50,
          "category":9,
          "image":"images/book-covers/30.jpg",
-         "book_of_month":false,
          "sales_count":143, 
          "pdf": "pdfs/Vegetables.pdf"
    }
@@ -459,7 +429,6 @@
          "price":2.50,
          "category":16,
          "image":"images/book-covers/31.jpg",
-         "book_of_month":false,
          "sales_count":138, 
          "pdf": "pdfs/Ember-Queen.pdf"
    }
@@ -474,7 +443,6 @@
          "price":2.50,
          "category":7,
          "image":"images/book-covers/32.jpg",
-         "book_of_month":false,
          "sales_count":108, 
          "pdf": "pdfs/Madonna.pdf"
    }
@@ -489,7 +457,6 @@
          "price":2.50,
          "category":11,
          "image":"images/book-covers/33.jpg",
-         "book_of_month":false,
          "sales_count":50, 
          "pdf": "pdfs/Art-Of-Mindfulness.pdf"
    }
@@ -504,7 +471,6 @@
          "price":2.50,
          "category":7,
          "image":"images/book-covers/34.jpg",
-         "book_of_month":false,
          "sales_count":207, 
          "pdf": "pdfs/War-Doctor.pdf"
    }
@@ -519,7 +485,6 @@
          "price":2.50,
          "category":12,
          "image":"images/book-covers/35.jpg",
-         "book_of_month":false,
          "sales_count":184, 
          "pdf": "pdfs/Hope-The-Whale.pdf"
    }
@@ -534,7 +499,6 @@
          "price":2.50,
          "category":2,
          "image":"images/book-covers/36.jpg",
-         "book_of_month":false,
          "sales_count":238, 
          "pdf": "pdfs/The-Little-Old-Lady-Who-Struck-Lucky-Again.pdf"
    }
@@ -549,7 +513,6 @@
          "price":2.50,
          "category":6,
          "image":"images/book-covers/37.jpg",
-         "book_of_month":false,
          "sales_count":67, 
          "pdf": "pdfs/Embassytown.pdf"
    }
@@ -564,7 +527,6 @@
          "price":2.50,
          "category":3,
          "image":"images/book-covers/38.jpg",
-         "book_of_month":false,
          "sales_count":148, 
          "pdf": "pdfs/Daughters-Of-Night.pdf"
    }
@@ -579,7 +541,6 @@
          "price":2.50,
          "category":4,
          "image":"images/book-covers/39.jpg",
-         "book_of_month":false,
          "sales_count":96, 
          "pdf": "pdfs/The-Devils-Labyrinth.pdf"
    }
@@ -594,7 +555,6 @@
          "price":2.50,
          "category":6,
          "image":"images/book-covers/40.jpg",
-         "book_of_month":false,
          "sales_count":181, 
          "pdf": "pdfs/Twisted-Metal.pdf"
    }
@@ -609,7 +569,6 @@
          "price":2.50,
          "category":10,
          "image":"images/book-covers/41.jpg",
-         "book_of_month":false,
          "sales_count":50, 
          "pdf": "pdfs/The-Rise-And-Fall-Of-The-Dinosaurs.pdf"
    }
@@ -624,7 +583,6 @@
          "price":2.50,
          "category":3,
          "image":"images/book-covers/42.jpg",
-         "book_of_month":false,
          "sales_count":243, 
          "pdf": "pdfs/Riccardino.pdf"
    }
@@ -639,7 +597,6 @@
          "price":2.50,
          "category":5,
          "image":"images/book-covers/43.jpg",
-         "book_of_month":false,
          "sales_count":142, 
          "pdf": "pdfs/Pride-And-Prejudice.pdf"
    }
@@ -654,7 +611,6 @@
          "price":2.50,
          "category":15,
          "image":"images/book-covers/44.jpg",
-         "book_of_month":false,
          "sales_count":5, 
          "pdf": "pdfs/Beautiful-Broken-Things.pdf"
    }
@@ -669,7 +625,6 @@
          "price":2.50,
          "category":4,
          "image":"images/book-covers/45.jpg",
-         "book_of_month":false,
          "sales_count":146, 
          "pdf": "pdfs/The-Upstairs-Room.pdf"
    }
@@ -684,7 +639,6 @@
          "price":2.50,
          "category":16,
          "image":"images/book-covers/46.jpg",
-         "book_of_month":false,
          "sales_count":7, 
          "pdf": "pdfs/Gilded-Cage.pdf"
    }
@@ -699,7 +653,6 @@
          "price":2.50,
          "category":14,
          "image":"images/book-covers/47.jpg",
-         "book_of_month":false,
          "sales_count":170, 
          "pdf": "pdfs/Kat-Wolfe-On-Thin-Ice.pdf"
    }
@@ -714,7 +667,6 @@
          "price":2.50,
          "category":8,
          "image":"images/book-covers/48.jpg",
-         "book_of_month":false,
          "sales_count":60, 
          "pdf": "pdfs/Thebes.pdf"
    }
@@ -729,7 +681,6 @@
          "price":2.50,
          "category":12,
          "image":"images/book-covers/49.jpg",
-         "book_of_month":false,
          "sales_count":216, 
          "pdf": "pdfs/The-Fire-Fox.pdf"
    }
@@ -744,7 +695,6 @@
          "price":2.50,
          "category":12,
          "image":"images/book-covers/50.jpg",
-         "book_of_month":false,
          "sales_count":8, 
          "pdf": "pdfs/The-Woolly-Bear-Caterpillar.pdf"
    }
@@ -759,7 +709,6 @@
          "price":2.50,
          "category":5,
          "image":"images/book-covers/51.jpg",
-         "book_of_month":false,
          "sales_count":69, 
          "pdf": "pdfs/Midnight-In-The-Snow.pdf"
    }
@@ -774,7 +723,6 @@
          "price":2.50,
          "category":3,
          "image":"images/book-covers/52.jpg",
-         "book_of_month":false,
          "sales_count":22, 
          "pdf": "pdfs/The-Cook-Of-The-Halcyon.pdf"
    }
@@ -789,7 +737,6 @@
          "price":2.50,
          "category":15,
          "image":"images/book-covers/53.jpg",
-         "book_of_month":false,
          "sales_count":114, 
          "pdf": "pdfs/Dreamless.pdf"
    }
@@ -804,7 +751,6 @@
          "price":2.50,
          "category":4,
          "image":"images/book-covers/54.jpg",
-         "book_of_month":false,
          "sales_count":213, 
          "pdf": "pdfs/The-Walker-In-The-Shadows.pdf"
    }
@@ -819,7 +765,6 @@
          "price":2.50,
          "category":11,
          "image":"images/book-covers/55.jpg",
-         "book_of_month":false,
          "sales_count":213, 
          "pdf": "pdfs/Ten-To-Zen.pdf"
    }
@@ -834,7 +779,6 @@
          "price":2.50,
          "category":11,
          "image":"images/book-covers/56.jpg",
-         "book_of_month":false,
          "sales_count":129, 
          "pdf": "pdfs/Stress-Less-Accomplish-More.pdf"
    }
@@ -849,7 +793,6 @@
          "price":2.50,
          "category":11,
          "image":"images/book-covers/57.jpg",
-         "book_of_month":false,
          "sales_count":197, 
          "pdf": "pdfs/A-Dinosaur-Ate-My-Sister.pdf"
    }
@@ -864,7 +807,6 @@
          "price":2.50,
          "category":9,
          "image":"images/book-covers/58.jpg",
-         "book_of_month":false,
          "sales_count":162, 
          "pdf": "pdfs/The-Knackered-Mothers-Wine-Guide.pdf"
    }
@@ -879,7 +821,6 @@
          "price":2.50,
          "category":13,
          "image":"images/book-covers/59.jpg",
-         "book_of_month":false,
          "sales_count":68, 
          "pdf": "pdfs/Journey-To-The-River-Sea-Illustrated-Edition.pdf"
    }
@@ -894,7 +835,6 @@
          "price":2.50,
          "category":11,
          "image":"images/book-covers/60.jpg",
-         "book_of_month":false,
          "sales_count":33, 
          "pdf": "pdfs/Journey-To-The-River-Sea-Illustrated-Edition.pdf"
    }
@@ -909,7 +849,6 @@
          "price":2.50,
          "category":10,
          "image":"images/book-covers/61.jpg",
-         "book_of_month":false,
          "sales_count":150, 
          "pdf": "pdfs/Beasts-In-My-Belfry.pdf"
    }
@@ -924,7 +863,6 @@
          "price":2.50,
          "category":15,
          "image":"images/book-covers/62.jpg",
-         "book_of_month":false,
          "sales_count":71, 
          "pdf": "pdfs/Almost-Midnight-Two-Festive-Short-Stories.pdf"
    }
@@ -939,7 +877,6 @@
          "price":2.50,
          "category":9,
          "image":"images/book-covers/63.jpg",
-         "book_of_month":false,
          "sales_count":76, 
          "pdf": "pdfs/The-Ultimate-Family-Business-Survival-Guide.pdf"
    }
@@ -954,7 +891,6 @@
          "price":2.50,
          "category":7,
          "image":"images/book-covers/64.jpg",
-         "book_of_month":false,
          "sales_count":241, 
          "pdf": "pdfs/Me.pdf"
    }
@@ -969,7 +905,6 @@
          "price":2.50,
          "category":16,
          "image":"images/book-covers/65.jpg",
-         "book_of_month":false,
          "sales_count":191, 
          "pdf": "pdfs/Genesis.pdf"
    }
@@ -984,7 +919,6 @@
          "price":2.50,
          "category":2,
          "image":"images/book-covers/66.jpg",
-         "book_of_month":false,
          "sales_count":223, 
          "pdf": "pdfs/Confessions-Of-A-Forty-Something-Fk-Up.pdf"
    }
@@ -999,7 +933,6 @@
          "price":2.50,
          "category":3,
          "image":"images/book-covers/67.jpg",
-         "book_of_month":false,
          "sales_count":202, 
          "pdf": "pdfs/The-Herons-Cry.pdf"
    }
@@ -1014,7 +947,6 @@
          "price":2.50,
          "category":13,
          "image":"images/book-covers/68.jpg",
-         "book_of_month":false,
          "sales_count":79, 
          "pdf": "pdfs/Colt-Of-The-Clouds.pdf"
    }
@@ -1029,7 +961,6 @@
          "price":2.50,
          "category":15,
          "image":"images/book-covers/69.jpg",
-         "book_of_month":false,
          "sales_count":118, 
          "pdf": "pdfs/The-Lost-City.pdf"
    }
@@ -1044,7 +975,6 @@
          "price":2.50,
          "category":6,
          "image":"images/book-covers/70.jpg",
-         "book_of_month":false,
          "sales_count":194, 
          "pdf": "pdfs/The-Warship.pdf"
    }
@@ -1059,7 +989,6 @@
          "price":2.50,
          "category":4,
          "image":"images/book-covers/71.jpg",
-         "book_of_month":false,
          "sales_count":1, 
          "pdf": "pdfs/The-Apartment.pdf"
    }
@@ -1074,7 +1003,6 @@
          "price":2.50,
          "category":7,
          "image":"images/book-covers/72.jpg",
-         "book_of_month":false,
          "sales_count":57, 
          "pdf": "pdfs/All-We-Are-Saying.pdf"
    }
@@ -1089,7 +1017,6 @@
          "price":2.50,
          "category":12,
          "image":"images/book-covers/73.jpg",
-         "book_of_month":false,
          "sales_count":117, 
          "pdf": "pdfs/The-Smartest-Giant-In-Town-20th-Anniversary-Edition.pdf"
    }
@@ -1104,7 +1031,6 @@
          "price":2.50,
          "category":14,
          "image":"images/book-covers/74.jpg",
-         "book_of_month":false,
          "sales_count":75, 
          "pdf": "pdfs/Sabotage-On-The-Solar-Express.pdf"
    }
@@ -1119,7 +1045,6 @@
          "price":2.50,
          "category":13,
          "image":"images/book-covers/75.jpg",
-         "book_of_month":false,
          "sales_count":180, 
          "pdf": "pdfs/Posh-Pup-And-Other-Puppy-Stories.pdf"
    }
@@ -1134,7 +1059,6 @@
          "price":2.50,
          "category":6,
          "image":"images/book-covers/76.jpg",
-         "book_of_month":false,
          "sales_count":119, 
          "pdf": "pdfs/Exhalation.pdf"
    }
@@ -1149,7 +1073,6 @@
          "price":2.50,
          "category":10,
          "image":"images/book-covers/77.jpg",
-         "book_of_month":false,
          "sales_count":61, 
          "pdf": "pdfs/Losing-Earth.pdf"
    }
@@ -1164,7 +1087,6 @@
          "price":2.50,
          "category":16,
          "image":"images/book-covers/78.jpg",
-         "book_of_month":false,
          "sales_count":185, 
          "pdf": "pdfs/Mark-My-Words.pdf"
    }
@@ -1179,7 +1101,6 @@
          "price":2.50,
          "category":14,
          "image":"images/book-covers/79.jpg",
-         "book_of_month":false,
          "sales_count":235, 
          "pdf": "pdfs/The-Monsters-Of-Rookhaven.pdf"
    }
@@ -1194,7 +1115,6 @@
          "price":2.50,
          "category":10,
          "image":"images/book-covers/80.jpg",
-         "book_of_month":false,
          "sales_count":206, 
          "pdf": "pdfs/A-Very-Short-History-Of-Life-On-Earth.pdf"
    }
@@ -1209,7 +1129,6 @@
          "price":2.50,
          "category":1,
          "image":"images/book-covers/81.jpg",
-         "book_of_month":false,
          "sales_count":57, 
          "pdf": "pdfs/The-Prince-Of-The-Skies.pdf"
    }
@@ -1224,7 +1143,6 @@
          "price":2.50,
          "category":6,
          "image":"images/book-covers/82.jpg",
-         "book_of_month":false,
          "sales_count":188, 
          "pdf": "pdfs/The-Space-Between-The-Stars.pdf"
    }
@@ -1239,7 +1157,6 @@
          "price":2.50,
          "category":7,
          "image":"images/book-covers/83.jpg",
-         "book_of_month":false,
          "sales_count":111, 
          "pdf": "pdfs/Unbeaten.pdf"
    }
@@ -1254,7 +1171,6 @@
          "price":2.50,
          "category":2,
          "image":"images/book-covers/84.jpg",
-         "book_of_month":false,
          "sales_count":59, 
          "pdf": "pdfs/A-Not-Quite-Perfect-Family.pdf"
    }
@@ -1269,7 +1185,6 @@
          "price":2.50,
          "category":6,
          "image":"images/book-covers/85.jpg",
-         "book_of_month":false,
          "sales_count":33, 
          "pdf": "pdfs/Shards-Of-Earth.pdf"
    }
@@ -1284,7 +1199,6 @@
          "price":2.50,
          "category":2,
          "image":"images/book-covers/86.jpg",
-         "book_of_month":false,
          "sales_count":145, 
          "pdf": "pdfs/Bridget-Joness-Diary-And-Other-Writing.pdf"
    }
@@ -1299,7 +1213,6 @@
          "price":2.50,
          "category":4,
          "image":"images/book-covers/87.jpg",
-         "book_of_month":false,
          "sales_count":145, 
          "pdf": "pdfs/The-Ritual.pdf"
    }
@@ -1314,7 +1227,6 @@
          "price":2.50,
          "category":5,
          "image":"images/book-covers/88.jpg",
-         "book_of_month":false,
          "sales_count":244, 
          "pdf": "pdfs/Invisible.pdf"
    }
@@ -1329,7 +1241,6 @@
          "price":2.50,
          "category":12,
          "image":"images/book-covers/89.jpg",
-         "book_of_month":false,
          "sales_count":22, 
          "pdf": "pdfs/Sometimes-I-Am-Furious.pdf"
    }
@@ -1344,7 +1255,6 @@
          "price":2.50,
          "category":13,
          "image":"images/book-covers/90.jpg",
-         "book_of_month":false,
          "sales_count":154, 
          "pdf": "pdfs/Shaping-The-World.pdf"
    }
@@ -1359,7 +1269,6 @@
          "price":2.50,
          "category":15,
          "image":"images/book-covers/91.jpg",
-         "book_of_month":false,
          "sales_count":246, 
          "pdf": "pdfs/We-Free-The-Stars.pdf"
    }
@@ -1374,7 +1283,6 @@
          "price":2.50,
          "category":4,
          "image":"images/book-covers/92.jpg",
-         "book_of_month":false,
          "sales_count":92, 
          "pdf": "pdfs/Under-Ground.pdf"
    }
@@ -1389,7 +1297,6 @@
          "price":2.50,
          "category":9,
          "image":"images/book-covers/93.jpg",
-         "book_of_month":false,
          "sales_count":135, 
          "pdf": "pdfs/How-To-Survive-A-Pandemic.pdf"
    }
@@ -1404,7 +1311,6 @@
          "price":2.50,
          "category":1,
          "image":"images/book-covers/94.jpg",
-         "book_of_month":false,
          "sales_count":130, 
          "pdf": "pdfs/The-African-Queen.pdf"
    }
@@ -1419,7 +1325,6 @@
          "price":2.50,
          "category":10,
          "image":"images/book-covers/95.jpg",
-         "book_of_month":false,
          "sales_count":88, 
          "pdf": "pdfs/Sentient.pdf"
    }
@@ -1434,7 +1339,6 @@
          "price":2.50,
          "category":13,
          "image":"images/book-covers/96.jpg",
-         "book_of_month":false,
          "sales_count":72, 
          "pdf": "pdfs/Peter-Pan-And-Wendy.pdf"
    }
@@ -1449,7 +1353,6 @@
          "price":2.50,
          "category":5,
          "image":"images/book-covers/97.jpg",
-         "book_of_month":false,
          "sales_count":202, 
          "pdf": "pdfs/Jane-Eyre.pdf"
    }
@@ -1464,7 +1367,6 @@
          "price":2.50,
          "category":12,
          "image":"images/book-covers/98.jpg",
-         "book_of_month":false,
          "sales_count":37, 
          "pdf": "pdfs/Arlo-The-Lion-Who-Couldnt-Sleep.pdf"
    }
@@ -1479,7 +1381,6 @@
          "price":2.50,
          "category":15,
          "image":"images/book-covers/99.jpg",
-         "book_of_month":false,
          "sales_count":168, 
          "pdf": "pdfs/Any-Way-The-Wind-Blows.pdf"
    }
@@ -1494,7 +1395,6 @@
          "price":2.50,
          "category":10,
          "image":"images/book-covers/100.jpg",
-         "book_of_month":false,
          "sales_count":24, 
          "pdf": "pdfs/She-Has-Her-Mothers-Laugh.pdf"
    }
@@ -1509,7 +1409,6 @@
          "price":2.50,
          "category":15,
          "image":"images/book-covers/101.jpg",
-         "book_of_month":false,
          "sales_count":22, 
          "pdf": "pdfs/Royal-Scandal.pdf"
    }
@@ -1524,7 +1423,6 @@
          "price":2.50,
          "category":11,
          "image":"images/book-covers/102.jpg",
-         "book_of_month":false,
          "sales_count":160, 
          "pdf": "pdfs/How-To-Leave-Your-Psychopath.pdf"
    }
@@ -1539,7 +1437,6 @@
          "price":2.50,
          "category":13,
          "image":"images/book-covers/103.jpg",
-         "book_of_month":false,
          "sales_count":91, 
          "pdf": "pdfs/The-Story-Of-Doctor-Dolittle.pdf"
    }
@@ -1554,7 +1451,6 @@
          "price":2.50,
          "category":14,
          "image":"images/book-covers/104.jpg",
-         "book_of_month":false,
          "sales_count":98, 
          "pdf": "pdfs/Kidnap-On-The-California-Comet.pdf"
    }
@@ -1569,7 +1465,6 @@
          "price":2.50,
          "category":13,
          "image":"images/book-covers/105.jpg",
-         "book_of_month":false,
          "sales_count":32, 
          "pdf": "pdfs/Fly-By-Night.pdf"
    }
@@ -1584,7 +1479,6 @@
          "price":2.50,
          "category":11,
          "image":"images/book-covers/106.jpg",
-         "book_of_month":false,
          "sales_count":130, 
          "pdf": "pdfs/Success-Habits.pdf"
    }
@@ -1599,7 +1493,6 @@
          "price":2.50,
          "category":14,
          "image":"images/book-covers/107.jpg",
-         "book_of_month":false,
          "sales_count":158, 
          "pdf": "pdfs/Saffys-Angel.pdf"
    }
@@ -1614,7 +1507,6 @@
          "price":2.50,
          "category":3,
          "image":"images/book-covers/108.jpg",
-         "book_of_month":false,
          "sales_count":131, 
          "pdf": "pdfs/Edge-Of-The-Grave.pdf"
    }
@@ -1629,7 +1521,6 @@
          "price":2.50,
          "category":5,
          "image":"images/book-covers/109.jpg",
-         "book_of_month":false,
          "sales_count":118, 
          "pdf": "pdfs/The-Man-Who-Didnt-Call.pdf"
    }
@@ -1644,7 +1535,6 @@
          "price":2.50,
          "category":8,
          "image":"images/book-covers/110.jpg",
-         "book_of_month":false,
          "sales_count":186, 
          "pdf": "pdfs/A-World-Beneath-The-Sands.pdf"
    }

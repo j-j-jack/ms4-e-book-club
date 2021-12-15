@@ -4,8 +4,7 @@
       "model":"products.category",
       "fields":{
          "name":"action",
-         "friendly_name":"Action/Adventure",
-         "books": [{"titles": [10]}]
+         "friendly_name":"Action/Adventure"
       }
    },
    {
@@ -13,8 +12,7 @@
       "model":"products.category",
       "fields":{
          "name":"comedy",
-         "friendly_name":"Comedy",
-         "books": [{"titles": [5]}]
+         "friendly_name":"Comedy"
       }
    },
       {
@@ -22,8 +20,7 @@
       "model":"products.category",
       "fields":{
          "name":"crime",
-         "friendly_name":"Crime",
-         "books": [{"titles": [3]}]
+         "friendly_name":"Crime"
       }
    },
       {
@@ -31,8 +28,7 @@
       "model":"products.category",
       "fields":{
          "name":"horror",
-         "friendly_name":"Horror",
-         "books": [{"titles": [999]}]
+         "friendly_name":"Horror"
       }
    },
 {
@@ -40,8 +36,7 @@
       "model":"products.category",
       "fields":{
          "name":"romance",
-         "friendly_name":"Romance",
-         "books": [{"titles": [999]}]
+         "friendly_name":"Romance"
       }
    },
 {
@@ -49,8 +44,7 @@
       "model":"products.category",
       "fields":{
          "name":"sci_fi",
-         "friendly_name":"Science-Fiction",
-         "books": [{"titles": [999]}]
+         "friendly_name":"Science-Fiction"
       }
    },
 {
@@ -58,8 +52,7 @@
       "model":"products.category",
       "fields":{
          "name":"biographies",
-         "friendly_name":"Biographies",
-         "books": [{"titles": [6]}]
+         "friendly_name":"Biographies"
       }
    },
 {
@@ -67,8 +60,7 @@
       "model":"products.category",
       "fields":{
          "name":"history",
-         "friendly_name":"History/Politics",
-         "books": [{"titles": [7, 9]}]
+         "friendly_name":"History/Politics"
       }
    },
 {
@@ -76,8 +68,7 @@
       "model":"products.category",
       "fields":{
          "name":"hobbies",
-         "friendly_name":"Hobbies/How-to",
-         "books": [{"titles": [1, 4]}]
+         "friendly_name":"Hobbies/How-to"
       }
    },
 {
@@ -85,8 +76,7 @@
       "model":"products.category",
       "fields":{
          "name":"science",
-         "friendly_name":"Science/Nature",
-         "books": [{"titles": [999]}]
+         "friendly_name":"Science/Nature"
       }
    },
 {
@@ -94,8 +84,7 @@
       "model":"products.category",
       "fields":{
          "name":"self_help",
-         "friendly_name":"Self-Help/Spirituality",
-         "books": [{"titles": [999]}]
+         "friendly_name":"Self-Help/Spirituality"
       }
    },
    {
@@ -103,8 +92,7 @@
       "model":"products.category",
       "fields":{
          "name":"three_to_five",
-         "friendly_name":"3-5 Years",
-         "books": [{"titles": [8]}]
+         "friendly_name":"3-5 Years"
       }
    },
    {
@@ -112,8 +100,7 @@
       "model":"products.category",
       "fields":{
          "name":"six_to_eight",
-         "friendly_name":"6-8 Years",
-         "books": [{"titles": [2]}]
+         "friendly_name":"6-8 Years"
       }
    },
    {
@@ -121,8 +108,7 @@
       "model":"products.category",
       "fields":{
          "name":"nine_to_twelve",
-         "friendly_name":"9-12 Years",
-         "books": [{"titles": [999]}]
+         "friendly_name":"9-12 Years"
       }
    },
    {
@@ -130,8 +116,7 @@
       "model":"products.category",
       "fields":{
          "name":"twelve_to_fifteen",
-         "friendly_name":"12-15 Years",
-         "books": [{"titles": [999]}]
+         "friendly_name":"12-15 Years"
       }
    },
    {
@@ -139,8 +124,7 @@
       "model":"products.category",
       "fields":{
          "name":"young_adult",
-         "friendly_name":"Young Adult",
-         "books": [{"titles": [999]}]
+         "friendly_name":"Young Adult"
       }
    }
 ]

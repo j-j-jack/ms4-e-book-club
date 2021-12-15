@@ -13,7 +13,6 @@ class ProductAdmin(admin.ModelAdmin):
         "description",
         "price",
         "rating",
-        "book_of_month",
         "currently_on_sale",
         "image",
         "pdf",

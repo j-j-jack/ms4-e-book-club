@@ -1,0 +1,146 @@
+[
+   {
+      "pk":1,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+         "category": 1,
+         "name":"action_book_of_month",
+         "friendly_name":"Action/Adventure Book of the Month"
+      }
+   },
+   {
+      "pk":2,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+         "category": 2,
+         "name":"comedy_book_of_month",
+         "friendly_name":"Comedy Book of the Month"
+      }
+   },
+      {
+      "pk":3,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+         "category": 3,
+         "name":"crime_book_of_month",
+         "friendly_name":"Crime Book of the Month"
+      }
+   },
+      {
+      "pk":4,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 4,
+         "name":"horror_book_of_month",
+         "friendly_name":"Horror Book of the Month"
+      }
+   },
+{
+      "pk":5,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 5,
+         "name":"romance_book_of_month",
+         "friendly_name":"Romance Book of the Month"
+      }
+   },
+{
+      "pk":6,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 6,
+         "name":"sci_fi_book_of_month",
+         "friendly_name":"Science-Fiction Book of the Month"
+      }
+   },
+{
+      "pk":7,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 7,
+         "name":"biographies_book_of_month",
+         "friendly_name":"Biographies Book of the Month"
+      }
+   },
+{
+      "pk":8,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 8,
+         "name":"history_book_of_month",
+         "friendly_name":"History/Politics Book of the Month"
+      }
+   },
+{
+      "pk":9,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 9,
+         "name":"hobbies_book_of_month",
+         "friendly_name":"Hobbies/How-to Book of the Month"
+      }
+   },
+{
+      "pk":10,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 10,
+         "name":"science_book_of_month",
+         "friendly_name":"Science/Nature Book of the Month"
+      }
+   },
+{
+      "pk":11,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 11,
+         "name":"self_help_book_of_month",
+         "friendly_name":"Self-Help/Spirituality Book of the Month"
+      }
+   },
+   {
+      "pk":12,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 12,
+         "name":"three_to_five_book_of_month",
+         "friendly_name":"3-5 Years Book of the Month"
+      }
+   },
+   {
+      "pk":13,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 13,
+         "name":"six_to_eight_book_of_month",
+         "friendly_name":"6-8 Years Book of the Month"
+      }
+   },
+   {
+      "pk":14,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 14,
+         "name":"nine_to_twelve_book_of_month",
+         "friendly_name":"9-12 Years Book of the Month"
+      }
+   },
+   {
+      "pk":15,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 15,
+         "name":"twelve_to_fifteen_book_of_month",
+         "friendly_name":"12-15 Years Book of the Month"
+      }
+   },
+   {
+      "pk":16,
+      "model":"book_clubs.bookofmonth",
+      "fields":{
+          "category": 16,
+         "name":"young_adult_book_of_month",
+         "friendly_name":"Young Adult Book of the Month"
+      }
+   }
+]
