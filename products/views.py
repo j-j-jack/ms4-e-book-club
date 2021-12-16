@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from .models import Product, Category
 from django.db.models import Q
-from django. http import JsonResponse
+from django.http import JsonResponse
 from django.core import serializers
 from .forms import ProductForm
 # Create your views here.

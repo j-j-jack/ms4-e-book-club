@@ -14,7 +14,7 @@ class BookOfMonthForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         products = Product.objects.filter(category=category)
         names = [(c.id, c.get_name()) for c in products]
-
         self.fields['book'].choices = names
+        self.fields['book'].label = products[0].category.friendly_name + ' Book Club'
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
