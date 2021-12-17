@@ -3,7 +3,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from django.contrib import messages
-
+import json
 from products.models import Category
 from .models import BookOfMonth
 from .forms import BookOfMonthForm
@@ -12,7 +12,7 @@ from .forms import BookOfMonthForm
 
 @login_required
 def edit_book_clubs(request):
-    """ Add a product to the store """
+    """ Edit the book clubs """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -21,7 +21,7 @@ def edit_book_clubs(request):
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
     category_count = categories.count()
     if is_ajax:
-        book = request.POST['book']
+        response = {'finished': False, }
         category = int(request.POST['category'])
         book_of_month_instance = get_object_or_404(
             BookOfMonth, category=category)
@@ -29,12 +29,14 @@ def edit_book_clubs(request):
             category, request.POST, instance=book_of_month_instance)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated book clubs!')
-            return redirect(reverse('home'))
         else:
             messages.error(
                 request, 'Failed to  update book clubs. Please ensure the form is valid.')
-        return HttpResponse(status=200)
+        if category == category_count:
+            response = {'finished': True, }
+            messages.success(request, 'Successfully updated book clubs!')
+
+        return HttpResponse(json.dumps(response), status=200)
 
     forms = []
     for cat in categories:

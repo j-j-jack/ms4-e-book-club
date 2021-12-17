@@ -10,6 +10,7 @@ class BookOfMonthAdmin(admin.ModelAdmin):
         "friendly_name",
         'book',
         'category',
+        'description',
     )
 
 
