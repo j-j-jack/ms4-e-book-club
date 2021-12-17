@@ -1,6 +1,6 @@
 jQuery(document).ready(function () {
   let categoryCount = parseInt(
-    document.getElementsByClassName("category-count")[0].innerHTML
+    document.getElementsByClassName("category-count")[0]
   );
   jQuery("#form-submission-button").click(function () {
     console.log("submitting now");
@@ -8,7 +8,10 @@ jQuery(document).ready(function () {
   });
   jQuery(document).on("submit", "#form1", function (e) {
     e.preventDefault();
-    document.getElementsByClassName("overlay")[0].style.display = "block";
+    let overlay = document.getElementById("form-loading-overlay");
+    overlay.style.display = "block";
+    document.body.style.pointerEvents = "none";
+    document.style.cursor = "pointer";
     for (i = 1; i <= categoryCount; i++) {
       let select = document.getElementsByTagName("select")[i - 1];
       select = select.options[select.selectedIndex].value;

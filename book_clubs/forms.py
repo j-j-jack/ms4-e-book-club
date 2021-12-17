@@ -7,7 +7,7 @@ class BookOfMonthForm(forms.ModelForm):
 
     class Meta:
         model = BookOfMonth
-        fields = ('book',)
+        fields = ('book', 'description')
         exclude = ('reviews', 'sales_count', 'rating')
 
     def __init__(self, category, *args, **kwargs):
