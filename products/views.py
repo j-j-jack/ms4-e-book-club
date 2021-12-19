@@ -76,7 +76,6 @@ def product_detail(request, product_id):
                 in_bag = True
 
     review_count = product.reviews.count()
-    print(review_count)
     reviews = product.reviews.all()
     if user_review:
         reviews = product.reviews.all().exclude(pk=user_review.pk)

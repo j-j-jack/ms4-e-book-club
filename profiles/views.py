@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
+from book_clubs.models import BookOfMonth
 from .forms import UserProfileForm
 
 from checkout.models import Order
@@ -24,12 +25,23 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
-
+    book_clubs = BookOfMonth.objects.all()
     template = 'profiles/profile.html'
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    user_profile
+    book_of_the_month = get_object_or_404(BookOfMonth, pk=2)
+    print(book_of_the_month)
+    user_profile.book_club_subscriptions_this_month.add(book_of_the_month)
+    book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
+    print(book_club_subscriptions_this_month)
+
     context = {
         'form': form,
         'orders': orders,
-        'on_profile_page': True
+        'on_profile_page': True,
+        'user_profile': user_profile,
+        'book_club_subscriptions_this_month': book_club_subscriptions_this_month,
+        'book_clubs': book_clubs,
     }
 
     return render(request, template, context)

@@ -6,7 +6,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
+from book_clubs.models import BookOfMonth
 from django_countries.fields import CountryField
 
 
@@ -16,6 +16,10 @@ class UserProfile(models.Model):
     delivery information and order history
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    book_club_subscriptions_this_month = models.ManyToManyField(
+        BookOfMonth, related_name='users_subscribed_this_month')
+    book_club_subscriptions_next_month = models.ManyToManyField(
+        BookOfMonth, related_name="users_subscribed_next_month")
     default_phone_number = models.CharField(
         max_length=20, null=True, blank=True)
     default_country = CountryField(

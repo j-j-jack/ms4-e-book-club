@@ -31,7 +31,6 @@ class Product(models.Model):
     book_of_month = BooleanField(null=True, blank=False, default=True)
     image = models.ImageField(null=True, blank=True)
     sales_count = models.IntegerField(null=True, blank=True)
-    currently_on_sale = models.BooleanField(blank=True, default=True)
     pdf = models.FileField(blank=True, null=True, upload_to="pdfs")
 
     def __str__(self):

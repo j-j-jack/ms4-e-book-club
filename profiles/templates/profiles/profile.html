@@ -22,6 +22,10 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
+            {{ book_club_subscriptions_this_month }}
+            {% for book_of_month in book_club_subscriptions_this_month %}
+            {{ book_of_month.name }}
+            {% endfor %}
             <div class="col">
                 <hr>
                 <h2 class="logo-font mb-4">My Profile</h2>
@@ -59,7 +63,46 @@
                                         </a>
                                     </td>
                                     <td>{{ order.date }}</td>
-                                    <td>${{ order.grand_total }}</td>
+                                    <td>€{{ order.grand_total }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p class="text-muted">Book Club Subscriptions</p>
+                <div class="order-history table-responsive">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Book Club</th>
+                                <th>Book this month</th>
+                                <th>Subscribed this Month</th>
+                                <th>Subscription to Continue Next Month</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for book_club in book_clubs %}
+                                <tr>
+                                    <td>
+                                        {{ book_club.friendly_name }}
+                                        </a>
+                                    </td>
+                                    <td>{{ book_club.book }}</td>
+                                    <td>{% if book_club in book_club_subscriptions_this_month %}yes{% else %}no{% endif %}</td>
+                                    <td>{% if book_club in user_profile.book_club_subscriptions_next_month %}yes{% else %}no{% endif %}</td>
+                                    <td>
+                                    <form class="form" action="{% url 'add_sub_to_bag'  book_club.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                                            </div>
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        </div>
+                                    </form>
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </tbody>

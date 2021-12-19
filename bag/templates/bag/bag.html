@@ -13,6 +13,7 @@
 
 {% block content %}
     <div class="overlay"></div>
+    {{ bag_items }}
     <div class="container mb-2">
         <div class="row">
             <div class="col">
@@ -38,6 +39,8 @@
                             </div>
                         </div>
                         {% for item in bag_items %}
+                        {% if item.type == 'product' %}
+                        
                             <div class="row">
                                 <div class="col-12 col-sm-6 mb-2">
                                     {% include "bag/includes/product-image.html" %}
@@ -46,12 +49,13 @@
                                     {% include "bag/includes/product-info.html" %}
                                 </div>
                                 <div class="col-12 col-sm-6 order-sm-last">
-                                    <p class="my-0">Price Each: ${{ item.product.price }}</p>
-                                    <p><strong>Subtotal: </strong>€{{ item.product.price }}</p>
+                                    <p><strong>Price: </strong>€{{ item.product.price }}</p>
                                 </div>
                             </div>
                             <div class="row"><div class="col"><hr></div></div>
+                        {% endif %}
                         {% endfor %}
+                        
                         <div class="btt-button shadow-sm rounded-0 border border-black">
                             <a class="btt-link d-flex h-100">
                                 <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
@@ -63,13 +67,15 @@
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col">Product Info</th>
-                                    <th scope="col"></th>
+                                    <th></th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Subtotal</th>
+                                    <th scope="col"></th>
+                                    <th></th>
                                 </tr>
                             </thead>
 
                             {% for item in bag_items %}
+                            {% if item.type == 'product' %}
                                 <tr>
                                     <td class="p-3 w-25">
                                         {% include "bag/includes/product-image.html" %}
@@ -80,10 +86,27 @@
                                     <td class="py-3">
                                         <p class="my-0">€{{ item.product.price }}</p>
                                     </td>
-                                    <td class="py-3">
-                                        <p class="my-0">€{{ item.product.price }}</p>
+                                    <td>
+                                        <button class="remove-item btn btn-black rounded-0 text-uppercase" id='{{ item.product.id }}'>Remove from Bag</button>
                                     </td>
                                 </tr>
+                            {% elif item.type == 'subscription' %}
+                                <tr>
+                                    <td class="p-3 w-25">
+                                        {% include "bag/includes/subscription-image.html" %}
+                                    </td>
+                                    <td class="py-3">
+                                        {% include "bag/includes/subscription-info.html" %}
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">€2</p>
+                                    </td>
+                                    <td>
+                                        <button class="remove-item btn btn-black rounded-0 text-uppercase" id='{{ item.product.id }}'>Remove from Bag</button>
+                                    </td>
+                                </tr>
+                            
+                            {% endif %}
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
@@ -109,4 +132,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".remove-item").click(function () {
+                var csrfToken = "{{ csrf_token }}";
+                var itemId = jQuery(this).attr("id");
+                var url = `/bag/remove/${itemId}/`;
+                var data = { csrfmiddlewaretoken: csrfToken };
+                jQuery.post(url, data).done(function () {
+                    location.reload();
+                });
+            });
+        });
+    </script>
 {% endblock %}
