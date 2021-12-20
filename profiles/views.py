@@ -34,7 +34,11 @@ def profile(request):
     user_profile.book_club_subscriptions_this_month.add(book_of_the_month)
     book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
     print(book_club_subscriptions_this_month)
-
+    subscriptions_in_bag = []
+    if request.session['bag']:
+        for item in request.session['bag']:
+            if request.session['bag'].get(item) == 'S':
+                subscriptions_in_bag.append(int(item))
     context = {
         'form': form,
         'orders': orders,
@@ -42,6 +46,7 @@ def profile(request):
         'user_profile': user_profile,
         'book_club_subscriptions_this_month': book_club_subscriptions_this_month,
         'book_clubs': book_clubs,
+        'subscriptions_in_bag': subscriptions_in_bag,
     }
 
     return render(request, template, context)

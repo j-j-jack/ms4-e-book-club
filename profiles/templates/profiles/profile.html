@@ -22,10 +22,6 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            {{ book_club_subscriptions_this_month }}
-            {% for book_of_month in book_club_subscriptions_this_month %}
-            {{ book_of_month.name }}
-            {% endfor %}
             <div class="col">
                 <hr>
                 <h2 class="logo-font mb-4">My Profile</h2>
@@ -93,6 +89,9 @@
                                     <td>{% if book_club in book_club_subscriptions_this_month %}yes{% else %}no{% endif %}</td>
                                     <td>{% if book_club in user_profile.book_club_subscriptions_next_month %}yes{% else %}no{% endif %}</td>
                                     <td>
+                                    {% if book_club.id in subscriptions_in_bag %}
+                                    <button class="remove-sub btn btn-black rounded-0 text-uppercase" id='{{ book_club.id }}'>Remove from Bag</button>   
+                                    {% else %}  
                                     <form class="form" action="{% url 'add_sub_to_bag'  book_club.id %}" method="POST">
                                         {% csrf_token %}
                                         <div class="form-row">
@@ -104,14 +103,28 @@
                                     </form>
                                     </td>
                                 </tr>
+                                {% endif %}
                             {% endfor %}
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+        <script>
+jQuery(document).ready(function () {console.log('script ready')
+            jQuery(".remove-sub").click(function () {
+                var csrfToken = "{{ csrf_token }}";
+                var itemId = jQuery(this).attr("id");
+                console.log(itemId);
+                var url = `/bag/remove_sub/${itemId}/`;
+                var data = { csrfmiddlewaretoken: csrfToken };
+                jQuery.post(url, data).done(function () {
+                    location.reload();
+                });
+            });
+        });
+</script>
 {% endblock %}
-
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
