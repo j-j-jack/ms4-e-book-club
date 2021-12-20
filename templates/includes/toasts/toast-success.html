@@ -18,6 +18,7 @@
             <p class="logo-font bg-white text-black py-1">Your Bag ({{ product_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in bag_items %}
+                {% if item.type == 'product' %}
                     <div class="row">
                         <div class="col-3 my-1">
                             {% if item.product.image %}
@@ -30,6 +31,20 @@
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                         </div>
                     </div>
+                {% elif item.type == 'subscription' %}
+                <div class="row">
+                        <div class="col-3 my-1">
+                            {% if item.book_club.book.image %}
+                            <img class="w-100" src="{{ MEDIA_URL }}{{ item.book_club.book.image }}">
+                            {% else %}
+                            <img class="w-100" src="{{ MEDIA_URL }}images/noimage.png">
+                            {% endif %}
+                        </div>
+                        <div class="col-9">
+                            <p class="my-0"><strong>{{ item.book_club.category.friendly_name }} Book Club Subscription</strong></p>
+                        </div>
+                    </div>
+                {% endif %}
                 {% endfor %}
             </div>
             <div class="row">

@@ -13,7 +13,6 @@
 
 {% block content %}
     <div class="overlay"></div>
-    {{ bag_items }}
     <div class="container mb-2">
         <div class="row">
             <div class="col">
@@ -50,6 +49,21 @@
                                 </div>
                                 <div class="col-12 col-sm-6 order-sm-last">
                                     <p><strong>Price: </strong>€{{ item.product.price }}</p>
+                                </div>
+                            </div>
+                            <div class="row"><div class="col"><hr></div></div>
+
+                            {% elif item.type == 'subscription' %}
+                        
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-2">
+                                    {% include "bag/includes/subscription-image.html" %}
+                                </div>
+                                <div class="col-12 col-sm-6 mb-2">
+                                    {% include "bag/includes/subscription-info.html" %}
+                                </div>
+                                <div class="col-12 col-sm-6 order-sm-last">
+                                    <p><strong>Price: </strong>€2</p>
                                 </div>
                             </div>
                             <div class="row"><div class="col"><hr></div></div>
@@ -102,7 +116,7 @@
                                         <p class="my-0">€2</p>
                                     </td>
                                     <td>
-                                        <button class="remove-item btn btn-black rounded-0 text-uppercase" id='{{ item.product.id }}'>Remove from Bag</button>
+                                        <button class="remove-sub btn btn-black rounded-0 text-uppercase" id='{{ item.book_club.id }}'>Remove from Bag</button>
                                     </td>
                                 </tr>
                             
@@ -139,6 +153,15 @@
                 var csrfToken = "{{ csrf_token }}";
                 var itemId = jQuery(this).attr("id");
                 var url = `/bag/remove/${itemId}/`;
+                var data = { csrfmiddlewaretoken: csrfToken };
+                jQuery.post(url, data).done(function () {
+                    location.reload();
+                });
+            });
+            jQuery(".remove-sub").click(function () {
+                var csrfToken = "{{ csrf_token }}";
+                var itemId = jQuery(this).attr("id");
+                var url = `/bag/remove_sub/${itemId}/`;
                 var data = { csrfmiddlewaretoken: csrfToken };
                 jQuery.post(url, data).done(function () {
                     location.reload();

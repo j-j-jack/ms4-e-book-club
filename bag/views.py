@@ -38,7 +38,7 @@ def add_subscription_to_bag(request, item_id):
 
     request.session['bag'] = bag
     messages.success(
-        request, f'Added {subscription.category.friendly_name} book club subscription -to your bag')
+        request, f'Added {subscription.category.friendly_name} book club subscription to your bag')
     return redirect(redirect_url)
 
 
@@ -50,6 +50,24 @@ def remove_from_bag(request, item_id):
         bag = request.session.get('bag', {})
         bag.pop(item_id)
         messages.success(request, f'Removed {product.name} from your bag')
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
+
+
+def remove_subscription_from_bag(request, item_id):
+    """Remove the item from the shopping bag"""
+
+    try:
+        subscription = get_object_or_404(BookOfMonth, pk=item_id)
+        bag = request.session.get('bag', {})
+        bag.pop(item_id)
+        messages.success(
+            request, f'Removed {subscription.category.friendly_name} book club subscription to your bag')
 
         request.session['bag'] = bag
         return HttpResponse(status=200)
