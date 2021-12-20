@@ -44,7 +44,9 @@
                     </div>
                 </div>
                 {% for item in bag_items %}
+                {% if bag_items.type == 'product' %}
                     <div class="row">
+                        
                         <div class="col-2 mb-1">
                             <a href="{% url 'product_detail' item.product.id %}">
                                 {% if item.product.image %}
@@ -56,13 +58,30 @@
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
                             <p class="my-0 small text-muted">€{{ item.product.price}}</p>
                         </div>
                     </div>
+                    {% elif bag_items.type == 'subscription' %}
+                    <div class="row">
+                        <div class="col-2 mb-1">
+                            <a href="{% url '' %}">
+                                {% if item.book_club.book.image %}
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.book_club.category.friendly_name }} Book Club Subscription">
+                                {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}/images/noimage.png" alt="{{ item.book_club.category.friendly_name }} Book Club Subscription">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="col-7">
+                            <p class="my-0"><strong>{{ item.book_club.category.friendly_name }} Book Club Subscription</strong></p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <p class="my-0 small text-muted">€2</p>
+                        </div>
+                    </div>
+                {% endif %}
                 {% endfor %}
                 <hr class="my-0">
                 <div class="row text-black text-right">

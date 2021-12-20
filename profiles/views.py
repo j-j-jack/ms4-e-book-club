@@ -29,9 +29,9 @@ def profile(request):
     template = 'profiles/profile.html'
     user_profile = get_object_or_404(UserProfile, user=request.user)
     user_profile
-    book_of_the_month = get_object_or_404(BookOfMonth, pk=2)
-    print(book_of_the_month)
-    user_profile.book_club_subscriptions_this_month.add(book_of_the_month)
+    # book_of_the_month = get_object_or_404(BookOfMonth, pk=2)
+    # print(book_of_the_month)
+    # user_profile.book_club_subscriptions_this_month.add(book_of_the_month)
     book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
     print(book_club_subscriptions_this_month)
     subscriptions_in_bag = []

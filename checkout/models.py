@@ -3,6 +3,7 @@ from django.db.models import Sum
 from django.db import models
 from django.conf import settings
 from products.models import Product
+from book_clubs.models import BookOfMonth
 
 from django_countries.fields import CountryField
 from profiles.models import UserProfile
@@ -48,6 +49,16 @@ class Order(models.Model):
 
         self.save()
 
+    def update_subscription_total(self):
+        """
+        Update grand total each time a line item is added,
+        accounting for delivery costs.
+        """
+        self.grand_total = self.subscription_lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
+
+        self.save()
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the order number
@@ -58,7 +69,7 @@ class Order(models.Model):
         super().save(*args, **kwargs)
 
 
-class OrderLineItem(models.Model):
+class OrderLineItemProduct(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False,
                               on_delete=models.CASCADE,
                               related_name='lineitems')
@@ -74,4 +85,23 @@ class OrderLineItem(models.Model):
         and update the order total.
         """
         self.lineitem_total = self.product.price
+        super().save(*args, **kwargs)
+
+
+class OrderLineItemSubscription(models.Model):
+    order = models.ForeignKey(Order, null=False, blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='subscription_lineitems')
+    book_of_month = models.ForeignKey(BookOfMonth, null=False, blank=False,
+                                      on_delete=models.CASCADE)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                         null=False, blank=False,
+                                         editable=False)
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the lineitem total
+        and update the order total.
+        """
+        self.lineitem_total = 2
         super().save(*args, **kwargs)

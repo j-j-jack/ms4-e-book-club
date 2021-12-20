@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItemProduct
 from products.models import Product
 from profiles.models import UserProfile
 
@@ -121,9 +121,10 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(bag).items():
-                    product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
+                    print(item_data)
+                    if item_data == 'P':
+                        product = Product.objects.get(id=item_id)
+                        order_line_item = OrderLineItemProduct(
                             order=order,
                             product=product,
                         )

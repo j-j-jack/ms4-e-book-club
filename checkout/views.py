@@ -3,9 +3,11 @@ from django.urls import reverse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
+from book_clubs.models import BookOfMonth
 from .forms import OrderForm
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItemProduct, OrderLineItemSubscription
 from products.models import Product
 from bag.contexts import bag_contents
 
@@ -35,6 +37,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+@login_required
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -61,13 +64,21 @@ def checkout(request):
             order.save()
             for item_id, item_data in bag.items():
                 try:
-                    product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
+                    print(item_data)
+                    if item_data == 'P':
+                        product = Product.objects.get(id=item_id)
+                        order_line_item = OrderLineItemProduct(
                             order=order,
                             product=product,
                         )
                         order_line_item.save()
+                    elif item_data == 'S':
+                        book_of_month = BookOfMonth.objects.get(id=item_id)
+                        order_subscription_line_item = OrderLineItemSubscription(
+                            order=order,
+                            book_of_month=book_of_month,
+                        )
+                        order_subscription_line_item.save()
 
                 except Product.DoesNotExist:
                     messages.error(request, (

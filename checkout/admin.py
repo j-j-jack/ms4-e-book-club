@@ -1,13 +1,10 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItemProduct
 # Register your models here.
-
-from django.contrib import admin
-from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
-    model = OrderLineItem
+    model = OrderLineItemProduct
     readonly_fields = ('lineitem_total',)
 
 

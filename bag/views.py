@@ -20,8 +20,6 @@ def add_to_bag(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
     bag[item_id] = 'P'  # p for product
-    print(bag[item_id])
-    print(bag)
 
     request.session['bag'] = bag
     messages.success(request, f'Added {product.name} to your bag')
