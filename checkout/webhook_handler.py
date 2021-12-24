@@ -83,11 +83,17 @@ class StripeWH_Handler:
                 user_profile.book_club_subscriptions_this_month.add(
                     int(item_id))
                 print(item_data)
-            print(item_id)
-            user_profile.save()
-            book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
-            print('book clubs')
-            print(book_club_subscriptions_this_month)
+                print(item_id)
+                user_profile.save()
+                book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
+                book = get_object_or_404(BookOfMonth, id=int(item_id)).book
+                print('book')
+                print(book)
+                user_profile.owned_books.add(book.id)
+                user_profile.save()
+                print(user_profile.owned_books)
+                print('book clubs')
+                print(book_club_subscriptions_this_month)
         save_info = intent.metadata.save_info
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping

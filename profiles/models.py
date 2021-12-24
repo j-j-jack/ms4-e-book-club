@@ -8,6 +8,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from book_clubs.models import BookOfMonth
 from django_countries.fields import CountryField
+from products.models import Product
 
 
 class UserProfile(models.Model):
@@ -37,6 +38,8 @@ class UserProfile(models.Model):
         max_length=300, null=True, blank=True)
     stripe_subscription_id = models.CharField(
         max_length=300, null=True, blank=True)
+    owned_books = models.ManyToManyField(
+        Product, null=True, blank=True, related_name='owned_by')
 
     def __str__(self):
         return self.user.username
