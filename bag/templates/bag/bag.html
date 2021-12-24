@@ -63,7 +63,7 @@
                                     {% include "bag/includes/subscription-info.html" %}
                                 </div>
                                 <div class="col-12 col-sm-6 order-sm-last">
-                                    <p><strong>Price: </strong>€2</p>
+                                    <p><strong>Price: </strong>€{{item.book_club.price|floatformat:2}}</p>
                                 </div>
                             </div>
                             <div class="row"><div class="col"><hr></div></div>
@@ -113,7 +113,7 @@
                                         {% include "bag/includes/subscription-info.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">€2</p>
+                                        <p class="my-0"><p>€{{item.book_club.price|floatformat:2}}</p></p>
                                     </td>
                                     <td>
                                         <button class="remove-sub btn btn-black rounded-0 text-uppercase" id='{{ item.book_club.id }}'>Remove from Bag</button>

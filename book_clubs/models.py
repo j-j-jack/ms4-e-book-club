@@ -14,6 +14,8 @@ class BookOfMonth(models.Model):
     book = models.OneToOneField(
         Product, null=True, blank=True, on_delete=models.SET_NULL, related_name="book_of_month_information")
     description = TextField(blank=True, null=True, max_length=2000)
+    price = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)
 
     def __str__(self):
         return self.name

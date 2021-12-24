@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import (
     render, redirect, reverse, HttpResponse, get_object_or_404
 )
@@ -5,6 +6,7 @@ from django.contrib import messages
 from book_clubs.models import BookOfMonth
 
 from products.models import Product
+from profiles.models import UserProfile
 
 
 def view_bag(request):
@@ -26,14 +28,13 @@ def add_to_bag(request, item_id):
     return redirect(redirect_url)
 
 
+@login_required
 def add_subscription_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
-
     subscription = BookOfMonth.objects.get(pk=item_id)
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
     bag[item_id] = 'S'  # s for subscription
-
     request.session['bag'] = bag
     messages.success(
         request, f'Added {subscription.category.friendly_name} book club subscription to your bag')
