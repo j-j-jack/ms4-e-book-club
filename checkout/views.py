@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.urls import reverse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
-from django.conf import settings
+from django.conf import Settings, settings
 from django.contrib.auth.decorators import login_required
 from stripe.api_resources.payment_intent import PaymentIntent
 
@@ -42,23 +42,41 @@ def cache_checkout_data(request):
         stripe.Customer.modify(customer,
                                email=request.POST.get('email'),
                                name=request.POST.get('name'),)
+
+        subscription_quantity = user_profile.book_club_subscriptions_this_month.all().count()
         for item in request.session.get('bag'):
             print(item, request.session.get('bag').get(item) + 'ch')
-
-        subscription = stripe.SubscriptionSchedule.create(
-            customer=customer,
-            start_date='now',
-            end_behavior="release",
-            phases=[
-                {
-                    'items': [
-                        {'price': settings.STRIPE_PRICE, 'quantity': 1},
-                    ],
-                },
-            ],
-        )
-        user_profile.stripe_subscription_id = subscription.subscription
-        user_profile.save()
+            if request.session.get('bag').get(item) == 'S':
+                subscription_quantity += 1
+        print('subscription quanity:', subscription_quantity)
+        existing_subscription = None
+        try:
+            existing_subscription = user_profile.stripe_subscription_id
+            print('existing subscription' + existing_subscription)
+        except:
+            print('broke here line 55')
+        if existing_subscription != None or existing_subscription != '':
+            try:
+                stripe.Subscription.modify(existing_subscription,
+                                           quantity=subscription_quantity,)
+            except:
+                print('broken here line 63')
+        else:
+            subscription = stripe.SubscriptionSchedule.create(
+                customer=customer,
+                start_date='now',
+                end_behavior="release",
+                phases=[
+                    {
+                        'items': [
+                            {'price': settings.STRIPE_PRICE,
+                             'quantity': subscription_quantity},
+                        ],
+                    },
+                ],
+            )
+            user_profile.stripe_subscription_id = subscription.subscription
+            user_profile.save()
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
@@ -136,11 +154,16 @@ def checkout(request):
         total = current_bag['grand_total']
         stripe_total = round(total*100)
         stripe.api_key = stripe_secret_key
-        customer = stripe.Customer.create(
-            name=request.user
-        )
-        user_profile.stripe_customer_id = customer.id
-        user_profile.save()
+        existing_customer = user_profile.stripe_customer_id
+        customer = None
+        if existing_customer != None or existing_customer != '':
+            customer = stripe.Customer.create(
+                name=request.user
+            )
+            user_profile.stripe_customer_id = customer.id
+            user_profile.save()
+        else:
+            customer = stripe.Customer.retrieve(existing_customer)
         intent = stripe.PaymentIntent.create(
             customer=customer.id,
             setup_future_usage='off_session',
