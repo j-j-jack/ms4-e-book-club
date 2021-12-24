@@ -1,12 +1,16 @@
 Hello {{ profile.user }}!
 
 This is a confirmation of your order at E-Book Club that you have paid your month subscription.
-Amount Paid: €4
+Amount Paid: {{ amount_paid }}
 Order Date: {{ date }}
 
 
 
-You can download your file from here
+You will get access to the following books
+
+{% for club in user_clubs}
+{{club.friendly_name}} : {{club.book.name}}
+{% endfor %}
 
 If you have any questions, feel free to contact us at {{ contact_email }}.
 

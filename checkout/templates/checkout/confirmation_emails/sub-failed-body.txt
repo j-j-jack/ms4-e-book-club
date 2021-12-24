@@ -1,0 +1,16 @@
+Hello {{ profile.user }}!
+
+This is a notification that your subscription payment has failed.
+Date of payment failure: {{ date }}
+
+
+
+Your subscription has been cancelled. Feel free to re-subscribe at E-Book Club at any time.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your continued subscription!
+
+Sincerely,
+
+E-Book Club

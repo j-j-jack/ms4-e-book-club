@@ -1,0 +1,1 @@
+E-Book Club Subscription Payment Failed for {{ profile.user }}

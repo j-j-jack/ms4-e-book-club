@@ -1,1 +1,1 @@
-E-Book Club Confirmation for subscription for {{ profile.name }}
+E-Book Club Confirmation for subscription for {{ profile.user }}

@@ -40,14 +40,34 @@ class StripeWH_Handler:
             [cust_email]
         )
 
-    def _send_invoice_paid_email(self, profile, email):
+    def _send_invoice_paid_email(self, profile, email, paid):
         """Send the user a confirmation email for the monthly subscription payment"""
         cust_email = email
+        user_clubs = profile.book_club_subscriptions_this_month.all()
+        amount_paid = paid
         subject = render_to_string(
             'checkout/confirmation_emails/sub-paid-confirmation-subject.txt',
             {'profile': profile})
         body = render_to_string(
             'checkout/confirmation_emails/sub-paid-confirmation-body.txt',
+            {'profile': profile, 'amount_paid': amount_paid, 'user_clubs': user_clubs, 'date': datetime.datetime.now(), 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )
+
+    def _send_invoice_failed_email(self, profile, email):
+        """Send the user a confirmation email for the monthly subscription payment"""
+        cust_email = email
+
+        subject = render_to_string(
+            'checkout/confirmation_emails/sub-failed-subject.txt',
+            {'profile': profile})
+        body = render_to_string(
+            'checkout/confirmation_emails/sub-failed-body.txt',
             {'profile': profile, 'date': datetime.datetime.now(), 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         send_mail(
@@ -61,6 +81,7 @@ class StripeWH_Handler:
         """
         Handle a generic/unknown/unexpected webhook event
         """
+        print(event.data.object.subscription)
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
@@ -206,13 +227,33 @@ class StripeWH_Handler:
         user_clubs = profile.book_club_subscriptions_this_month.all()
         book_clubs = BookOfMonth.objects.all()
         for club in book_clubs:
-        if club in user_clubs:
-            profile.owned_books.add(club.book)
-            print(club.book)
+            if club in user_clubs:
+                profile.owned_books.add(club.book)
+                print(club.book)
         profile.first_month = False
         profile.save()
 
-        self._send_invoice_paid_email(profile, customer_email)
+        self._send_invoice_paid_email(
+            profile, customer_email, invoice.amount_paid)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} {customer}{subscription}',
+            content=f'Webhook received: {event["type"]}',
+            status=200)
+
+    def handle_invoice_payment_failed(self, event):
+        """
+        Handle the failed payment of an invoice for a subscription
+        """
+        invoice = event.data.object
+        customer = invoice.get('customer')
+        profile = get_object_or_404(UserProfile, stripe_customer_id=customer)
+        customer = stripe.Customer.retrieve(customer)
+        customer_email = customer.get('email')
+        subscription = invoice.get('subscription')
+        stripe.Subscription.delete(subscription)
+        stripe.Customer.delete(customer)
+
+        self._send_invoice_failed_email(
+            profile, customer_email)
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]}',
             status=200)
