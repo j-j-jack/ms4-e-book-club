@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.conf import Settings, settings
 from django.contrib.auth.decorators import login_required
 from stripe.api_resources.payment_intent import PaymentIntent
+from stripe.api_resources.subscription_schedule import SubscriptionSchedule
 
 from book_clubs.models import BookOfMonth
 from e_book_club.settings import STRIPE_SECRET_KEY
@@ -55,28 +56,55 @@ def cache_checkout_data(request):
             existing_subscription = user_profile.stripe_subscription_id
             print(existing_subscription)
             if existing_subscription == None or existing_subscription == '':
+                print(customer)
                 timestamp = get_next_month_timestamp()
-                print(timestamp)
-                subscription = stripe.SubscriptionSchedule.create(
+                subscription_schedule = stripe.SubscriptionSchedule.create(
                     customer=customer,
-                    start_date=timestamp,
-                    end_behavior="release",
+                    end_behavior='release',
+                    start_date='now',
                     phases=[
                         {
                             'items': [
+                                {'price': settings.STRIPE_DUMMY_PRICE, 'quantity': 1},
+                            ],
+                            'end_date': timestamp,
+                        },
+                        {
+                            'items': [
                                 {'price': settings.STRIPE_PRICE,
-                                 'quantity': subscription_quantity},
+                                    'quantity': subscription_quantity},
                             ],
                         },
                     ],
                 )
-                print('this worked')
 
-                user_profile.stripe_subscription_id = subscription.subscription
+                print(subscription_schedule)
+                user_profile.stripe_subscription_id = subscription_schedule.subscription
                 user_profile.save()
             else:
-                stripe.Subscription.modify(existing_subscription,
-                                           quantity=subscription_quantity,)
+                if user_profile.first_month:
+                    subscription = stripe.Subscription.modify(
+                        existing_subscription)
+                    subscription_schedule = stripe.SubscriptionSchedule.Modify(
+                        subscription.schedule,
+                        phases=[
+                            {
+                                'items': [
+                                    {'price': settings.STRIPE_DUMMY_PRICE,
+                                        'quantity': 1},
+                                ],
+                            },
+                            {
+                                'items': [
+                                    {'price': settings.STRIPE_PRICE,
+                                     'quantity': subscription_quantity},
+                                ],
+                            },
+                        ],
+                    )
+                else:
+                    stripe.Subscription.modify(existing_subscription,
+                                               quantity=subscription_quantity,)
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \

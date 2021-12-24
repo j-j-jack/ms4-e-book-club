@@ -225,6 +225,7 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 STRIPE_PRICE = os.getenv('STRIPE_PRICE')
+STRIPE_DUMMY_PRICE = os.getenv('STRIPE_DUMMY_PRICE')
 DEFAULT_FROM_EMAIL = 'ebookclub@example.com'
 
 # Default primary key field type

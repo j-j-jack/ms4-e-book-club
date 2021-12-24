@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+from stripe.api_resources import subscription
 
 from .models import Order, OrderLineItemProduct, OrderLineItemSubscription
 from products.models import Product
@@ -69,31 +70,19 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
-        # print(intent)
         user_profile = get_object_or_404(
             UserProfile, id=intent.metadata.user_profile)
-        # print(user_profile)
         pid = intent.id
         bag = intent.metadata.bag
         print(bag + 'bag')
         for item_id, item_data in json.loads(bag).items():
-            print(item_id, item_data + 'wh')
-
             if item_data == 'S':
                 user_profile.book_club_subscriptions_this_month.add(
                     int(item_id))
-                print(item_data)
-                print(item_id)
                 user_profile.save()
-                book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
                 book = get_object_or_404(BookOfMonth, id=int(item_id)).book
-                print('book')
-                print(book)
                 user_profile.owned_books.add(book.id)
                 user_profile.save()
-                print(user_profile.owned_books)
-                print('book clubs')
-                print(book_club_subscriptions_this_month)
         save_info = intent.metadata.save_info
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
@@ -213,6 +202,16 @@ class StripeWH_Handler:
         customer = stripe.Customer.retrieve(customer)
         customer_email = customer.get('email')
         subscription = invoice.get('subscription')
+        profile.first_month = False
+        user_clubs = profile.book_club_subscriptions_this_month.all()
+        book_clubs = BookOfMonth.objects.all()
+        for club in book_clubs:
+        if club in user_clubs:
+            profile.owned_books.add(club.book)
+            print(club.book)
+        profile.first_month = False
+        profile.save()
+
         self._send_invoice_paid_email(profile, customer_email)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} {customer}{subscription}',
