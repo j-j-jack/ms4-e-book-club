@@ -19,7 +19,7 @@ from profiles.forms import UserProfileForm
 
 import stripe
 import json
-import time
+import datetime
 
 
 @ login_required
@@ -44,39 +44,39 @@ def cache_checkout_data(request):
                                name=request.POST.get('name'),)
 
         subscription_quantity = user_profile.book_club_subscriptions_this_month.all().count()
+        subscription_in_bag = False
         for item in request.session.get('bag'):
             print(item, request.session.get('bag').get(item) + 'ch')
             if request.session.get('bag').get(item) == 'S':
                 subscription_quantity += 1
-        print('subscription quanity:', subscription_quantity)
-        existing_subscription = None
-        try:
+                subscription_in_bag = True
+        if subscription_in_bag:
+            print('subscription quanity:', subscription_quantity)
             existing_subscription = user_profile.stripe_subscription_id
-            print('existing subscription' + existing_subscription)
-        except:
-            print('broke here line 55')
-        if existing_subscription != None or existing_subscription != '':
-            try:
+            print(existing_subscription)
+            if existing_subscription == None or existing_subscription == '':
+                timestamp = get_next_month_timestamp()
+                print(timestamp)
+                subscription = stripe.SubscriptionSchedule.create(
+                    customer=customer,
+                    start_date=timestamp,
+                    end_behavior="release",
+                    phases=[
+                        {
+                            'items': [
+                                {'price': settings.STRIPE_PRICE,
+                                 'quantity': subscription_quantity},
+                            ],
+                        },
+                    ],
+                )
+                print('this worked')
+
+                user_profile.stripe_subscription_id = subscription.subscription
+                user_profile.save()
+            else:
                 stripe.Subscription.modify(existing_subscription,
                                            quantity=subscription_quantity,)
-            except:
-                print('broken here line 63')
-        else:
-            subscription = stripe.SubscriptionSchedule.create(
-                customer=customer,
-                start_date='now',
-                end_behavior="release",
-                phases=[
-                    {
-                        'items': [
-                            {'price': settings.STRIPE_PRICE,
-                             'quantity': subscription_quantity},
-                        ],
-                    },
-                ],
-            )
-            user_profile.stripe_subscription_id = subscription.subscription
-            user_profile.save()
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
@@ -156,7 +156,7 @@ def checkout(request):
         stripe.api_key = stripe_secret_key
         existing_customer = user_profile.stripe_customer_id
         customer = None
-        if existing_customer != None or existing_customer != '':
+        if existing_customer == None or existing_customer == '':
             customer = stripe.Customer.create(
                 name=request.user
             )
@@ -164,6 +164,7 @@ def checkout(request):
             user_profile.save()
         else:
             customer = stripe.Customer.retrieve(existing_customer)
+
         intent = stripe.PaymentIntent.create(
             customer=customer.id,
             setup_future_usage='off_session',
@@ -248,3 +249,18 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+def get_next_month_timestamp():
+    date = datetime.datetime.now()
+    month = int(date.strftime("%m"))
+    year = int(date.strftime("%y"))
+    if month == 12:
+        month = 1
+        year = year + 1
+    else:
+        month = month + 1
+    year = int('20' + str(year))
+    ts = datetime.datetime(year, month, 1)
+    ts = int(ts.timestamp())
+    return ts
