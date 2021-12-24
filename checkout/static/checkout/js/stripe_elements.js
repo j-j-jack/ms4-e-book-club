@@ -61,7 +61,7 @@ jQuery(document).ready(function () {
     jQuery("#submit-button").attr("disabled", true);
     jQuery("#payment-form").fadeToggle(100);
     jQuery("#loading-overlay").fadeToggle(100);
-
+    console.log(card);
     var saveInfo = Boolean(jQuery("#id-save-info").attr("checked"));
     console.log(saveInfo);
     // From using {% csrf_token %} in the form
@@ -70,6 +70,8 @@ jQuery(document).ready(function () {
       csrfmiddlewaretoken: csrfToken,
       client_secret: clientSecret,
       save_info: saveInfo,
+      email: jQuery.trim(form.email.value),
+      name: jQuery.trim(form.full_name.value),
     };
     var url = "/checkout/cache_checkout_data/";
 

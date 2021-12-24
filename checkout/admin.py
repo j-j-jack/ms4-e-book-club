@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Order, OrderLineItemProduct
-# Register your models here.
 
 
 class OrderLineItemAdminInline(admin.TabularInline):

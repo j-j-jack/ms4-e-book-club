@@ -1,11 +1,14 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.urls import reverse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from stripe.api_resources.payment_intent import PaymentIntent
 
 from book_clubs.models import BookOfMonth
+from e_book_club.settings import STRIPE_SECRET_KEY
 from .forms import OrderForm
 from .models import Order, OrderLineItemProduct, OrderLineItemSubscription
 from products.models import Product
@@ -19,17 +22,43 @@ import json
 import time
 
 
+@ login_required
 @require_POST
 def cache_checkout_data(request):
     try:
+        user_profile = get_object_or_404(
+            UserProfile, user=request.user)
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
+            'user_profile': request.user.userprofile.id,
         })
+        intent = stripe.PaymentIntent.retrieve(pid)
+        customer = intent.customer
+        stripe.PaymentIntent.modify(pid, customer=customer)
+        stripe.Customer.modify(customer,
+                               email=request.POST.get('email'),
+                               name=request.POST.get('name'),)
+        for item in request.session.get('bag'):
+            print(item, request.session.get('bag').get(item) + 'ch')
 
+        subscription = stripe.SubscriptionSchedule.create(
+            customer=customer,
+            start_date='now',
+            end_behavior="release",
+            phases=[
+                {
+                    'items': [
+                        {'price': settings.STRIPE_PRICE, 'quantity': 1},
+                    ],
+                },
+            ],
+        )
+        user_profile.stripe_subscription_id = subscription.subscription
+        user_profile.save()
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
@@ -37,13 +66,15 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
-@login_required
+@ login_required
 def checkout(request):
+    bag = request.session['bag']
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+    user_profile = get_object_or_404(
+        UserProfile, user=request.user)
     if request.method == 'POST':
         bag = request.session.get('bag', {})
-
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -62,9 +93,9 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+
             for item_id, item_data in bag.items():
                 try:
-                    print(item_data)
                     if item_data == 'P':
                         product = Product.objects.get(id=item_id)
                         order_line_item = OrderLineItemProduct(
@@ -105,10 +136,21 @@ def checkout(request):
         total = current_bag['grand_total']
         stripe_total = round(total*100)
         stripe.api_key = stripe_secret_key
+        customer = stripe.Customer.create(
+            name=request.user
+        )
+        user_profile.stripe_customer_id = customer.id
+        user_profile.save()
         intent = stripe.PaymentIntent.create(
+            customer=customer.id,
+            setup_future_usage='off_session',
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
+            automatic_payment_methods={
+                'enabled': True,
+            },
         )
+        # print(stripe.PaymentIntent.retrieve(intent.id))
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

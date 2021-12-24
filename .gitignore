@@ -7,3 +7,5 @@ node_modules
 a.py
 rand.py
 .env
+time.py
+sr.py

@@ -1,15 +1,19 @@
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
+from django.shortcuts import get_object_or_404
 
-
-from .models import Order, OrderLineItemProduct
+from .models import Order, OrderLineItemProduct, OrderLineItemSubscription
 from products.models import Product
 from profiles.models import UserProfile
-
+from book_clubs.models import BookOfMonth
+from profiles.models import UserProfile
+import stripe
 import json
 import time
+import datetime
 
 
 class StripeWH_Handler:
@@ -35,6 +39,23 @@ class StripeWH_Handler:
             [cust_email]
         )
 
+    def _send_invoice_paid_email(self, profile, email):
+        """Send the user a confirmation email for the monthly subscription payment"""
+        cust_email = email
+        subject = render_to_string(
+            'checkout/confirmation_emails/sub-paid-confirmation-subject.txt',
+            {'profile': profile})
+        body = render_to_string(
+            'checkout/confirmation_emails/sub-paid-confirmation-body.txt',
+            {'profile': profile, 'date': datetime.datetime.now(), 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )
+
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event
@@ -48,14 +69,37 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
+        # print(intent)
+        user_profile = get_object_or_404(
+            UserProfile, id=intent.metadata.user_profile)
+        # print(user_profile)
         pid = intent.id
         bag = intent.metadata.bag
-        save_info = intent.metadata.save_info
+        print(bag + 'bag')
+        for item_id, item_data in json.loads(bag).items():
+            print(item_id, item_data + 'wh')
 
+            if item_data == 'S':
+                user_profile.book_club_subscriptions_this_month.add(
+                    int(item_id))
+                print(item_data)
+            print(item_id)
+            user_profile.save()
+            book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
+            print('book clubs')
+            print(book_club_subscriptions_this_month)
+        save_info = intent.metadata.save_info
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
-
+        customer = intent.customer
+        payment_method = intent.payment_method
+        print(payment_method + 'payment wh')
+        stripe.Customer.modify(
+            customer,
+            invoice_settings={
+                "default_payment_method": payment_method},
+        )
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
             if value == "":
@@ -121,7 +165,6 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(bag).items():
-                    print(item_data)
                     if item_data == 'P':
                         product = Product.objects.get(id=item_id)
                         order_line_item = OrderLineItemProduct(
@@ -129,13 +172,19 @@ class StripeWH_Handler:
                             product=product,
                         )
                         order_line_item.save()
+                    elif item_data == 'S':
+                        book_of_month = BookOfMonth.objects.get(id=item_id)
+                        order_subscription_line_item = OrderLineItemSubscription(
+                            order=order,
+                            book_of_month=book_of_month,
+                        )
+                        order_subscription_line_item.save()
 
             except Exception as e:
                 if order:
                     order.delete()
                 return HttpResponse(
-                    content=f'Webhook received: {bag}{event["type"]} | ERROR: {e}',
-                    status=500)
+                    content=f'Webhook received: {bag}{event["type"]} | ERROR: {e}', status=500)
         return HttpResponse(
             content=f'Webhook received: {bag}{event["type"]} | SUCCESS: Created order in webhook',
             status=200)
@@ -146,4 +195,19 @@ class StripeWH_Handler:
         """
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
+            status=200)
+
+    def handle_invoice_payment_succeeded(self, event):
+        """
+        Handle the payment of an invoice for a subscription
+        """
+        invoice = event.data.object
+        customer = invoice.get('customer')
+        profile = get_object_or_404(UserProfile, stripe_customer_id=customer)
+        customer = stripe.Customer.retrieve(customer)
+        customer_email = customer.get('email')
+        subscription = invoice.get('subscription')
+        self._send_invoice_paid_email(profile, customer_email)
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]} {customer}{subscription}',
             status=200)

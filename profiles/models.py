@@ -15,11 +15,12 @@ class UserProfile(models.Model):
     A user profile model for maintaining default
     delivery information and order history
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE)
     book_club_subscriptions_this_month = models.ManyToManyField(
-        BookOfMonth, related_name='users_subscribed_this_month')
+        BookOfMonth, related_name='users_subscribed_this_month', null=True, blank=True)
     book_club_subscriptions_next_month = models.ManyToManyField(
-        BookOfMonth, related_name="users_subscribed_next_month")
+        BookOfMonth, related_name="users_subscribed_next_month", null=True, blank=True)
     default_phone_number = models.CharField(
         max_length=20, null=True, blank=True)
     default_country = CountryField(
@@ -32,6 +33,10 @@ class UserProfile(models.Model):
     default_street_address2 = models.CharField(
         max_length=80, null=True, blank=True)
     default_county = models.CharField(max_length=80, null=True, blank=True)
+    stripe_customer_id = models.CharField(
+        max_length=300, null=True, blank=True)
+    stripe_subscription_id = models.CharField(
+        max_length=300, null=True, blank=True)
 
     def __str__(self):
         return self.user.username
