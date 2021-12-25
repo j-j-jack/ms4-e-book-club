@@ -100,6 +100,8 @@ class StripeWH_Handler:
             if item_data == 'S':
                 user_profile.book_club_subscriptions_this_month.add(
                     int(item_id))
+                user_profile.book_club_subscriptions_next_month.add(
+                    int(item_id))
                 user_profile.save()
                 book = get_object_or_404(BookOfMonth, id=int(item_id)).book
                 user_profile.owned_books.add(book.id)
@@ -222,7 +224,6 @@ class StripeWH_Handler:
         profile = get_object_or_404(UserProfile, stripe_customer_id=customer)
         customer = stripe.Customer.retrieve(customer)
         customer_email = customer.get('email')
-        subscription = invoice.get('subscription')
         profile.first_month = False
         user_clubs = profile.book_club_subscriptions_this_month.all()
         book_clubs = BookOfMonth.objects.all()
@@ -246,6 +247,8 @@ class StripeWH_Handler:
         invoice = event.data.object
         customer = invoice.get('customer')
         profile = get_object_or_404(UserProfile, stripe_customer_id=customer)
+        profile.book_club_subscriptions_next_month.clear()
+        profile.book_club_subscriptions_this_month.clear()
         customer = stripe.Customer.retrieve(customer)
         customer_email = customer.get('email')
         subscription = invoice.get('subscription')

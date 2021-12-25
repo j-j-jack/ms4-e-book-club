@@ -33,6 +33,7 @@ def profile(request):
     # print(book_of_the_month)
     # user_profile.book_club_subscriptions_this_month.add(book_of_the_month)
     book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
+    book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
     print(book_club_subscriptions_this_month)
     subscriptions_in_bag = []
     if request.session['bag']:
@@ -45,6 +46,7 @@ def profile(request):
         'on_profile_page': True,
         'user_profile': user_profile,
         'book_club_subscriptions_this_month': book_club_subscriptions_this_month,
+        'book_club_subscriptions_next_month': book_club_subscriptions_next_month,
         'book_clubs': book_clubs,
         'subscriptions_in_bag': subscriptions_in_bag,
     }

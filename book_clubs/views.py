@@ -7,6 +7,7 @@ import json
 from products.models import Category
 from .models import BookOfMonth
 from .forms import BookOfMonthForm
+from profiles.models import UserProfile
 # Create your views here.
 
 
@@ -49,3 +50,29 @@ def edit_book_clubs(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def unsubscribe_next_month(request, item_id):
+    """Unsubscribe from a particular book club next month"""
+
+    book_club = BookOfMonth.objects.get(pk=item_id)
+    redirect_url = request.POST.get('redirect_url')
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    user_profile.book_club_subscriptions_next_month.remove(book_club)
+    messages.success(
+        request, f'You will not be subscribed to the {book_club.friendly_name} book club next month')
+    return redirect(redirect_url)
+
+
+@login_required
+def resubscribe_next_month(request, item_id):
+    """Unsubscribe from a particular book club next month"""
+
+    book_club = BookOfMonth.objects.get(pk=item_id)
+    redirect_url = request.POST.get('redirect_url')
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    user_profile.book_club_subscriptions_next_month.add(book_club)
+    messages.success(
+        request, f'You are resubscribed to the {book_club.friendly_name} next month')
+    return redirect(redirect_url)

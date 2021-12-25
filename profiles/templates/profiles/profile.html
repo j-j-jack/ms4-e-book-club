@@ -66,14 +66,13 @@
                     </table>
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12">
                 <p class="text-muted">Book Club Subscriptions</p>
                 <div class="order-history table-responsive">
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
                                 <th>Book Club</th>
-                                <th>Book this month</th>
                                 <th>Subscribed this Month</th>
                                 <th>Subscription to Continue Next Month</th>
                             </tr>
@@ -85,9 +84,9 @@
                                         {{ book_club.friendly_name }}
                                         </a>
                                     </td>
-                                    <td>{{ book_club.book }}</td>
                                     <td>{% if book_club in book_club_subscriptions_this_month %}yes{% else %}no{% endif %}</td>
-                                    <td>{% if book_club in user_profile.book_club_subscriptions_next_month %}yes{% else %}no{% endif %}</td>
+                                    <td>{% if book_club in book_club_subscriptions_next_month %}yes{% else %}no{% endif %}</td>
+                                    {% if book_club not in book_club_subscriptions_this_month %}
                                     <td>
                                     {% if book_club.id in subscriptions_in_bag %}
                                     <button class="remove-sub btn btn-black rounded-0 text-uppercase" id='{{ book_club.id }}'>Remove from Bag</button>   
@@ -96,12 +95,38 @@
                                         {% csrf_token %}
                                         <div class="form-row">
                                             <div class="col-12">
-                                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                                                <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag">
                                             </div>
                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </div>
                                     </form>
                                     </td>
+                                    {% endif %}
+                                    {% else %}
+                                    
+                                    <td>
+                                        {% if book_club in book_club_subscriptions_next_month %}
+                                    <form class="form" action="{% url 'unsubscribe_next_month'  book_club.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Unsubscribe">
+                                            </div>
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        </div>
+                                    </form>
+                                    {% else %}
+                                    <form class="form" action="{% url 'resubscribe_next_month'  book_club.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Resubscribe">
+                                            </div>
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        </div>
+                                    </form>
+                                    </td>
+                                    {% endif %}
                                 </tr>
                                 {% endif %}
                             {% endfor %}
