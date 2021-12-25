@@ -32,7 +32,7 @@ if DEVELOPEMENT == '1':
 DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOST_NAME'), '127.0.0.1',
-                 '0668-2a01-b340-60-d569-348a-6d32-6b57-10b5.ngrok.io']
+                 'c66d-2a01-b340-64-1b23-19d8-6e98-c309-1a1b.ngrok.io']
 
 
 # Application definition

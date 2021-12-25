@@ -1,3 +1,4 @@
+from time import time
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
@@ -8,6 +9,9 @@ from products.models import Category
 from .models import BookOfMonth
 from .forms import BookOfMonthForm
 from profiles.models import UserProfile
+import stripe
+from django.conf import settings
+from checkout.views import get_next_month_timestamp
 # Create your views here.
 
 
@@ -60,12 +64,51 @@ def unsubscribe_next_month(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     user_profile = get_object_or_404(UserProfile, user=request.user)
     user_profile.book_club_subscriptions_next_month.remove(book_club)
+    subscription_count = user_profile.book_club_subscriptions_next_month.all().count()
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    timestamp = get_next_month_timestamp()
+    if user_profile.first_month:
+        subscription = stripe.Subscription.retrieve(
+            user_profile.stripe_subscription_id)
+        subscription_schedule = stripe.SubscriptionSchedule.retrieve(
+            subscription.schedule)
+        subscription_schedule_phase_zero_start_date = subscription_schedule.phases[
+            0].start_date
+        subscription_schedule_phase_zero_end_date = subscription_schedule.phases[
+            0].end_date
+        subscription_schedule_phase_one_start_date = subscription_schedule.phases[
+            1].start_date
+        subscription_schedule_phase_one_end_date = subscription_schedule.phases[
+            1].end_date
+        stripe.SubscriptionSchedule.modify(
+            subscription.schedule,
+            phases=[
+                {
+                    'items': [
+                        {'price': settings.STRIPE_DUMMY_PRICE,
+                            'quantity': 1},
+                    ],
+                    'start_date': subscription_schedule_phase_zero_start_date,
+                    'end_date': subscription_schedule_phase_zero_end_date},
+                {
+                    'items': [
+                        {'price': settings.STRIPE_PRICE,
+                         'quantity': subscription_count},
+                    ],
+                    'start_date': subscription_schedule_phase_one_start_date,
+                    'end_date': subscription_schedule_phase_one_end_date
+                },
+            ],
+        )
+    else:
+        stripe.Subscription.modify(user_profile.stripe_subscription_id,
+                                   quantity=subscription_count,)
     messages.success(
         request, f'You will not be subscribed to the {book_club.friendly_name} book club next month')
     return redirect(redirect_url)
 
 
-@login_required
+@ login_required
 def resubscribe_next_month(request, item_id):
     """Unsubscribe from a particular book club next month"""
 
@@ -73,6 +116,45 @@ def resubscribe_next_month(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     user_profile = get_object_or_404(UserProfile, user=request.user)
     user_profile.book_club_subscriptions_next_month.add(book_club)
+    subscription_count = user_profile.book_club_subscriptions_next_month.all().count()
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    timestamp = get_next_month_timestamp()
+    if user_profile.first_month:
+        subscription = stripe.Subscription.retrieve(
+            user_profile.stripe_subscription_id)
+        subscription_schedule = stripe.SubscriptionSchedule.retrieve(
+            subscription.schedule)
+        subscription_schedule_phase_zero_start_date = subscription_schedule.phases[
+            0].start_date
+        subscription_schedule_phase_zero_end_date = subscription_schedule.phases[
+            0].end_date
+        subscription_schedule_phase_one_start_date = subscription_schedule.phases[
+            1].start_date
+        subscription_schedule_phase_one_end_date = subscription_schedule.phases[
+            1].end_date
+        stripe.SubscriptionSchedule.modify(
+            subscription.schedule,
+            phases=[
+                {
+                    'items': [
+                        {'price': settings.STRIPE_DUMMY_PRICE,
+                            'quantity': 1},
+                    ],
+                    'start_date': subscription_schedule_phase_zero_start_date,
+                    'end_date': subscription_schedule_phase_zero_end_date},
+                {
+                    'items': [
+                        {'price': settings.STRIPE_PRICE,
+                         'quantity': subscription_count},
+                    ],
+                    'start_date': subscription_schedule_phase_one_start_date,
+                    'end_date': subscription_schedule_phase_one_end_date
+                },
+            ],
+        )
+    else:
+        stripe.Subscription.modify(user_profile.stripe_subscription_id,
+                                   quantity=subscription_count,)
     messages.success(
         request, f'You are resubscribed to the {book_club.friendly_name} next month')
     return redirect(redirect_url)

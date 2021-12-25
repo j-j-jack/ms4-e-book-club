@@ -81,7 +81,6 @@ class StripeWH_Handler:
         """
         Handle a generic/unknown/unexpected webhook event
         """
-        print(event.data.object.subscription)
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
@@ -221,21 +220,41 @@ class StripeWH_Handler:
         """
         invoice = event.data.object
         customer = invoice.get('customer')
-        profile = get_object_or_404(UserProfile, stripe_customer_id=customer)
+        profile = get_object_or_404(
+            UserProfile, stripe_customer_id=customer)
+        amount_paid = None
         customer = stripe.Customer.retrieve(customer)
         customer_email = customer.get('email')
-        profile.first_month = False
-        user_clubs = profile.book_club_subscriptions_this_month.all()
-        book_clubs = BookOfMonth.objects.all()
-        for club in book_clubs:
-            if club in user_clubs:
-                profile.owned_books.add(club.book)
-                print(club.book)
-        profile.first_month = False
-        profile.save()
+        if invoice.amount_paid > 0:
+
+            profile.first_month = False
+            user_resubscriptions = profile.book_club_subscriptions_next_month.all()
+            profile.book_club_subscriptions_this_month.clear()
+            # update the book club subscriptions from this month to the next month
+            for club in user_resubscriptions:
+                profile.book_club_subscriptions_this_month.add(club)
+            user_clubs = profile.book_club_subscriptions_this_month.all()
+            book_clubs = BookOfMonth.objects.all()
+            for club in book_clubs:
+                if club in user_clubs:
+                    profile.owned_books.add(club.book)
+            # only remove first month if the subscription is past the dummy price
+            profile.save()
+        else:
+            amount_paid = 0
+            subscription_count = 0
+            user_clubs = profile.book_club_subscriptions_this_month.all()
+            for club in user_clubs:
+                subscription_count = subscription_count + 1
+                if subscription_count < 2:
+                    amount_paid = amount_paid + 2
+                elif subscription_count >= 2 and subscription_count < 4:
+                    amount_paid = amount_paid + 1.75
+                else:
+                    amount_paid = amount_paid + 1.50
 
         self._send_invoice_paid_email(
-            profile, customer_email, invoice.amount_paid)
+            profile, customer_email, amount_paid)
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)

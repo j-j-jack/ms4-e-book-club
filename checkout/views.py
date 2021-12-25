@@ -83,25 +83,37 @@ def cache_checkout_data(request):
                 user_profile.save()
             else:
                 if user_profile.first_month:
-                    subscription = stripe.Subscription.modify(
-                        existing_subscription)
-                    subscription_schedule = stripe.SubscriptionSchedule.Modify(
-                        subscription.schedule,
-                        phases=[
-                            {
-                                'items': [
-                                    {'price': settings.STRIPE_DUMMY_PRICE,
-                                        'quantity': 1},
-                                ],
-                            },
-                            {
-                                'items': [
-                                    {'price': settings.STRIPE_PRICE,
-                                     'quantity': subscription_quantity},
-                                ],
-                            },
-                        ],
-                    )
+                    subscription = stripe.Subscription.retrieve(
+                        user_profile.stripe_subscription_id)
+                    subscription_schedule = stripe.SubscriptionSchedule.retrieve(
+                        subscription.schedule)
+                    subscription_schedule_phase_zero_start_date = subscription_schedule.phases[
+                        0].start_date
+                    subscription_schedule_phase_zero_end_date = subscription_schedule.phases[
+                        0].end_date
+                    subscription_schedule_phase_one_start_date = subscription_schedule.phases[
+                        1].start_date
+                    subscription_schedule_phase_one_end_date = subscription_schedule.phases[
+                        1].end_date
+                    stripe.SubscriptionSchedule.modify(subscription.schedule,
+                                                       phases=[
+                                                           {
+                                                               'items': [
+                                                                   {'price': settings.STRIPE_DUMMY_PRICE,
+                                                                    'quantity': 1},
+                                                               ],
+                                                               'start_date': subscription_schedule_phase_zero_start_date,
+                                                               'end_date': subscription_schedule_phase_zero_end_date},
+                                                           {
+                                                               'items': [
+                                                                   {'price': settings.STRIPE_PRICE,
+                                                                    'quantity': subscription_quantity},
+                                                               ],
+                                                               'start_date': subscription_schedule_phase_one_start_date,
+                                                               'end_date': subscription_schedule_phase_one_end_date
+                                                           },
+                                                       ],
+                                                       )
                 else:
                     stripe.Subscription.modify(existing_subscription,
                                                quantity=subscription_quantity,)
@@ -188,6 +200,7 @@ def checkout(request):
             customer = stripe.Customer.create(
                 name=request.user
             )
+            user_profile.first_month = True
             user_profile.stripe_customer_id = customer.id
             user_profile.save()
         else:

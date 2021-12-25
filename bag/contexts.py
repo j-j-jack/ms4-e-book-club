@@ -13,7 +13,12 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
-    user_subscription_count = UserProfile.objects.all().count()
+    user_profile = None
+    user_subscription_count = 0
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile,  user=request.user)
+        user_subscription_count = user_profile.book_club_subscriptions_this_month.all().count()
+        print(str(user_subscription_count) + "= subscription_count")
     for item_id, type in bag.items():
         if type == 'P':
             product = get_object_or_404(Product, pk=item_id)
@@ -41,6 +46,7 @@ def bag_contents(request):
                 book_club_subscription.price = decimal.Decimal(1.50)
                 book_club_subscription.save()
             user_subscription_count += 1
+            print(str(user_subscription_count) + "= subscription_count")
             product_count += 1
             bag_items.append({
                 'item_id': item_id,
