@@ -50,13 +50,13 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="book-clubs-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="" id="book-clubs-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Book Clubs
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="book-clubs-dropdown">
-                <a href="" class="dropdown-item ">Fiction Book Clubs</a>
-                <a href="" class="dropdown-item ">Non-Fiction Book Clubs</a>
-                <a href="" class="dropdown-item ">Child/Teen Book Clubs</a>
+                <a href="{% url 'fiction_clubs' %}" class="dropdown-item ">Fiction Book Clubs</a>
+                <a href="{% url 'non_fiction_clubs' %}" class="dropdown-item ">Non-Fiction Book Clubs</a>
+                <a href="{% url 'child_teen_clubs' %}" class="dropdown-item ">Child/Teen Book Clubs</a>
             </div>
         </li>
     </ul>

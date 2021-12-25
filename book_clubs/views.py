@@ -15,6 +15,21 @@ from checkout.views import get_next_month_timestamp
 # Create your views here.
 
 
+def fiction_book_clubs(request):
+    template = 'book_clubs/fiction-book-clubs.html'
+    return render(request, template)
+
+
+def non_fiction_book_clubs(request):
+    template = 'book_clubs/non-fiction-book-clubs.html'
+    return render(request, template)
+
+
+def child_teen_book_clubs(request):
+    template = 'book_clubs/child-teen-book-clubs.html'
+    return render(request, template)
+
+
 @login_required
 def edit_book_clubs(request):
     """ Edit the book clubs """
