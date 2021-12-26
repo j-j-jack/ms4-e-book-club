@@ -60,8 +60,10 @@ def product_detail(request, product_id):
     load_round = 0
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
     product = get_object_or_404(Product, pk=product_id)
-    user_review_exists = product.reviews.filter(
-        review_by=request.user).exists()
+    user_review_exists = False
+    if request.user.is_authenticated:
+        user_review_exists = product.reviews.filter(
+            review_by=request.user).exists()
     user_review = None
     if user_review_exists:
         user_review = product.reviews.filter(review_by=request.user).first()
