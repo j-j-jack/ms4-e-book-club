@@ -13,7 +13,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <a href="#" class="home-carousel-image">
+      <a href="{% url 'fiction_clubs' %}" class="home-carousel-image">
       <img src="{{ MEDIA_URL }}images/carousel-fiction.jpg" class="d-block w-100" alt="...">
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <a href="#" class="home-carousel-image">
+      <a href="{% url 'non_fiction_clubs' %}" class="home-carousel-image">
       <img src="{{ MEDIA_URL }}images/carousel-non-fiction.jpg" class="d-block w-100" alt="...">
       </a>
       <div class="carousel-caption d-none d-md-block">
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <a href="#" class="home-carousel-image"> </a>
+      <a href="{% url 'child_teen_clubs' %}" class="home-carousel-image">
       <img src="{{ MEDIA_URL }}images/carousel-children.jpg" class="d-block w-100" alt="...">
       </a>  
       <div class="carousel-caption d-none d-md-block">
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <a href="#" class="home-carousel-image"> </a>
+      <a href="{% url 'products' %}" class="home-carousel-image">
       <img src="{{ MEDIA_URL }}images/carousel-bestsellers.jpg" class="d-block w-100" alt="...">
       </a>  
       <div class="carousel-caption d-none d-md-block">
@@ -79,8 +79,7 @@
                                 {% endif %}
     {% endfor %}
     </div>
-    </div>
-  </div>
+
  
 
 
@@ -94,8 +93,7 @@
     </div>
     <div class="col-sm-12 col-md-4">
       <h3>Save money by subscribing to more than one book club</h3>
-      <p>If you are interested in more than one genre you can save more money by  subscribing to more than one book club.
-           If you have an account you can view the full pricing details <a href="#"><u>here.</u></a></p>
+      <p>If you are interested in more than one genre you can save more money by subscribing to more than one book club. It's only €2 for your first 2 subscriptions, €1.75 for the next 2 and just €1.50 for every subsequent subscription!</p>
     </div>
     <div class="col-sm-12 col-md-4">
       <h3>Get access to the heaps of the latest titles</h3>
@@ -103,4 +101,7 @@
           curated by our resident team of bookworms and updated weekly</p>
     </div>
 </div>
+
+    </div>
+  </div>
 {% endblock %}
