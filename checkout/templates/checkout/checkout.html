@@ -78,7 +78,7 @@
                             <p class="my-0"><strong>{{ item.book_club.category.friendly_name }} Book Club Subscription</strong></p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">€2</p>
+                            <p class="my-0 small text-muted">item.book_club.price</p>
                         </div>
                     </div>
                 {% endif %}
@@ -87,8 +87,6 @@
                 <div class="row text-black text-right">
                     <div class="col-7 offset-2">
                         <p class="my-0">Order Total:</p>
-                        <p class="my-0">Delivery:</p>
-                        <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="col-3">
                         <p class="my-0"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
@@ -114,7 +112,7 @@
                         {{ order_form.postcode | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                         <div class="form-check form-check-inline float-right mr-0">
-							<label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+							<label class="form-check-label" for="id-save-info">Save this information to my profile</label>
                             <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
                         </div>
                     </fieldset>

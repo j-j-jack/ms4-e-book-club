@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.fields import BooleanField
 from django.db.models.fields.json import JSONField
 from django.db.models import Avg
+from django.db.models.fields.related import ForeignKey
 
 
 class WiderCategory(models.Model):
