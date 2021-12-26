@@ -1,3 +1,5 @@
+{% autoescape off %}
+
 Hello {{ profile.user }}!
 
 This is a confirmation of your order at E-Book Club that you have paid your month subscription.
@@ -20,3 +22,5 @@ Thank you for your continued subscription!
 Sincerely,
 
 E-Book Club
+
+{% endautoescape %}
