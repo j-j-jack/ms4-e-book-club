@@ -184,8 +184,8 @@ jQuery(document).ready(function () {
         } catch (err) {
           console.log(err.message);
         }
-        jsonResponseLength = Object.keys(jsonResponse).length;
-        if (jsonResponseLength < 3) {
+        loadMoreOrNot = JSON.parse(response.load_more);
+        if (!loadMoreOrNot) {
           jQuery("#load-more-container").attr("style", " display:none");
         }
       },

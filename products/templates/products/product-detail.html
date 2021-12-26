@@ -106,7 +106,7 @@
                 <p class="mb-0">{{ user_review.review_body }}</p>
                     <small>
                         <a href="{% url 'edit_review' product.id %}">Edit</a> |
-                        <a class="text-danger" href="{% url 'delete_review' product.id %}">Delete</a>
+                        <a class="text-danger" href="{% url 'delete_review'  user_review.id %}">Delete</a>
                     </small>
         </div>
     </div>

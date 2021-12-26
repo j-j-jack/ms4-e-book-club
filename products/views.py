@@ -38,15 +38,17 @@ def products(request):
             products = products.filter(queries)
 
     if is_ajax:
+        load_more = True
         load_round = int(request.GET.get('load_round'))
         response_items = products[load_round*20: (load_round*20)+20]
+        load_more = products[(load_round*20)+20:(load_round*20)+21].exists()
         response_items = serializers.serialize('json', response_items)
-        return JsonResponse({'items': response_items}, status=200)
+        return JsonResponse({'items': response_items, 'load_more': load_more}, status=200)
     #products = products[0: 3]
     all_categories = Category.objects.all()
     all_categories = serializers.serialize('json', all_categories)
     context = {
-        "products": products,
+        "products": products[0:20],
         "search_term": query,
         'current_categories': categories,
         'all_categories': all_categories,
