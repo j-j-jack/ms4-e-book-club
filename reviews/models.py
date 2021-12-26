@@ -7,6 +7,7 @@ from django.db import models
 from django.db.models.fields import CharField
 from products.models import Product
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Review(models.Model):
@@ -18,7 +19,8 @@ class Review(models.Model):
         User, null=True, on_delete=models.SET_NULL, related_name='reviews')
     title = CharField(max_length=100, null=False, blank=False)
     review_body = models.TextField(null=False, blank=False)
-    rating = models.IntegerField(null=False, blank=False, default=0)
+    rating = models.PositiveIntegerField(null=False, blank=False, default=1, validators=[
+                                         MinValueValidator(1), MaxValueValidator(5)])
     # likes = models.IntegerField(null=True, blank=False, default=0)
     # unlikes = models.IntegerField(null=True, blank=False, default=0)
 
