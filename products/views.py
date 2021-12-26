@@ -1,13 +1,18 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.contrib import admin, messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
+from django.views.decorators.http import require_POST
 from .models import Product, Category
 from django.db.models import Q
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse
 from django.core import serializers
 from .forms import ProductForm
+from profiles.models import UserProfile
+import os
+from django.conf import settings
 # Create your views here.
 
 
@@ -100,6 +105,12 @@ def product_detail(request, product_id):
                 load_round*5: (load_round*5)+5]
         response_items = serializers.serialize('json', response_items)
         return JsonResponse({'items': response_items}, status=200)
+    owns_book = False
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        owned_books = user_profile.owned_books.all()
+        if product in owned_books:
+            owns_book = True
     context = {
         "product": product,
         'all_categories': all_categories,
@@ -107,6 +118,7 @@ def product_detail(request, product_id):
         'reviews': reviews,
         'load_more': load_more,
         'user_review': user_review,
+        'owns_book': owns_book,
     }
     return render(request, 'products/product-detail.html', context)
 
@@ -187,3 +199,20 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def download_product(request, product_id):
+    """ Delete a product from the store """
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    product = get_object_or_404(Product, id=product_id)
+    owned_books = user_profile.owned_books.all()
+    if product in owned_books:
+        obj = Product.objects.get(id=product_id)
+        filename = obj.pdf.path
+        response = FileResponse(open(filename, 'rb'))
+        return response
+    else:
+        messages.error(
+            request, 'Sorry, You don\'t currently own this book. Please pay for the book in order to download it')
+        return redirect(reverse('home'))

@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-
+    {% if not owns_book %}
     {% if in_bag %}
                         <div class="row">
                             <div class="col-12">
@@ -85,6 +85,25 @@
                         </div>
                     </form>
     {% endif %}
+    {% endif %}
+
+    {% if owns_book %}
+    <form class="form" action="{% url 'download' product.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12">
+                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Shopping</span>
+                                </a>
+                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Download">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>
+    {% endif %}
     <div class="review-header mt-5 mb-2 row">
     <div class="col">
         <h2>Reviews</h2>
@@ -95,7 +114,6 @@
         {% endif %}
     </div>
     </div>
-
     {% if reviews or user_review %}
     <!-- display user's review at the top for convenience -->
     {% if user_review %}
