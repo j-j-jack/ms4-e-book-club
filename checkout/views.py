@@ -309,6 +309,9 @@ def checkout_success(request, order_number):
 
 def order_search(request):
     template = 'checkout/order-search.html'
+    context = {
+
+    }
     if request.GET:
         if 'q' in request.GET:
             print('qqqq')
@@ -317,11 +320,14 @@ def order_search(request):
             if not query:
                 messages.error(
                     request, "You didn't enter any search criteria!")
-                return redirect('products')
+                return redirect('order_search')
             orders = Order.objects.all()
             queries = Q(order_number__icontains=query) | Q(
                 full_name__icontains=query)
             orders = orders.filter(queries)
+            if orders.count() == 0:
+                messages.info(
+                    request, "Your query didn't return any results. Adjust your query and try again.")
             context = {
                 "orders": orders
             }
