@@ -3,6 +3,8 @@ jQuery(document).ready(function () {
   let allCategories = jQuery("#all-categories").text();
   let mediaURL = jQuery("#media-url").text();
   allCategories = JSON.parse(allCategories);
+  let ajaxResponseContainer = jQuery("#ajax-response");
+  let productCardCount = 20;
   jQuery("#load-more").click(function () {
     loadRound += 1;
     jQuery.ajax({
@@ -21,14 +23,11 @@ jQuery(document).ready(function () {
           let bookId;
           jsonResponse = JSON.parse(response.items);
           let template = `
-            <div class="row">
-            <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
-                <div class="row">`;
+            `;
 
           for (var item in jsonResponse) {
             let errorExists = false;
-
+            productCardCount += 1;
             try {
               bookName = jsonResponse[item].fields.name;
             } catch (err) {
@@ -102,7 +101,7 @@ jQuery(document).ready(function () {
 
             if (errorExists == false) {
               template += `
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="product-card col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 <a href="product_detail/${bookId}">
                                     <img class="card-img-top img-fluid" src="${mediaURL}${bookImage}" alt="${bookName}">
@@ -151,35 +150,31 @@ jQuery(document).ready(function () {
                             </div>
                         </div>`;
             }
-            if ((item + 1) % 1 == 0) {
+            if (productCardCount % 1 == 0) {
               template += `
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>
                             </div>`;
             }
-            if ((item + 1) % 2 == 0) {
+            if (productCardCount % 2 == 0) {
               template += `
                             <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
                                 <hr>
                             </div>`;
             }
-            if ((item + 1) % 3 == 0) {
+            if (productCardCount % 3 == 0) {
               template += `
                             <div class="col-12 d-none d-lg-block d-xl-none mb-5">
                                 <hr>
                             </div>`;
             }
-            if ((item + 1) % 4 == 0) {
+            if (productCardCount % 4 == 0) {
               template += `
                             <div class="col-12 d-none d-xl-block mb-5">
                                 <hr>
                             </div>`;
             }
           }
-          template += `
-            </div>
-            </div>
-            </div>`;
           jQuery("#ajax-response").append(template);
         } catch (err) {
           console.log(err.message);
