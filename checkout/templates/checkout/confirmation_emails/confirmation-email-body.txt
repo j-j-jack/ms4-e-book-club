@@ -1,5 +1,4 @@
-{% autoescape off %}
-Hello {{ order.full_name }}!
+{% autoescape off %}Hello {{ order.full_name }}!
 
 This is a confirmation of your order at E-Book Club. Your order information is below:
 

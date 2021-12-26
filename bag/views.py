@@ -26,7 +26,7 @@ def view_bag(request):
                 elif i >= 3 and i < 5:
                     subscription_prices.append(1.75)
                 elif i >= 5:
-                    subscription_prices.append(2)
+                    subscription_prices.append(1.50)
     if 'bag' in request.session:
         bag = request.session['bag']
         position = 0

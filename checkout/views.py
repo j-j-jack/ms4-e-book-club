@@ -152,21 +152,35 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
-
+            subscriptions_purchased = 0
+            current_subscription_count = user_profile.book_club_subscriptions_this_month.all().count()
             for item_id, item_data in bag.items():
                 try:
+
+                    print('current prices')
+                    price = 0
                     if item_data == 'P':
                         product = Product.objects.get(id=item_id)
                         order_line_item = OrderLineItemProduct(
                             order=order,
                             product=product,
+                            lineitem_total=2.50,
                         )
                         order_line_item.save()
                     elif item_data == 'S':
+                        subscriptions_purchased += 1
+                        total_subscriptions = subscriptions_purchased + current_subscription_count
+                        if total_subscriptions < 3:
+                            price = 2
+                        if total_subscriptions >= 3 and total_subscriptions < 5:
+                            price = 1.75
+                        elif total_subscriptions >= 5:
+                            price = 1.50
                         book_of_month = BookOfMonth.objects.get(id=item_id)
                         order_subscription_line_item = OrderLineItemSubscription(
                             order=order,
                             book_of_month=book_of_month,
+                            lineitem_total=price,
                         )
                         order_subscription_line_item.save()
 

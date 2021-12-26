@@ -92,6 +92,7 @@ class StripeWH_Handler:
         intent = event.data.object
         user_profile = get_object_or_404(
             UserProfile, id=intent.metadata.user_profile)
+        subscription_count_before_order = user_profile.book_club_subscriptions_this_month.all().count()
         pid = intent.id
         bag = intent.metadata.bag
         for item_id, item_data in json.loads(bag).items():
@@ -102,6 +103,10 @@ class StripeWH_Handler:
                     int(item_id))
                 user_profile.save()
                 book = get_object_or_404(BookOfMonth, id=int(item_id)).book
+                user_profile.owned_books.add(book.id)
+                user_profile.save()
+            elif item_data == 'P':
+                book = get_object_or_404(BookOfMonth, id=int(item_id))
                 user_profile.owned_books.add(book.id)
                 user_profile.save()
         save_info = intent.metadata.save_info
@@ -183,19 +188,30 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 order_exists = True
+                subscriptions_purchased = 0
                 for item_id, item_data in json.loads(bag).items():
                     if item_data == 'P':
                         product = Product.objects.get(id=item_id)
                         order_line_item = OrderLineItemProduct(
                             order=order,
                             product=product,
+                            price=2.50,
                         )
                         order_line_item.save()
                     elif item_data == 'S':
+                        subscriptions_purchased += 1
+                        total_subscriptions = subscriptions_purchased + subscription_count_before_order
+                        if total_subscriptions < 3:
+                            price = 2
+                        if total_subscriptions >= 3 and total_subscriptions < 5:
+                            price = 1.75
+                        elif total_subscriptions >= 5:
+                            price = 1.50
                         book_of_month = BookOfMonth.objects.get(id=item_id)
                         order_subscription_line_item = OrderLineItemSubscription(
                             order=order,
                             book_of_month=book_of_month,
+                            lineitem_total=price,
                         )
                         order_subscription_line_item.save()
                 if order_exists:

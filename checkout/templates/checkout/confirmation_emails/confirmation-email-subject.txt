@@ -1,3 +1,1 @@
-{% autoescape off %}
-E-Book Club Confirmation for Order Number {{ order.order_number }}
-{% endautoescape %}
+{% autoescape off %}E-Book Club Confirmation for Order Number {{ order.order_number }}{% endautoescape %}
