@@ -90,8 +90,14 @@ def product_detail(request, product_id):
     if is_ajax:
         load_round = int(request.GET.get('load_round'))
         # exclude users own review if exists as it is at the top
-        response_items = product.reviews.all().exclude(pk=user_review.pk)[
-            load_round*5: (load_round*5)+5]
+        if user_review_exists:
+            response_items = product.reviews.all().exclude(pk=user_review.pk)[
+                load_round*5: (load_round*5)+5]
+            response_items = serializers.serialize('json', response_items)
+            return JsonResponse({'items': response_items}, status=200)
+        else:
+            response_items = product.reviews.all()[
+                load_round*5: (load_round*5)+5]
         response_items = serializers.serialize('json', response_items)
         return JsonResponse({'items': response_items}, status=200)
     context = {

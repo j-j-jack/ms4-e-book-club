@@ -16,7 +16,7 @@ class ReviewForm(forms.ModelForm):
         placeholders = {
             'title': 'Give your review a title*',
             'review_body': 'Write your review here*',
-            'rating': 5,
+            'rating': 0,
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True

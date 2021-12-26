@@ -18,7 +18,7 @@ class Review(models.Model):
         User, null=True, on_delete=models.SET_NULL, related_name='reviews')
     title = CharField(max_length=100, null=False, blank=False)
     review_body = models.TextField(null=False, blank=False)
-    rating = models.IntegerField(null=False, blank=False, default=5)
+    rating = models.IntegerField(null=False, blank=False, default=0)
     # likes = models.IntegerField(null=True, blank=False, default=0)
     # unlikes = models.IntegerField(null=True, blank=False, default=0)
 
