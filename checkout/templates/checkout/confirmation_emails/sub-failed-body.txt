@@ -1,3 +1,4 @@
+{% autoescape off %}
 Hello {{ profile.user }}!
 
 This is a notification that your subscription payment has failed.
@@ -14,3 +15,4 @@ Thank you for your continued subscription!
 Sincerely,
 
 E-Book Club
+{% endautoescape %}

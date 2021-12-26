@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Fiction Book Clubs</h2>
+                <hr class="w-50 mb-1">
+            </div>
+        </div>
+        
+        <div class="container">
+           <div class="col-10 offset-1 my-auto text-center"
+           style="border: 1px solid black">
+          <form method="GET" action="{% url 'order_search' %}">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search Orders by number or name">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+            </div>
+        
+        <div class="col-12 col-lg-6">
+                <p class="text-muted">Order History</p>
+                <div class="order-history table-responsive">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Order Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}">
+                                            {{ order.order_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ order.date }}</td>
+                                    <td>€{{ order.grand_total }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                
+{% endblock %}
+
+

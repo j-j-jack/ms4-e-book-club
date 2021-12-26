@@ -17,6 +17,7 @@ from bag.contexts import bag_contents
 
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
+from django.db.models import Q
 
 import stripe
 import json
@@ -288,6 +289,28 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
     }
+
+    return render(request, template, context)
+
+
+def order_search(request):
+    template = 'checkout/order-search.html'
+    if request.GET:
+        if 'q' in request.GET:
+            print('qqqq')
+            query = request.GET['q']
+            print(request.GET['q'])
+            if not query:
+                messages.error(
+                    request, "You didn't enter any search criteria!")
+                return redirect('products')
+            orders = Order.objects.all()
+            queries = Q(order_number__icontains=query) | Q(
+                full_name__icontains=query)
+            orders = orders.filter(queries)
+            context = {
+                "orders": orders
+            }
 
     return render(request, template, context)
 
