@@ -64,25 +64,21 @@
   <div class="col text-center"><h2>Latest Books</h2></div>
 </div>
   <div class="row">
-    <div class="col-sm-6 col-md-3 text-center">
-      <a href="#" class="home-page-latest-books-link">
-        <img src="{{ MEDIA_URL }}images/placeholder-book.jpg" class="img-fluid">
-      </a>
+    {% for product in products %}
+    {% if product.image %}      <div class="col-sm-6 col-md-3 text-center">
+                                <a href="{% url 'product_detail' product.id %}" class="home-page-latest-books-link">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}">
+                                </a>
+                                </div>
+                                {% else %}
+                                <div class="col-sm-6 col-md-3 text-center">
+                                <a href="{% url 'product_detail' product.id %}" class="home-page-latest-books-link">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }} images/noimage.png" alt="{{ product.name }}">
+                                </a>
+                                </div>
+                                {% endif %}
+    {% endfor %}
     </div>
-    <div class="col-sm-6 col-md-3 text-center">
-      <a href="#" class="home-page-latest-books-link">
-        <img src="{{ MEDIA_URL }}images/placeholder-book.jpg" class="img-fluid">
-      </a>
-    </div>
-    <div class="col-sm-6 col-md-3 text-center">
-      <a href="#" class="home-page-latest-books-link">
-        <img src="{{ MEDIA_URL }}images/placeholder-book.jpg" class="img-fluid">
-      </a>
-    </div>
-    <div class="col-sm-6 col-md-3 text-center">
-      <a href="#" class="home-page-latest-books-link">
-        <img src="{{ MEDIA_URL }}images/placeholder-book.jpg" class="img-fluid">
-      </a>
     </div>
   </div>
  
