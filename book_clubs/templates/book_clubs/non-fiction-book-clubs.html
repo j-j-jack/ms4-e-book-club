@@ -53,7 +53,6 @@
                                         </div>
                                     </form>
                                     {% endif %}
-                                </tr>
                                 {% endif %}
                                 {% else %}
                             <form class="form" action="{% url 'add_sub_to_bag'  club.id %}" method="POST">
@@ -92,7 +91,7 @@
                 </div>
         </div>
         {% endfor %}
-
+</div>
         <script>
 jQuery(document).ready(function () {console.log('script ready')
             jQuery(".remove-sub").click(function () {

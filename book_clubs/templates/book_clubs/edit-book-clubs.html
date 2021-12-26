@@ -16,7 +16,7 @@
 {% block content %}
     <div id="form-loading-overlay">
         <div id="form-loading-text">
-            <br><br><br><h3>Please Wait... <div id="form-loading-icon"><i class="fas fa-spinner"></i></div></h3>
+            <br><br><br><h3>Please Wait... </h3><div style="display: inline-block" id="form-loading-icon"><i class="fas fa-spinner"></i></div>
         </div>
     </div>
     <div class="container">
@@ -33,7 +33,7 @@
             <div class="col-12 col-md-6">
                     
                     {% for form in forms %}
-                    <form action = "" method="POST" id = "form{{forloop.counter}}">
+                    <form action = "edit" method="POST" id = "form{{forloop.counter}}">
                     {% csrf_token %}
                     {% for field in form %}
                         {{ field|as_crispy_field }}
