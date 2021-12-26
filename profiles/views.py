@@ -36,7 +36,7 @@ def profile(request):
     book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
     print(book_club_subscriptions_this_month)
     subscriptions_in_bag = []
-    if request.session['bag']:
+    if 'bag' in request.session:
         for item in request.session['bag']:
             if request.session['bag'].get(item) == 'S':
                 subscriptions_in_bag.append(int(item))
