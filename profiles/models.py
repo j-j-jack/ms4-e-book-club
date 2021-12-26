@@ -42,6 +42,8 @@ class UserProfile(models.Model):
     owned_books = models.ManyToManyField(
         Product, null=True, blank=True, related_name='owned_by')
     first_month = BooleanField(default=False)
+    subscriptions_in_bag = models.PositiveIntegerField(
+        null=False, blank=False, default=0)
 
     def __str__(self):
         return self.user.username

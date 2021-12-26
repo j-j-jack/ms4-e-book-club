@@ -56,10 +56,12 @@ INSTALLED_APPS = [
     'reviews',
     'book_clubs',
 
+
     # Other
 
     'crispy_forms',
     'storages',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [

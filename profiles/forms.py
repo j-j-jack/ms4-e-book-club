@@ -8,7 +8,7 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         exclude = ('user', 'book_club_subscriptions_this_month',
                    'book_club_subscriptions_next_month', 'stripe_customer_id',
-                   'first_month', 'stripe_subscription_id', 'owned_books',)
+                   'first_month', 'stripe_subscription_id', 'owned_books', 'subscriptions_in_bag',)
 
     def __init__(self, *args, **kwargs):
         """

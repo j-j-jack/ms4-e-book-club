@@ -18,7 +18,7 @@ def bag_contents(request):
     if request.user.is_authenticated:
         user_profile = get_object_or_404(UserProfile,  user=request.user)
         user_subscription_count = user_profile.book_club_subscriptions_this_month.all().count()
-        print(str(user_subscription_count) + "= subscription_count")
+        user_profile.subscriptions_in_bag = 0
     for item_id, type in bag.items():
         if type == 'P':
             product = get_object_or_404(Product, pk=item_id)
@@ -32,6 +32,11 @@ def bag_contents(request):
                 'book_club': None,
             })
         elif type == 'S':
+
+            user_profile.subscriptions_in_bag += 1
+            user_profile.save()
+            print('user subscriptions in bag')
+            print(user_profile.subscriptions_in_bag)
             book_club_subscription = get_object_or_404(BookOfMonth, pk=item_id)
             if user_subscription_count < 2:
                 total = total + 2

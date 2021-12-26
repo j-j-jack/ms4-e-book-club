@@ -1,4 +1,5 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.models import User
 from django.shortcuts import (
     render, redirect, reverse, HttpResponse, get_object_or_404
 )
@@ -11,8 +12,34 @@ from profiles.models import UserProfile
 
 def view_bag(request):
     """ A view to return the index page """
-
-    return render(request, 'bag/bag.html')
+    subscription_prices = []
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        current_subscription_count = user_profile.book_club_subscriptions_this_month.all().count()
+        subscriptions_in_bag = user_profile.subscriptions_in_bag
+        total_subscriptions = current_subscription_count + subscriptions_in_bag
+        print('current prices')
+        for i in range(total_subscriptions+1):
+            if i > current_subscription_count:
+                if i < 3:
+                    subscription_prices.append(2)
+                elif i >= 3 and i < 5:
+                    subscription_prices.append(1.75)
+                elif i >= 5:
+                    subscription_prices.append(2)
+    if 'bag' in request.session:
+        bag = request.session['bag']
+        position = 0
+        for item in request.session['bag']:
+            if bag.get(item) == 'P':
+                subscription_prices.insert(position, 0)
+            position += 1
+        print(subscription_prices)
+    context = {
+        "subscription_prices": subscription_prices,
+        "subscription_number": 0,
+    }
+    return render(request, 'bag/bag.html', context)
 
 
 def add_to_bag(request, item_id):
@@ -62,6 +89,10 @@ def remove_subscription_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
 
     try:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        subscriptions_in_bag = user_profile.subscriptions_in_bag
+        user_profile.subscriptions_in_bag = subscriptions_in_bag - 1
+        user_profile.save()
         subscription = get_object_or_404(BookOfMonth, pk=item_id)
         bag = request.session.get('bag', {})
         bag.pop(item_id)
