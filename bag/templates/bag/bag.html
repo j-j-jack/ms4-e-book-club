@@ -87,7 +87,6 @@
                                     <th></th>
                                     <th scope="col">Price</th>
                                     <th scope="col"></th>
-                                    <th></th>
                                 </tr>
                             </thead>
 
@@ -116,7 +115,7 @@
                                         {% include "bag/includes/subscription-info.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><p>€{{subscription_prices|index:forloop.counter0|floatformat:2}}</p></p>
+                                        <p class="my-0">€{{subscription_prices|index:forloop.counter0|floatformat:2}}</p>
                                     </td>
                                     <td>
                                         <button class="remove-sub btn btn-black rounded-0 text-uppercase" id='{{ item.book_club.id }}'>Remove from Bag</button>
@@ -126,12 +125,12 @@
                             {% endif %}
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="pt-5 text-right">
+                                <td colspan="4" class="pt-5 text-right">
                                     {% include "bag/includes/bag-total.html" %}
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="5" class="text-right">
+                                <td colspan="4" class="text-right">
                                     {% include "bag/includes/checkout-buttons.html" %}
                                 </td>
                             </tr>
