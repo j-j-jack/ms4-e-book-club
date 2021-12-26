@@ -15,6 +15,7 @@ import stripe
 import json
 import time
 import datetime
+import decimal
 
 
 class StripeWH_Handler:
@@ -106,7 +107,7 @@ class StripeWH_Handler:
                 user_profile.owned_books.add(book.id)
                 user_profile.save()
             elif item_data == 'P':
-                book = get_object_or_404(BookOfMonth, id=int(item_id))
+                book = get_object_or_404(Product, id=int(item_id))
                 user_profile.owned_books.add(book.id)
                 user_profile.save()
         save_info = intent.metadata.save_info
@@ -128,7 +129,6 @@ class StripeWH_Handler:
         # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
-        print(username)
         profile = UserProfile.objects.get(user__username=username)
         if save_info:
             profile.default_phone_number = shipping_details.phone
@@ -159,15 +159,12 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 order_exists = True
-                print('order exists')
                 break
             except Order.DoesNotExist:
-                print('order does not exist')
                 attempt += 1
                 time.sleep(1)
         if order_exists:
             self._send_confirmation_email(order)
-            print('sent it')
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -187,6 +184,7 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
+                order.save()
                 order_exists = True
                 subscriptions_purchased = 0
                 for item_id, item_data in json.loads(bag).items():
@@ -195,23 +193,23 @@ class StripeWH_Handler:
                         order_line_item = OrderLineItemProduct(
                             order=order,
                             product=product,
-                            price=2.50,
+                            lineitem_total=decimal.Decimal(2.50),
                         )
                         order_line_item.save()
                     elif item_data == 'S':
                         subscriptions_purchased += 1
                         total_subscriptions = subscriptions_purchased + subscription_count_before_order
                         if total_subscriptions < 3:
-                            price = 2
+                            price = decimal.Decimal(2)
                         if total_subscriptions >= 3 and total_subscriptions < 5:
-                            price = 1.75
+                            price = decimal.Decimal(1.75)
                         elif total_subscriptions >= 5:
-                            price = 1.50
+                            price = decimal.Decimal(1.50)
                         book_of_month = BookOfMonth.objects.get(id=item_id)
-                        order_subscription_line_item = OrderLineItemSubscription(
+                        order_subscription_line_item = OrderLineItemProduct(
                             order=order,
                             book_of_month=book_of_month,
-                            lineitem_total=price,
+                            lineitem_total=decimal.Decimal(price),
                         )
                         order_subscription_line_item.save()
                 if order_exists:
@@ -242,7 +240,7 @@ class StripeWH_Handler:
         customer = invoice.get('customer')
         profile = get_object_or_404(
             UserProfile, stripe_customer_id=customer)
-        amount_paid = None
+        amount_paid = 0
         customer = stripe.Customer.retrieve(customer)
         customer_email = customer.get('email')
         if invoice.amount_paid > 0:

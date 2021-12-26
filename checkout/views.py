@@ -18,6 +18,7 @@ from bag.contexts import bag_contents
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from django.db.models import Q
+import decimal
 
 import stripe
 import json
@@ -158,7 +159,7 @@ def checkout(request):
                 try:
 
                     print('current prices')
-                    price = 0
+                    price = decimal.Decimal(0)
                     if item_data == 'P':
                         product = Product.objects.get(id=item_id)
                         order_line_item = OrderLineItemProduct(
@@ -171,11 +172,12 @@ def checkout(request):
                         subscriptions_purchased += 1
                         total_subscriptions = subscriptions_purchased + current_subscription_count
                         if total_subscriptions < 3:
-                            price = 2
+                            price = decimal.Decimal(2)
                         if total_subscriptions >= 3 and total_subscriptions < 5:
-                            price = 1.75
+                            price = decimal.Decimal(1.75)
                         elif total_subscriptions >= 5:
-                            price = 1.50
+                            price = decimal.Decimal(1.50)
+                        print(price)
                         book_of_month = BookOfMonth.objects.get(id=item_id)
                         order_subscription_line_item = OrderLineItemSubscription(
                             order=order,
@@ -253,11 +255,37 @@ def checkout(request):
         if not stripe_public_key:
             messages.warning(
                 request, "Stripe public key is missing... Did you forget to set it in your environment variables?")
+        subscription_prices = []
+        if request.user.is_authenticated:
+            user_profile = get_object_or_404(UserProfile, user=request.user)
+            current_subscription_count = user_profile.book_club_subscriptions_this_month.all().count()
+            subscriptions_in_bag = user_profile.subscriptions_in_bag
+            total_subscriptions = current_subscription_count + subscriptions_in_bag
+            print('current prices')
+            for i in range(total_subscriptions+1):
+                if i > current_subscription_count:
+                    if i < 3:
+                        subscription_prices.append(2)
+                    elif i >= 3 and i < 5:
+                        subscription_prices.append(1.75)
+                    elif i >= 5:
+                        subscription_prices.append(1.50)
+            if 'bag' in request.session:
+                bag = request.session['bag']
+                print(request.session['bag'])
+                position = 0
+                for item in request.session['bag']:
+                    if bag.get(item) == 'P':
+                        print(bag.get(item), position)
+                        subscription_prices.insert(position, 0)
+                    position += 1
+                    print(subscription_prices)
         template = 'checkout/checkout.html'
         context = {
             'order_form': order_form,
             'stripe_public_key': stripe_public_key,
             'client_secret': intent.client_secret,
+            'subscription_prices': subscription_prices,
         }
 
         return render(request, template, context)

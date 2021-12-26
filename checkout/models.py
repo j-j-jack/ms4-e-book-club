@@ -44,7 +44,7 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.grand_total = self.grand_total + self.lineitems.aggregate(
+        self.grand_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
 
         self.save()
@@ -54,7 +54,7 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.grand_total = self.grand_total + self.subscription_lineitems.aggregate(
+        self.grand_total = self.subscription_lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
 
         self.save()
@@ -79,6 +79,14 @@ class OrderLineItemProduct(models.Model):
                                          null=False, blank=False,
                                          editable=False)
 
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the lineitem total
+        and update the order total.
+        """
+        self.lineitem_total = self.product.price
+        super().save(*args, **kwargs)
+
 
 class OrderLineItemSubscription(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False,
@@ -89,3 +97,11 @@ class OrderLineItemSubscription(models.Model):
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          null=False, blank=False,
                                          editable=False)
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the lineitem total
+        and update the order total.
+        """
+        self.lineitem_total = 2
+        super().save(*args, **kwargs)

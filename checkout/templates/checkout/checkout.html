@@ -1,6 +1,7 @@
 
 {% extends "base.html" %}
 {% load static %}
+{% load index_tag %}
 
 
 {% block extra_js %}
@@ -34,18 +35,20 @@
 
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
-                <p class="text-muted">Order Summary ({{ product_count }})</p>
+                <p class="text-muted">Order Summary {{ product_count }}</p>
                 <div class="row">
                     <div class="col-7 offset-2">
                         <p class="mb-1 mt-0 small text-muted">Item</p>
                     </div>
                     <div class="col-3 text-right">
-                        <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                        <p class="mb-1 mt-0 small text-muted">Price</p>
                     </div>
                 </div>
                 {% for item in bag_items %}
-                {% if bag_items.type == 'product' %}
-                    <div class="row">
+                {{ item.name }}
+
+                {% if item.type == 'product' %}
+                    <div class="row mb-1">
                         
                         <div class="col-2 mb-1">
                             <a href="{% url 'product_detail' item.product.id %}">
@@ -60,25 +63,23 @@
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">€{{ item.product.price}}</p>
+                            <p class="my-0 small">€{{ item.product.price}}</p>
                         </div>
                     </div>
-                    {% elif bag_items.type == 'subscription' %}
-                    <div class="row">
+                    {% elif item.type == 'subscription' %}
+                    <div class="row mb-1">
                         <div class="col-2 mb-1">
-                            <a href="{% url '' %}">
                                 {% if item.book_club.book.image %}
-                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.book_club.category.friendly_name }} Book Club Subscription">
+                                    <img class="w-100" src="{{ MEDIA_URL }}{{item.book_club.book.image}}" alt="{{ item.book_club.category.friendly_name }} Book Club Subscription">
                                 {% else %}
                                     <img class="w-100" src="{{ MEDIA_URL }}/images/noimage.png" alt="{{ item.book_club.category.friendly_name }} Book Club Subscription">
                                 {% endif %}
-                            </a>
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.book_club.category.friendly_name }} Book Club Subscription</strong></p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">item.book_club.price</p>
+                            <p class="my-0 small">€{{subscription_prices|index:forloop.counter0|floatformat:2}}</p>
                         </div>
                     </div>
                 {% endif %}

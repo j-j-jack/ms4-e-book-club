@@ -17,6 +17,7 @@ from checkout.views import get_next_month_timestamp
 
 def fiction_book_clubs(request):
     template = 'book_clubs/fiction-book-clubs.html'
+    context = {}
     categories = Category.objects.all().filter(wider_category=1)
     list_of_category_ids = []
     for category in categories:
@@ -29,22 +30,26 @@ def fiction_book_clubs(request):
         for item in request.session['bag']:
             if request.session['bag'].get(item) == 'S':
                 subscriptions_in_bag.append(int(item))
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-    book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
-    print(book_club_subscriptions_this_month)
-    book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
-    print(book_club_subscriptions_this_month)
-    context = {
-        "book_clubs": book_clubs,
-        "subscriptions_in_bag": subscriptions_in_bag,
-        "book_club_subscriptions_this_month": book_club_subscriptions_this_month,
-        "book_club_subscriptions_next_month": book_club_subscriptions_next_month,
-    }
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
+        book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
+        context = {
+            "book_clubs": book_clubs,
+            "subscriptions_in_bag": subscriptions_in_bag,
+            "book_club_subscriptions_this_month": book_club_subscriptions_this_month,
+            "book_club_subscriptions_next_month": book_club_subscriptions_next_month,
+        }
+    else:
+        context = {
+            "book_clubs": book_clubs,
+        }
     return render(request, template, context)
 
 
 def non_fiction_book_clubs(request):
     template = 'book_clubs/non-fiction-book-clubs.html'
+    context = {}
     categories = Category.objects.all().filter(wider_category=2)
     list_of_category_ids = []
     for category in categories:
@@ -57,22 +62,26 @@ def non_fiction_book_clubs(request):
         for item in request.session['bag']:
             if request.session['bag'].get(item) == 'S':
                 subscriptions_in_bag.append(int(item))
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-    book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
-    print(book_club_subscriptions_this_month)
-    book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
-    print(book_club_subscriptions_this_month)
-    context = {
-        "book_clubs": book_clubs,
-        "subscriptions_in_bag": subscriptions_in_bag,
-        "book_club_subscriptions_this_month": book_club_subscriptions_this_month,
-        "book_club_subscriptions_next_month": book_club_subscriptions_next_month,
-    }
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
+        book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
+        context = {
+            "book_clubs": book_clubs,
+            "subscriptions_in_bag": subscriptions_in_bag,
+            "book_club_subscriptions_this_month": book_club_subscriptions_this_month,
+            "book_club_subscriptions_next_month": book_club_subscriptions_next_month,
+        }
+    else:
+        context = {
+            "book_clubs": book_clubs,
+        }
     return render(request, template, context)
 
 
 def child_teen_book_clubs(request):
     template = 'book_clubs/child-teen-book-clubs.html'
+    context = {}
     categories = Category.objects.all().filter(wider_category=3)
     list_of_category_ids = []
     for category in categories:
@@ -85,17 +94,20 @@ def child_teen_book_clubs(request):
         for item in request.session['bag']:
             if request.session['bag'].get(item) == 'S':
                 subscriptions_in_bag.append(int(item))
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-    book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
-    print(book_club_subscriptions_this_month)
-    book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
-    print(book_club_subscriptions_this_month)
-    context = {
-        "book_clubs": book_clubs,
-        "subscriptions_in_bag": subscriptions_in_bag,
-        "book_club_subscriptions_this_month": book_club_subscriptions_this_month,
-        "book_club_subscriptions_next_month": book_club_subscriptions_next_month,
-    }
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
+        book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
+        context = {
+            "book_clubs": book_clubs,
+            "subscriptions_in_bag": subscriptions_in_bag,
+            "book_club_subscriptions_this_month": book_club_subscriptions_this_month,
+            "book_club_subscriptions_next_month": book_club_subscriptions_next_month,
+        }
+    else:
+        context = {
+            "book_clubs": book_clubs,
+        }
     return render(request, template, context)
 
 
