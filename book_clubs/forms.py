@@ -4,7 +4,7 @@ from products.models import Product
 
 
 class BookOfMonthForm(forms.ModelForm):
-
+    """form used for editing the books of the month"""
     class Meta:
         model = BookOfMonth
         fields = ('book', 'description')

@@ -8,7 +8,7 @@ import decimal
 
 
 def bag_contents(request):
-
+    """function used to make the bag accessible throughout the site"""
     bag_items = []
     total = 0
     product_count = 0
@@ -32,7 +32,9 @@ def bag_contents(request):
                 'book_club': None,
             })
         elif type == 'S':
-
+            # the following code calculates the total to display on the bag page
+            # using the users current subscriptions to define the prices for the subscriptions
+            # in the bag
             user_profile.subscriptions_in_bag += 1
             user_profile.save()
             print('user subscriptions in bag')

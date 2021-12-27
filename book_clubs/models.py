@@ -11,6 +11,7 @@ class BookOfMonth(models.Model):
         Category, null=True, blank=True, on_delete=models.CASCADE, related_name="book_of_month")
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    # there can only be one book for each book of the month instance
     book = models.OneToOneField(
         Product, null=True, blank=True, on_delete=models.SET_NULL, related_name="book_of_month_information")
     description = TextField(blank=True, null=True, max_length=2000)
