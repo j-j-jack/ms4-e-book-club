@@ -45,6 +45,7 @@ class StripeWH_Handler:
         """Send the user a confirmation email for the monthly subscription payment"""
         cust_email = email
         user_clubs = profile.book_club_subscriptions_this_month.all()
+        # provided in the stripe invoice
         amount_paid = paid
         subject = render_to_string(
             'checkout/confirmation_emails/sub-paid-confirmation-subject.txt',
@@ -93,11 +94,14 @@ class StripeWH_Handler:
         intent = event.data.object
         user_profile = get_object_or_404(
             UserProfile, id=intent.metadata.user_profile)
+        # necessary to calculate the price for line items if the order is not successfully
+        # created in the checkout app
         subscription_count_before_order = user_profile.book_club_subscriptions_this_month.all().count()
         pid = intent.id
         bag = intent.metadata.bag
         for item_id, item_data in json.loads(bag).items():
             if item_data == 'S':
+                # add the subscriptoins to current and next month if purchases
                 user_profile.book_club_subscriptions_this_month.add(
                     int(item_id))
                 user_profile.book_club_subscriptions_next_month.add(
@@ -107,15 +111,18 @@ class StripeWH_Handler:
                 user_profile.owned_books.add(book.id)
                 user_profile.save()
             elif item_data == 'P':
+                # add any books purchased to the user profile
                 book = get_object_or_404(Product, id=int(item_id))
                 user_profile.owned_books.add(book.id)
                 user_profile.save()
+        # using the metadata to determine if the user wants their info saved
         save_info = intent.metadata.save_info
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
         customer = intent.customer
         payment_method = intent.payment_method
+        # this is necessary to ensure that payments continue in the future
         stripe.Customer.modify(
             customer,
             invoice_settings={
@@ -144,6 +151,7 @@ class StripeWH_Handler:
         attempt = 1
         while attempt <= 5:
             try:
+                # check if the order is already created
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
@@ -164,11 +172,14 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            # send the confirmation email if the order exists
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
         else:
+            # otherwise perform the same logic from the checkout app here and create a new order
+            # before sending the confirmation email
             order = None
             try:
                 order = Order.objects.create(
@@ -289,9 +300,10 @@ class StripeWH_Handler:
         customer = stripe.Customer.retrieve(customer)
         customer_email = customer.get('email')
         subscription = invoice.get('subscription')
+        # delete the customers subscription and profile on stripe
         stripe.Subscription.delete(subscription)
         stripe.Customer.delete(customer)
-
+        # send the user an email to notify them that the payment failed and they are no longer subscribed
         self._send_invoice_failed_email(
             profile, customer_email)
         return HttpResponse(

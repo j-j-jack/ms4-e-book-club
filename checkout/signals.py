@@ -23,7 +23,7 @@ def update_on_delete(sender, instance, **kwargs):
 @receiver(post_save, sender=OrderLineItemSubscription)
 def update_on_save_subscription(sender, instance, created, **kwargs):
     """
-    Update order total on lineitem update/create
+    Update order total on lineitem update/create for subscriptions
     """
     instance.order.update_subscription_total()
 
@@ -31,6 +31,6 @@ def update_on_save_subscription(sender, instance, created, **kwargs):
 @receiver(post_delete, sender=OrderLineItemSubscription)
 def update_on_delete_subscription(sender, instance, **kwargs):
     """
-    Update order total on lineitem delete
+    Update order total on lineitem delete for subscriptions
     """
     instance.order.update_subscription_total()
