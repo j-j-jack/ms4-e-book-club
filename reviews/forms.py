@@ -25,5 +25,6 @@ class ReviewForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
             self.fields[field].label = False
+            # rating field is not displayed but mapped to a javascript driven star system interface
             if field == 'rating':
                 self.fields[field].widget.attrs['class'] = 'd-none'

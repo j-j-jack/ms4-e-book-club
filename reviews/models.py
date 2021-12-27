@@ -21,8 +21,6 @@ class Review(models.Model):
     review_body = models.TextField(null=False, blank=False)
     rating = models.PositiveIntegerField(null=False, blank=False, default=1, validators=[
                                          MinValueValidator(1), MaxValueValidator(5)])
-    # likes = models.IntegerField(null=True, blank=False, default=0)
-    # unlikes = models.IntegerField(null=True, blank=False, default=0)
 
     def __str__(self):
         return self.title
