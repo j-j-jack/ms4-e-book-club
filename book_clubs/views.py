@@ -16,6 +16,9 @@ from checkout.views import get_next_month_timestamp
 
 
 def fiction_book_clubs(request):
+    """
+    function to render the fiction book clubs page
+    """
     template = 'book_clubs/fiction-book-clubs.html'
     context = {}
     categories = Category.objects.all().filter(wider_category=1)
@@ -24,6 +27,7 @@ def fiction_book_clubs(request):
         list_of_category_ids.append(category.id)
     book_clubs = BookOfMonth.objects.all().filter(
         category__in=list_of_category_ids).order_by("category")
+    # subscriptions in the bag are used to track whether the add or remove buttons displays
     subscriptions_in_bag = []
     if "bag" in request.session:
         print('in cookies')
@@ -32,6 +36,7 @@ def fiction_book_clubs(request):
                 subscriptions_in_bag.append(int(item))
     if request.user.is_authenticated:
         user_profile = get_object_or_404(UserProfile, user=request.user)
+        # the following querysets track whether the user can unsubscribe or resubscribe to individual clubs
         book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
         book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
         context = {
@@ -48,6 +53,9 @@ def fiction_book_clubs(request):
 
 
 def non_fiction_book_clubs(request):
+    """
+    function to render the non-fiction book clubs page
+    """
     template = 'book_clubs/non-fiction-book-clubs.html'
     context = {}
     categories = Category.objects.all().filter(wider_category=2)
@@ -80,6 +88,9 @@ def non_fiction_book_clubs(request):
 
 
 def child_teen_book_clubs(request):
+    """
+    function to render the child/teen book clubs page
+    """
     template = 'book_clubs/child-teen-book-clubs.html'
     context = {}
     categories = Category.objects.all().filter(wider_category=3)
@@ -113,7 +124,7 @@ def child_teen_book_clubs(request):
 
 @login_required
 def edit_book_clubs(request):
-    """ Edit the book clubs """
+    """ function to render the page to edit the book club choices """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -139,6 +150,8 @@ def edit_book_clubs(request):
 
         return HttpResponse(json.dumps(response), status=200)
 
+    # because each book club is its own instance of the model. a form form each book club is needed
+    # the forms are then submitted individually using ajax
     forms = []
     for cat in categories:
         forms.append(BookOfMonthForm(category=cat.id, auto_id=False))
@@ -163,6 +176,11 @@ def unsubscribe_next_month(request, item_id):
     subscription_count = user_profile.book_club_subscriptions_next_month.all().count()
     stripe.api_key = settings.STRIPE_SECRET_KEY
     timestamp = get_next_month_timestamp()
+    # The method for modifying subscription schedules in stripe is very particular
+    # To edit the phases it requires the exact dates and prices
+    # The dummy price of 0 is required to ensure that a subscription id is created in the first
+    # month. As the customer pays up front. After the first month the quantity of the subscription
+    # is simply modified rather than the schedule phases
     if user_profile.first_month:
         subscription = stripe.Subscription.retrieve(
             user_profile.stripe_subscription_id)
@@ -208,6 +226,8 @@ def unsubscribe_next_month(request, item_id):
 def resubscribe_next_month(request, item_id):
     """Unsubscribe from a particular book club next month"""
 
+    # this function contains the same logic as the view above but adds to the quanities
+    # in stripe rather than taking away
     book_club = BookOfMonth.objects.get(pk=item_id)
     redirect_url = request.POST.get('redirect_url')
     user_profile = get_object_or_404(UserProfile, user=request.user)

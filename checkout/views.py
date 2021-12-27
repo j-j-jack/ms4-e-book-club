@@ -1,15 +1,12 @@
-from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.urls import reverse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
-from django.conf import Settings, settings
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from stripe.api_resources.payment_intent import PaymentIntent
-from stripe.api_resources.subscription_schedule import SubscriptionSchedule
+
 
 from book_clubs.models import BookOfMonth
-from e_book_club.settings import STRIPE_SECRET_KEY
 from .forms import OrderForm
 from .models import Order, OrderLineItemProduct, OrderLineItemSubscription
 from products.models import Product
@@ -28,6 +25,8 @@ import datetime
 @ login_required
 @require_POST
 def cache_checkout_data(request):
+    """ view to gather the checkout data in order to modify the payment intent as necessary
+    from the form on the page before it is submitted"""
     try:
         user_profile = get_object_or_404(
             UserProfile, user=request.user)
@@ -41,6 +40,8 @@ def cache_checkout_data(request):
         })
         intent = stripe.PaymentIntent.retrieve(pid)
         customer = intent.customer
+        # it is necessary to compare the customer in the paymentIntent with the id in the userprofile
+        # in the webhook handler
         stripe.PaymentIntent.modify(pid, customer=customer)
         stripe.Customer.modify(customer,
                                email=request.POST.get('email'),
@@ -49,16 +50,14 @@ def cache_checkout_data(request):
         subscription_quantity = user_profile.book_club_subscriptions_this_month.all().count()
         subscription_in_bag = False
         for item in request.session.get('bag'):
-            print(item, request.session.get('bag').get(item) + 'ch')
             if request.session.get('bag').get(item) == 'S':
                 subscription_quantity += 1
                 subscription_in_bag = True
         if subscription_in_bag:
-            print('subscription quanity:', subscription_quantity)
+            # only create a new subscription if there is none currently
             existing_subscription = user_profile.stripe_subscription_id
-            print(existing_subscription)
             if existing_subscription == None or existing_subscription == '':
-                print(customer)
+                # function used to calculate the 1st timestamp of next month as stripe requires
                 timestamp = get_next_month_timestamp()
                 subscription_schedule = stripe.SubscriptionSchedule.create(
                     customer=customer,
@@ -80,11 +79,12 @@ def cache_checkout_data(request):
                     ],
                 )
 
-                print(subscription_schedule)
                 user_profile.stripe_subscription_id = subscription_schedule.subscription
                 user_profile.save()
             else:
                 if user_profile.first_month:
+                    # if still in the first month the schedule needs to be modified rather than
+                    # the subscription.
                     subscription = stripe.Subscription.retrieve(
                         user_profile.stripe_subscription_id)
                     subscription_schedule = stripe.SubscriptionSchedule.retrieve(
@@ -135,6 +135,7 @@ def checkout(request):
         UserProfile, user=request.user)
     if request.method == 'POST':
         bag = request.session.get('bag', {})
+        # data which is put on the order instance
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -158,7 +159,6 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
 
-                    print('current prices')
                     price = decimal.Decimal(0)
                     if item_data == 'P':
                         product = Product.objects.get(id=item_id)
@@ -169,6 +169,8 @@ def checkout(request):
                         )
                         order_line_item.save()
                     elif item_data == 'S':
+                        # subscription prices sent to the order line items are calculated based on
+                        # the current subscriptions and the subscriptions in the bag.
                         subscriptions_purchased += 1
                         total_subscriptions = subscriptions_purchased + current_subscription_count
                         if total_subscriptions < 3:
@@ -177,7 +179,6 @@ def checkout(request):
                             price = decimal.Decimal(1.75)
                         elif total_subscriptions >= 5:
                             price = decimal.Decimal(1.50)
-                        print(price)
                         book_of_month = BookOfMonth.objects.get(id=item_id)
                         order_subscription_line_item = OrderLineItemSubscription(
                             order=order,
@@ -213,6 +214,7 @@ def checkout(request):
         stripe.api_key = stripe_secret_key
         existing_customer = user_profile.stripe_customer_id
         customer = None
+        # create a new customer now as it needs to be accessed later and attached to the payment intent
         if existing_customer == None or existing_customer == '':
             customer = stripe.Customer.create(
                 name=request.user
@@ -225,6 +227,8 @@ def checkout(request):
 
         intent = stripe.PaymentIntent.create(
             customer=customer.id,
+            # this allows the payment method to be attached to the customer automatically
+            # this is necessary for taking subscriptions when the user is not online to pay manually
             setup_future_usage='off_session',
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
@@ -232,7 +236,6 @@ def checkout(request):
                 'enabled': True,
             },
         )
-        # print(stripe.PaymentIntent.retrieve(intent.id))
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -255,13 +258,13 @@ def checkout(request):
         if not stripe_public_key:
             messages.warning(
                 request, "Stripe public key is missing... Did you forget to set it in your environment variables?")
+        # this list is used to show the prices on the template. It is not part of the order logic.
         subscription_prices = []
         if request.user.is_authenticated:
             user_profile = get_object_or_404(UserProfile, user=request.user)
             current_subscription_count = user_profile.book_club_subscriptions_this_month.all().count()
             subscriptions_in_bag = user_profile.subscriptions_in_bag
             total_subscriptions = current_subscription_count + subscriptions_in_bag
-            print('current prices')
             for i in range(total_subscriptions+1):
                 if i > current_subscription_count:
                     if i < 3:
@@ -272,14 +275,11 @@ def checkout(request):
                         subscription_prices.append(1.50)
             if 'bag' in request.session:
                 bag = request.session['bag']
-                print(request.session['bag'])
                 position = 0
                 for item in request.session['bag']:
                     if bag.get(item) == 'P':
-                        print(bag.get(item), position)
                         subscription_prices.insert(position, 0)
                     position += 1
-                    print(subscription_prices)
         template = 'checkout/checkout.html'
         context = {
             'order_form': order_form,
@@ -316,6 +316,7 @@ def checkout_success(request, order_number):
                 'default_street_address2': order.street_address2,
                 'default_county': order.county,
             }
+            # saving the user form information provided for future usage and convenience
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
@@ -335,38 +336,48 @@ def checkout_success(request, order_number):
     return render(request, template, context)
 
 
+@login_required
 def order_search(request):
-    template = 'checkout/order-search.html'
-    context = {
+    """
+    view to return a search for orders
+    """
+    # prevent non store admins from using the order search
+    if request.user.is_superuser:
+        template = 'checkout/order-search.html'
+        context = {}
+        if request.GET:
+            if 'q' in request.GET:
+                query = request.GET['q']
+                if not query:
+                    messages.error(
+                        request, "You didn't enter any search criteria!")
+                    return redirect('order_search')
+                orders = Order.objects.all()
+                # search using the order number or customer name
+                queries = Q(order_number__icontains=query) | Q(
+                    full_name__icontains=query)
+                orders = orders.filter(queries)
+                if orders.count() == 0:
+                    messages.info(
+                        request, "Your query didn't return any results. Adjust your query and try again.")
+                context = {
+                    "orders": orders
+                }
 
-    }
-    if request.GET:
-        if 'q' in request.GET:
-            print('qqqq')
-            query = request.GET['q']
-            print(request.GET['q'])
-            if not query:
-                messages.error(
-                    request, "You didn't enter any search criteria!")
-                return redirect('order_search')
-            orders = Order.objects.all()
-            queries = Q(order_number__icontains=query) | Q(
-                full_name__icontains=query)
-            orders = orders.filter(queries)
-            if orders.count() == 0:
-                messages.info(
-                    request, "Your query didn't return any results. Adjust your query and try again.")
-            context = {
-                "orders": orders
-            }
-
-    return render(request, template, context)
+        return render(request, template, context)
+    else:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
 
 def get_next_month_timestamp():
+    """
+    function used to provide the timestamp for the first day of next month to stripe
+    """
     date = datetime.datetime.now()
     month = int(date.strftime("%m"))
     year = int(date.strftime("%y"))
+    # end of a year logic
     if month == 12:
         month = 1
         year = year + 1
