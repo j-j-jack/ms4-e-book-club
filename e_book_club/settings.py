@@ -36,7 +36,7 @@ else:
     Debug = False
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOST_NAME'), '127.0.0.1',
-                 '7ed0-2a01-b340-64-1b23-8182-9bfb-85bd-bc84.ngrok.io']
+                 '7ed0-2a01-b340-64-1b23-8182-9bfb-85bd-bc84.ngrok.io', 'ami.responsivedesign.is']
 
 
 # Application definition

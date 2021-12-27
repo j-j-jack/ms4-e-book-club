@@ -1,5 +1,7 @@
 # **E-book Club**
 
+[View the live project here](https://e-book-club.herokuapp.com/) <br>
+This is the documentation for the E-Book Club e-commerce project. E-Book Club is an online seller of the latest books in pdf format at reasonable prices. Users may purchase these books as one of purchases. They may also subscribe to the many different genres of book clubs on the site to receive money of the top book picks every month. The more subscriptions that the users have the cheaper each individual subscription costs. The primary goals of the website are to provide many different book titles to users at affordable prices, to cater for those interested in all kinds of books as well as to share the expertise of the site owners by curating book clubs each month for the site users.
 ## **Table of Contents**
 *  **[Technologies Used](#technologies-used)**
     * [Code](#code)
@@ -33,8 +35,46 @@
         * [Order and Sequence](#order-and-sequence)
         * [Identity](#identity)
 
-## **UX Design**
+## **Technologies Used**
 
+## **UX Design**
+### **Code**
+
+* VSCode - to write the code for the project
+* Git - used for version control 
+* Github - software used to store project remotely
+
+### **Languages**
+
+* HTML
+* CSS
+* JavaScript
+* Python
+
+### **Validators**
+ * [W3Schools HTML validator](https://validator.w3.org/) 
+ * [W3Schools Jigsaw CSS validator](http://jigsaw.w3.org/css-validator/validator) 
+ * [JSHint JavaScript validator](https://www.jshint.com/)  - The code was validated in using the jshint extension for vscode with the esversion set to esversion 6.
+
+### **Frameworks and Libraries**
+
+* fontawesome
+* JQuery
+* Google Fonts
+* Django REST framwork
+
+ ### **Other Technologies Used**
+
+ * [Balsamiq](https://balsamiq.com/) - for creating wireframes
+ * Chrome developer tools - for testing and inspecting code
+ * Lighthouse - for testing performance rating of deployed site
+ * [Boxy SVG Editor](https://boxy-svg.com) - for creating brand logo
+ * [GIMP](https://www.gimp.org/) - for resizing images
+ * responsivedesignchecker.com - for testing site responsivity
+
+[back to contents](#table-of-contents)
+### **Databases**
+* PostgrSQL
 ### **Strategy plane**
 
 The strategy plane for the site was completed with consideration to the business objectives along with the user needs.
