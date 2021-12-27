@@ -18,6 +18,7 @@ def write_review(request, product_id):
         user_already_reviewed = product.reviews.get(review_by=request.user)
     except:
         user_already_reviewed = False
+    # user is redirected if they already reviewed the product
     if user_already_reviewed:
         messages.error(request, 'Oops you already reviewed this product')
         return redirect(reverse('product_detail', args=[product.id]))
