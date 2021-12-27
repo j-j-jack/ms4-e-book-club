@@ -1,3 +1,5 @@
+![E-Book Club](resources/project-on-different-screens.PNG)
+
 # **E-book Club**
 
 [View the live project here](https://e-book-club.herokuapp.com/) <br>
@@ -70,11 +72,10 @@ This is the documentation for the E-Book Club e-commerce project. E-Book Club is
  * Lighthouse - for testing performance rating of deployed site
  * [Boxy SVG Editor](https://boxy-svg.com) - for creating brand logo
  * [GIMP](https://www.gimp.org/) - for resizing images
- * responsivedesignchecker.com - for testing site responsivity
 
 [back to contents](#table-of-contents)
-### **Databases**
-* PostgrSQL
+
+## **UX Design**
 ### **Strategy plane**
 
 The strategy plane for the site was completed with consideration to the business objectives along with the user needs.
@@ -231,6 +232,116 @@ User stories were created to aid in the designing of the site and in testing lat
 19. As a possible buyer of the best-selling book on the site I would like to read a proper description of the book before making a purchase
 20. As a site administrator I would like to edit the category for a mis-categorised book
 
+### **Structure Plane** 
+
+#### **Interaction Design**
+
+1. Consistency - The site should remain consitant across all pages. This includes the following.
+    * The navbar will remain at the top of the page and the footer at the bottom. 
+    * There will be a burger icon on all pages instead of a nav-bar on smaller screen sizes. 
+    * Styling will also remain consitant across all pages.
+2. Predictablity -
+    * All links will take the user to expected locations.
+    * Clicking on the logo will take the user back to the home page as is convention. 
+3. Learnability -
+    * There will be active links on the navbar so that the user will know what page they are on. 
+    * Pages with the same function will have the same layout to provide the user with a better sense of place and navigational possibilities. 
+4. Visibility -
+    * When possible as much page content for each page will be visible on each page. 
+    * In situations where the content exceeds that of the screen size content hinting will be used. 
+5. Feedback - There will be clear and consistant feedback given to site users -
+    * Buttons that link the user to other locations will highlight when the mouse is over them.
+    * For links and other clickable items the cursor will change to a pointer. 
+    * Messages will appear to inform the user that their actions were successful or whether errors have occurred
+
+#### **Information Architecture**
+
+The site operates using a traditional navigational system with a navbar at the top of the page. The site reveals more information with as the user goes from the home page to the product page to the product detail pages. The site containers other links above the navbar as is common with e-commerce sites The site also uses a search so that the user can search for whatever they are looking for quickly . There are also admin links present in the profile dropdown as is commonly practiced. Finally there is a 'load more' setup on certain pages such as the reviews section and products pages so that the user is not delayed with loading times if they do not wish to see more from the outset.
+
+[back to contents](#table-of-contents)
+
+### **Skeleton Plane**
+
+The site uses icons as metaphors. Examples of these include the a person icon for the profile as well as the burger icon which represents represents a menu dropping down for the navbar on small screens for example. The information on the site will be displayed in order of importance. An example of this is the home page where the large carousel centrepiece provides the user with links to the main pages of the site. This is because the stories in the feed are more important. Content on the site will be well spaced and will be easy to read with good colour contrast. This is good information design.
+
+#### **Project Wireframes**
+
+[Admin page to add product - Desktop](resources/wireframes/admin-add-book-page-desktop.png) <br>
+[Admin page to add product - Mobile](resources/wireframes/admin-add-book-page-mobile.png) <br>
+[Admin page to add product - Tablet](resources/wireframes/admin-add-book-page-tablet.png) <br>
+[Admin page to change books of the month - Desktop](resources/wireframes/admin-change-books-of-the-month-desktop.png) <br>
+[Admin page to change books of the month - Mobile](resources/wireframes/admin-change-books-of-the-month-mobile.png) <br>
+[Admin page to change books of the month- Tablet](resources/wireframes/admin-change-books-of-the-month-tablet.png) <br>
+[Bag Page - Desktop](resources/wireframes/basket-page-desktop.png) <br>
+[Bag Page - Mobile](resources/wireframes/basket-page-mobile.png) <br>
+[Bag Page - Tablet](resources/wireframes/basket-page-desktop.png) <br>
+[Book Clubs Pages - Desktop](resources/wireframes/book-clubs-pages-desktop.png) <br>
+[Book Clubs Pages - Mobile](resources/wireframes/book-clubs-pages-mobile.png) <br>
+[Book Clubs Pages - Tablet](resources/wireframes/book-clubs-pages-tablet.png) <br>
+[Checkout Page - Desktop](resources/wireframes/checkout-page-desktop.png) <br>
+[Checkout Page - Mobile](resources/wireframes/checkout-page-mobile.png) <br>
+[Checkout Page - Tablet](resources/wireframes/checkout-page-tablet.png) <br>
+[Home Page - Desktop](resources/wireframes/home-page-desktop.png) <br>
+[Home Page - Mobile](resources/wireframes/home-page-mobile.png) <br>
+[Home Page - Tablet](resources/wireframes/home-page-tablet.png) <br>
+[Product Page - Desktop](resources/wireframes/product-page-desktop.png) <br>
+[Product Page - Mobile](resources/wireframes/product-page-mobile.png) <br>
+[Product Page - Tablet](resources/wireframes/product-page-tablet.png) <br>
+[Register Page - Desktop](resources/wireframes/register-page-desktop.png) <br>
+[Register Page - Mobile](resources/wireframes/register-page-mobile.png) <br>
+[Register Page - Tablet](resources/wireframes/register-page-tablet.png) <br>
+[Review Page - Desktop](resources/wireframes/review-page-desktop.png) <br>
+[Review Page - Mobile](resources/wireframes/review-page-mobile.png) <br>
+[Review Page - Tablet](resources/wireframes/review-page-tablet.png) <br>
+[Search and Categories Pages - Desktop](resources/wireframes/search-and-categories-pages-desktop.png) <br>
+[Search and Categories Pages - Mobile](resources/wireframes/search-and-categories-pages-mobile.png) <br>
+[Search and Categories Pages - Tablet](resources/wireframes/search-and-categories-pages-tablet.png) <br>
+[Signin Page- Desktop](resources/wireframes/signin-page-desktop.png) <br>
+[Signin Page - Mobile](resources/wireframes/signin-page-mobile.png) <br>
+[Signin Page - Tablet](resources/wireframes/signin-page-tablet.png) <br>
+[Signout Page- Desktop](resources/wireframes/signout-page-desktop.png) <br>
+[Signout Page - Mobile](resources/wireframes/signout-page-mobile.png) <br>
+[Signout Page - Tablet](resources/wireframes/signout-page-tablet.png) <br>
+[Subscription Page- Desktop](resources/wireframes/subscription-page-desktop.png) <br>
+[Subscription Page - Mobile](resources/wireframes/subscription-page-mobile.png) <br>
+[Subscription Page - Tablet](resources/wireframes/subscription-page-tablet.png) <br>
+
+
+[back to contents](#table-of-contents)
+
+
+### **Surface Plane**
+
+<br>
+
+Below are the surface plane considerations that were made for the site
+<br><br>
+
+#### **Colour**
+
+The colours chosen for the site are minimal. The font for the site is black and the background is white for good legibility. The navbar colour is vibrant so to compliment the many colours displayed on the book covers across the site.<br><br>
+
+#### **Layout**
+
+The site  attempts to create elements from the same sections aligned linearly to help in defining where sections begin and end for the user. The site uses changes of color in the navbar and footer to define sections. The site also uses borders and boxes to define which elements belong to particular sections. <br><br>
+
+#### **Fonts**
+
+The font chosen for the site are the fonts 'Garamond'. It is a literary font and matches the pages of books that were printed from the last century to remind users that reading is timeless.<br><br>
+
+#### **Images**
+
+The icons used on the site will be chosen according to how recognisable they are. The carousel images were designed to be eye-catching and to stand out from one another<br><br>
+
+#### **Order and Sequence**
+
+The most important elements on the site are the most easily recognized. The navbar provides the user with all the main links to the site. The home page carousel is also designed to stand out to encourage the user to browse the products. The search bar at the top of the site is very large in order to convey to the user that the site contains a large amount of titles to choose from. <br><br>
+
+#### **Identity**
+
+The site is a site which sells literature.The choices made in the surface plane reflect this. However it is also very modern with its choices of images and colour as it is dealing with digital products. The elements from both of these are there to compliment each other. The site attempts to link the past and present reading formats showing that although the method or reading has changed, there is still a lot of good content for readers.<br><br>
+
+[back to contents](#table-of-contents)
 
 
 
