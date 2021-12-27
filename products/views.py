@@ -21,13 +21,14 @@ from django.conf import settings
 
 def products(request):
     """ A view to return the products page """
-
+    # used to track which products displayed when loadmore is clicked
     load_round = 0
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
     products = Product.objects.all()
     query = None
     categories = None
     if request.GET:
+        # filter functionality using queries defined in the navbar
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -46,10 +47,11 @@ def products(request):
         load_more = True
         load_round = int(request.GET.get('load_round'))
         response_items = products[load_round*20: (load_round*20)+20]
+        # used to make the load more button disappear if there are not more than 20 products
+        # left to display
         load_more = products[(load_round*20)+20:(load_round*20)+21].exists()
         response_items = serializers.serialize('json', response_items)
         return JsonResponse({'items': response_items, 'load_more': load_more}, status=200)
-    #products = products[0: 3]
     all_categories = Category.objects.all()
     all_categories = serializers.serialize('json', all_categories)
     context = {
@@ -63,7 +65,7 @@ def products(request):
 
 def product_detail(request, product_id):
     """ A view to show an individual product """
-
+    # used to track which reviews are to be displayed when load more button is clicked
     load_round = 0
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
     product = get_object_or_404(Product, pk=product_id)
@@ -84,9 +86,10 @@ def product_detail(request, product_id):
             if int(item) == product.id:
                 in_bag = True
 
-    review_count = product.reviews.count()
     reviews = product.reviews.all()
     if user_review:
+        # exclude the review of the current user if it exists
+        # it is displayed at the top of the section for convenience
         reviews = product.reviews.all().exclude(pk=user_review.pk)
     load_more = False
     if reviews.count() > 5:
@@ -94,7 +97,6 @@ def product_detail(request, product_id):
     reviews = reviews[0: 5]
     if is_ajax:
         load_round = int(request.GET.get('load_round'))
-        # exclude users own review if exists as it is at the top
         if user_review_exists:
             response_items = product.reviews.all().exclude(pk=user_review.pk)[
                 load_round*5: (load_round*5)+5]
@@ -105,6 +107,7 @@ def product_detail(request, product_id):
                 load_round*5: (load_round*5)+5]
         response_items = serializers.serialize('json', response_items)
         return JsonResponse({'items': response_items}, status=200)
+    # used to display a download button if the user owns the book
     owns_book = False
     if request.user.is_authenticated:
         user_profile = get_object_or_404(UserProfile, user=request.user)

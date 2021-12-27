@@ -28,13 +28,11 @@ def profile(request):
     book_clubs = BookOfMonth.objects.all()
     template = 'profiles/profile.html'
     user_profile = get_object_or_404(UserProfile, user=request.user)
-    user_profile
-    # book_of_the_month = get_object_or_404(BookOfMonth, pk=2)
-    # print(book_of_the_month)
-    # user_profile.book_club_subscriptions_this_month.add(book_of_the_month)
+    # the three lines below track which actions the user can complete in the subscriptions section
+    # they can add a subscription they have not subscribed to to their bag
+    # they can unsubscribe and resubscribe to current subscriptions
     book_club_subscriptions_this_month = user_profile.book_club_subscriptions_this_month.all()
     book_club_subscriptions_next_month = user_profile.book_club_subscriptions_next_month.all()
-    print(book_club_subscriptions_this_month)
     subscriptions_in_bag = []
     if 'bag' in request.session:
         for item in request.session['bag']:
@@ -55,8 +53,11 @@ def profile(request):
 
 
 def order_history(request, order_number):
-    order = get_object_or_404(Order, order_number=order_number)
+    """
+    view to display orders made by the customer previously when clicked on from the profile page
+    """
 
+    order = get_object_or_404(Order, order_number=order_number)
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
         'A confirmation email was sent on the order date.'

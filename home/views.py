@@ -6,6 +6,7 @@ from products.models import Product
 
 def index(request):
     """ A view to return the index page """
+    # for filling the latest books section
     products = Product.objects.all()[0: 4]
     context = {
         "products": products,
