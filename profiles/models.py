@@ -15,7 +15,7 @@ from products.models import Product
 class UserProfile(models.Model):
     """
     A user profile model for maintaining default
-    delivery information and order history
+    billing information and order history
     """
     user = models.OneToOneField(
         User, on_delete=models.CASCADE)
@@ -35,12 +35,17 @@ class UserProfile(models.Model):
     default_street_address2 = models.CharField(
         max_length=80, null=True, blank=True)
     default_county = models.CharField(max_length=80, null=True, blank=True)
+    # fields used for tracking the user on stripe
     stripe_customer_id = models.CharField(
         max_length=300, null=True, blank=True)
     stripe_subscription_id = models.CharField(
         max_length=300, null=True, blank=True)
+
     owned_books = models.ManyToManyField(
         Product, null=True, blank=True, related_name='owned_by')
+    # field used to update schedule depending whether the user is in their first month
+    # this is necessary as the user is inititally subscribed to a  dummy price which costs 0 to
+    # ensure a subscription id is created for handling the webhooks from stripe
     first_month = BooleanField(default=False)
     subscriptions_in_bag = models.PositiveIntegerField(
         null=False, blank=False, default=0)
