@@ -5,6 +5,7 @@
     {{ block.super }}
     <script>
         jQuery(document).ready(function () {
+            // alt tag added here as developer didn't find a way to do it in forms
             jQuery('img.rounded.shadow-sm').attr('alt', 'Current book image');
         jQuery('#new-image').change(function() {
             

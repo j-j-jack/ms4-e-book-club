@@ -11,6 +11,7 @@
                 Fiction
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="fiction-dropdown">
+                <!-- categories added to query so that view can be reused -->
                 <a href="{% url 'products' %}?category=action,comedy,crime,horror,romance,sci_fi" class="dropdown-item ">All Titles</a>
                 <a href="{% url 'products' %}?category=action" class="dropdown-item ">Action/Adventure</a>
                 <a href="{% url 'products' %}?category=comedy" class="dropdown-item ">Comedy</a>

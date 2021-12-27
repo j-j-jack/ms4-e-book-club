@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load index_tag %}
-
+<!-- custom filter used to iterate through arrays using for loop counter -->
 
 
 
@@ -150,6 +150,7 @@
     </div>
 
     <script>
+        // scripts used to remove items from the bag and reload the page
         jQuery(document).ready(function () {
             jQuery(".remove-item").click(function () {
                 var csrfToken = "{{ csrf_token }}";

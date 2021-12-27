@@ -49,12 +49,14 @@
                             <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                         </small>
                     {% endif %}
+                    <!-- line breaks filter used to split into paragraphs -->
                     <p class="mt-3">{{ product.description|linebreaks }}
                 </div>
             </div>
         </div>
     </div>
     {% if not owns_book %}
+    <!-- if the user doesn't currently own the book they can add it to their bag -->
     {% if in_bag %}
                         <div class="row">
                             <div class="col-12">
@@ -88,6 +90,7 @@
     {% endif %}
 
     {% if owns_book %}
+    <!-- otherwise the user can download their property here -->
     <form class="form" action="{% url 'download' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
@@ -146,6 +149,7 @@
     {% else %}
         <i>Nobody has reviewed this yet... Be the first!</i>
     {% endif %}
+    <!-- reviews loaded with ajax call are displayed in this container -->
     <div class="container-fluid p-0" id="ajax-response"></div>
     <br>
         {% if load_more %}

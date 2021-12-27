@@ -70,6 +70,7 @@
                     </div>
                     {% endfor %}
                     {% for item in order.subscription_lineitems.all %}
+                    <!-- subscription line items also displayed -->
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0 text-black font-weight-bold">
@@ -82,11 +83,6 @@
                     </div>
                     {% endfor %}
 
-                    <div class="row">
-                        <div class="col">
-                            <small class="text-muted">Delivering To:</small>
-                        </div>
-                    </div>
 
                     <div class="row">
                         <div class="col-12 col-md-4">

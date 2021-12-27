@@ -16,6 +16,7 @@
 {% block content %}
     <div id="form-loading-overlay">
         <div id="form-loading-text">
+            <!-- loading animation for when forms are being submitted -->
             <br><br><br><h3>Please Wait... </h3><div style="display: inline-block" id="form-loading-icon"><i class="fas fa-spinner"></i></div>
         </div>
     </div>
@@ -33,6 +34,8 @@
             <div class="col-12 col-md-6">
                     
                     {% for form in forms %}
+                    <!-- using the for loop to create a unique id for each for so that they can 
+                    be submitted individually -->
                     <form action = "edit" method="POST" id = "form{{forloop.counter}}">
                     {% csrf_token %}
                     {% for field in form %}

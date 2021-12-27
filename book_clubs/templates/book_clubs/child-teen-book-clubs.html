@@ -88,12 +88,12 @@
             <div class="col-12 col-md-6 offset-md-1">
                 {{ club.description }}
             </div>
-                </div>
+            </div>
         </div>
         {% endfor %}
 </div>
         <script>
-jQuery(document).ready(function () {console.log('script ready')
+        jQuery(document).ready(function () {console.log('script ready')
             jQuery(".remove-sub").click(function () {
                 var csrfToken = "{{ csrf_token }}";
                 var itemId = jQuery(this).attr("id");

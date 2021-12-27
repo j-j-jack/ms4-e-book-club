@@ -6,3 +6,5 @@ register = template.Library()
 @register.filter
 def index(sequence, position):
     return sequence[position]
+
+# Daniel Roseman - Stack Overflow
