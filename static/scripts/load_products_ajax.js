@@ -3,10 +3,11 @@ jQuery(document).ready(function () {
   let allCategories = jQuery("#all-categories").text();
   let mediaURL = jQuery("#media-url").text();
   allCategories = JSON.parse(allCategories);
-  let ajaxResponseContainer = jQuery("#ajax-response");
+  // productCardCount is used to use the same floating logic as in the template
   let productCardCount = 20;
   jQuery("#load-more").click(function () {
     loadRound += 1;
+    // each click increases the load more so the next products are gathered
     jQuery.ajax({
       url: "",
       type: "get",
@@ -24,7 +25,7 @@ jQuery(document).ready(function () {
           jsonResponse = JSON.parse(response.items);
           let template = `
             `;
-
+          // although by design there shouldn't be any errors error handling is implemented
           for (var item in jsonResponse) {
             let errorExists = false;
             productCardCount += 1;
@@ -72,7 +73,7 @@ jQuery(document).ready(function () {
               categoryNumber = jsonResponse[item].fields.category;
               for (var category in allCategories) {
                 if (allCategories[category].pk == categoryNumber) {
-                  bookCategoryName = allCategories[category].fields.nam;
+                  bookCategoryName = allCategories[category].fields.name;
                   bookCategoryFriendlyName =
                     allCategories[category].fields.friendly_name;
                 }
@@ -100,6 +101,7 @@ jQuery(document).ready(function () {
             }
 
             if (errorExists == false) {
+              // intricate patching together of template to match products page
               template += `
                         <div class="product-card col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
@@ -150,6 +152,7 @@ jQuery(document).ready(function () {
                             </div>
                         </div>`;
             }
+            // using the productCardCount to implement the horizontal rule logic
             if (productCardCount % 1 == 0) {
               template += `
                             <div class="col-12 d-sm-none mb-5">
@@ -181,6 +184,7 @@ jQuery(document).ready(function () {
         }
         loadMoreOrNot = JSON.parse(response.load_more);
         if (!loadMoreOrNot) {
+          // the view defines when the loadmore button is to disappear
           jQuery("#load-more-container").attr("style", " display:none");
         }
       },

@@ -1,4 +1,5 @@
 jQuery(document).ready(function () {
+  // the same logic as in the load_products_ajax script but with a simpler template to generate
   let loadRound = 0;
   jQuery("#load-more").click(function () {
     loadRound += 1;
