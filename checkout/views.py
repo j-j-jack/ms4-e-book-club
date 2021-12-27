@@ -22,7 +22,7 @@ import json
 import datetime
 
 
-@ login_required
+@login_required
 @require_POST
 def cache_checkout_data(request):
     """ view to gather the checkout data in order to modify the payment intent as necessary
@@ -126,7 +126,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
-@ login_required
+@login_required
 def checkout(request):
     bag = request.session['bag']
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -291,6 +291,7 @@ def checkout(request):
         return render(request, template, context)
 
 
+@login_required
 def checkout_success(request, order_number):
     """
     Handle successful checkouts

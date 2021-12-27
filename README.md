@@ -450,6 +450,316 @@ Expected - The admin features for the site are as follows; pages to add and prod
 Result - The admin features are all present and correct. From the profile icon in the navbar the user can access the add products page, order search page and book clubs edit page. The add product page allows the admin to set all the fields for the products page for a new product and to upload a product image and file. The changes are seen in the products section of the site. The edit book page allows the admin to choose which books are the books of the month for each genre as well as to add a description why they have been chose. These changes appear on the book clubs pages. The order search page correctly returns the orders by name or order number when they are entered in the search bar. The edit buttons are accessed from the product pages and allow the user to edit the products with a form similar to the add product form. The admin can also delete products from this page as well as reviews.
 
 
+### **User Story Testing**
+
+#### **User Story 1**
+
+Expectation: As a new user of the site I would like to register and log in
+
+Test result: On opening the site the user searches for a place to create an account. Due to convention the user clicks on the profile icon and the top right of the page. The user is clicks on the register button. The user is navigated to a single form page where they can provide details to register with. The user enters and confirms their email. The user chooses a user name and password. The user clicks the register button. The user is then taken to a page that informs them that they have been sent an email that they can use to verify their email address. The user navigates to their email account and sees that they have received an email. The user clicks on the link in the email and is taken back to the site. The user clicks the confirm email and is then taken to a login page. The user fills out the form using their email and password. The login is successful. The user is provided with a message that they have have logged in as their username.
+
+Analysis: The user's expectation has been met
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-1-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-1-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-1-c.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 2**
+
+Expectation: As a new user to the site I would like to understand a little bit about the company
+
+Test result: On opening the site the user looks around. It is not immediately obvious where to look for information about the company. The user sees content beneath the home page carousel and scrolls down the page. It is not a large page and the user quickly spots the about section on the home page. The user reads about the company ethos and about the book club subscriptions.
+
+Analysis: The user's expectation has been met
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-2-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-2-b.PNG)
+
+
+[back to contents](#table-of-contents)
+
+#### **User Story 3**
+Expectation: As a guest to the site I would like to add a book to my basket and check out
+
+Test result: On opening the site the user spots the latest books. The user clicks on one of the books and is taken to the product page. The add to bag button on the product page is large and obvious. The user clicks the add to bag button and the bag total is updated underneath the basket icon at the top of the site. This makes it obvious to the user that they can click on this icon to check out. The user clicks the icon and is taken to the bag page. The user then clicks on the checkout button at the bottom of the page which is also large and visible. The user is then prompted to log in to the site to continue.
+
+Analysis: The user's expectation has been somewhat met but not completely. However it is not possible to buy ebooks without an account as you need to be authenticated to download your property.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-3-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-3-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-3-c.PNG)
+
+
+
+[back to contents](#table-of-contents)
+
+#### **User Story 4**
+
+Expectation: As a regular user of the site I would like to have my address details saved for future use
+
+Test result: The user is familiar with the site and understands that the address details are entered when checking out of the site. The user adds a subscription to their bag from the fiction book clubs page and proceeds to the check out. As the user did not wish to have their details before they did not click on the checkbox on the checkout page where it is possible to have this done. The user now clicks the box and enters their card details. The user pays and is presented with an order summary. The user sees that their billing details are present on the summary. The user wishes to confirm that the details have been saved and proceeds to their profile page. The user sees that the details that they have entered have been saved on the page.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-4-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-4-b.PNG)
+
+
+[back to contents](#table-of-contents)
+
+#### **User Story 5**
+
+Expectation: As a regular site user I would like to view the latest e-books available on the site.
+
+Test result: The user checks the home page that they are familiar with. They scroll to the latest books section. The user clicks on each title individually by first clicking on the title and then navigating back to the home page by using the company logo.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-5-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-5-b.PNG)
+
+
+[back to contents](#table-of-contents)
+
+#### **User Story 6**
+
+Expectation: As a user who has mistakenly added an item to my basket I would like to remove it.
+
+Test result: The user realises that the book that they added before the current book is not something that they are interested in. The user clicks on the basket icon at the top right of the page. The user scrolls and sees the item that they added by mistake. They click the 'remove from bag' button which is located adjacent to the product they wish to remove on this page. The page refreshes and the user is given a message that the item has been removed. The user scrolls to confirm and sees that the item is no longer present in the bag.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-6-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-6-b.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 7**
+
+Expectation: As a horror fan I would like to subscribe to the horror book-club
+
+Test result: The user clicks on the navbar link for book clubs and a dropdown for fiction, non-fiction and child/teen book clubs appears. The user clicks fiction as it is obvious that horror is part of the wider fiction categorisation. The user is taken to the fiction book club page. The user scrolls and finds the horror book and clicks to add the subscription to their bag. The user checks out as normal. When the checkout process is complete the user navigates back to the fiction book club page and clicks on the horror book. The user sees that they now have the option to download the book. The user downloads the book.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-7-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-7-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-7-c.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 8**
+
+Expectation: As somebody interested in multiple categories of books I would like to subscribe and save money for having multiple subscriptions
+
+Test result: The user navigates to the non-fiction book page by clicking on the carousel on the home page. The user clicks the add to bag link beside the biography book club. The user then clicks the dropdown for book clubs and navigates to the fiction book club page. The user adds science-fiction and crime to their bag. The user goes to their bag. The user sees that they have saved money on the crime subscription as described in the about section of the site.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-8-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-8-b.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 9**
+
+Expectation: As somebody who was dissatisfied with the quality of a previous book, I would like to leave a review reflecting my views
+
+Test result: The user enters the name of the book they bought in the search bar from the home page. The user clicks the search icon and 3 books appear. The user clicks on the book that they bought. The user sees the write review button underneath the product. The user clicks to write a review. The user is taken to the write review page. The user is presented with a form that requires a title and description of theiry review. The user enters the title "disappionting". The user gives the book 2 stars out of 5. The user is taken back to the product page. They see that their review is the first review for the book and the review score has updated. The user sees their review underneath the product.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-9-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-9-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-9-c.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 10**
+
+Expectation: As a user who misplaced a previously paid for book I would like to re-download this book
+
+Test result: The user uses the search bar to search for the book that they paid for. The user clicks on the book card from the results after entering the name of the book in the search bar. The user sees the download button on the product page and clicks it. The user is able to download the book.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-10-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-10-b.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 11**
+
+Expectation: As a fan of fiction I would like to access all the fiction titles on the site
+
+Test result: The user clicks on the burger icon. The user sees the fiction button and clicks it. The user is brought to a results page. The user scrolls and clicks on the load more button to view more titles. The user inspects all the books on the page.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-11-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-11-b.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 12**
+
+Expectation: As an individual who was recommended a specific e-book by a friend I would like to search for this book on the site
+
+Test result: The user cannot remember the name of the book exactly. The user enters 'europe' into the search bar. The user selects the book from the results displayed. The user adds the book to their bag and checks out.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-12-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-12-b.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 13**
+
+Expectation: As somebody who is trying to save money I would like to unsubscribe from the book clubs on the site
+
+Test result: The user navigates to their profile using the profile icon at the top right of the site. The scrolls on the profile page to the subscriptions section. The user uses the table columns to determine which books clubs that they are subscribed to. The user clicks unsubscribe on all the book clubs that they are subscribed to. The user is presented with messages confirming this action. The user reviews the table and sees that in the subscriptions to continue next month column that all the values are no. 
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-13-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-13-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-13-c.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 14**
+
+Expectation: As a site administrator I would like to add more titles to the site
+
+Test result: The site administrator clicks on the profile icon to search for admin functionality as is convention. The user clicks on product management and is brought to an page where they can fill out information about the product. The user fills out the information and then chooses the book cover image as well as a pdf file that can be downloaded which they have ready on their computer. The user is informed that they have been successful in their action when they are navigated to the product page. The user repeats this process to add more titles.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-14-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-14-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-14-c.PNG)
+
+[back to contents](#table-of-contents)
+
+
+#### **User Story 15**
+
+Expectation: As a site administrator I would like to edit the books chosen for the book club for the month
+
+Test result: The site administrator clicks on the profile icon to search for admin functionality as is convention. The user clicks on the edit book clubs link. The user is presented with a page containing 2 fields for every book club. Those being the books that can be chosen as well as the description why they have been chosen. The user fills out all the fields and a loading icon appears. The user is instructed to wait. The user waits and they are redirected. The user navigates to the book club pages and sees that the information that they have entered has appeared on these pages.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-15-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-15-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-15-c.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 16**
+
+Expectation: As a user subscribed to the crime book club I would like to download the crime book for the month
+
+Test result: The user receives an email telling them that they have have access to particular titles as their subscription for the month has been paid. The user uses the search bar on the site to search for the crime title. The user clicks on the title from the search results. The user clicks the download button to download the book.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-16-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-16-b.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 17**
+
+Expectation: As a security conscious individual I would like to log out of the site
+
+Test result: The user clicks on the profile icon which they used to log into the site. They click the logout option. The user is then taken to a page where they are asked if they are sure if they would like to log out of the site. The user confirms. The user is informed that they have been logged out. The user tries to manually navigate to the profile page using the url but is taken to a login page instead. The user is satisfied that they have been logged out of the site correctly
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-17-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-17-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-17-c.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 18**
+
+Expectation: As a regular user of twitter I would like to follow the company on twitter
+
+Test result: The user navigates to the bottom of the site as this is generally where social media links are contained. The user finds that this site follows the convention. The user clicks on the twitter icon. A new tab opens and the company's twitter page is loaded. The user clicks the follow button.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-18-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-18-b.PNG)
+
+[back to contents](#table-of-contents)
+
+
+#### **User Story 19**
+
+Expectation: As a possible buyer of one of the best-selling book on the site I would like to read a proper description of the book before making a purchase
+
+Test result: The user navigates clicks the bestsellers link on the navbar. The user is presented with a page full of products. The user clicks the result that they are interested in. The user is taken to the product page for this particular book. The user reads the description of the book. The user scrolls and reads the reviews for the book also.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-19-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-19-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-19-c.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **User Story 20**
+
+Expectation: As a site administrator I would like to edit the category for a mis-categorised book.
+
+Test result: The site user clicks the dropdown for crime books where the book was miscategorised. The user finds the book and clicks the edit button from this page. The user is brought to a form where the book information can be edited. The user clicks the category dropdown and chooses the hobby/how-to option. The user navigates to hobby/how-to titles using the non-fiction-dropdown. The user sees that the book now appears in the correct location.
+
+Analysis: The user's expectation has been met.
+
+[screenshot 1 of user story](resources/user-story-testing-images/user-story-20-a.PNG)
+
+[screenshot 2 of user story](resources/user-story-testing-images/user-story-20-b.PNG)
+
+[screenshot 3 of user story](resources/user-story-testing-images/user-story-20-c.PNG)
+
+[back to contents](#table-of-contents)
+
+
+
 
 
 
