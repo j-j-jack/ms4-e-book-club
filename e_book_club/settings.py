@@ -29,7 +29,11 @@ print(DEVELOPEMENT)
 if DEVELOPEMENT == '1':
     DEVELOPEMENT = True
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+if DEVELOPEMENT:
+    DEBUG = True
+else:
+    Debug = False
 
 ALLOWED_HOSTS = [os.environ.get('HEROKU_HOST_NAME'), '127.0.0.1',
                  '7ed0-2a01-b340-64-1b23-8182-9bfb-85bd-bc84.ngrok.io']
