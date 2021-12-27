@@ -39,8 +39,7 @@ class Product(models.Model):
 
     def update_rating(self):
         """
-        Update grand total each time a line item is added,
-        accounting for delivery costs.
+        average the product rating from all the reviews
         """
 
         self.rating = self.reviews.aggregate(
