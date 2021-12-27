@@ -343,6 +343,112 @@ The site is a site which sells literature.The choices made in the surface plane 
 
 [back to contents](#table-of-contents)
 
+## **Testing**
+
+### **Code Validation**
+
+* The HTML in this project was validated using the W3C code validation service. [W3C Markup Validation Service](https://validator.w3.org/) 
+
+* The CSS in this project was validated using the W3C CSS Code Validation Service [W3C CSS Markup Validation Service](http://jigsaw.w3.org/css-validator/validator) 
+
+* The Javascript in this Project was validated using the JSHint.com validator [JSHint Javscript Validator](https://jshint.com/)
+
+* The python code in this project is styled consistently and conforms to the PEP8 style guide
+
+[back to contents](#table-of-contents)
+
+### **Feature Testing**
+
+#### **Login and Register Forms**
+
+#### **Login and register forms** 
+Expected - The login button should link the user to the login page and the register button should link the user to the register page. On the login page the user should be able to provide their username, email and password. After creating an account the user should be sent a confirmation email in order to verify their account. The user should then be able to log in using the login page with the details that they have provided.
+
+Result - The register button links the user to a page where they can register their account. Upon account creation the user is informed that they have been sent an email to verify their account. On checking their inbox the email has been received. The link in the email allows the user to confirm their email address. Clicking the login button allows the user to login using the details they just provided.
+
+
+
+#### **Navbar**
+
+Expected - The navbar of the site should allow the user to navigate to all the main sections of the site including bestsellers, the various categories of books and to the book club pages. On smaller screens the navbar should collapse into a dropdown menu which is triggered by clicking on a burger icon. 
+
+Result - The links in the navbar direct the user to the appropriate locations. The navbar on smaller screens is not visible until the burger icon is clicked. The links in the smaller navbar also take the user to the right place
+
+
+#### **Book-club pages** 
+Expected - On navigating to the book club pages the user should be presented with the sub-genres for whichever wider category they have chosen - fiction, non-fiction or child/teen. The user should be presented with the books chosen for that particular month along with a description w hy they have been chose. It should be possible for the user to click on the buttons depending on whether they are subscribed to the book club or not.
+
+Result - The pages are sorted into the correct subgenres. The user is presented with the appropriate information about the books in each book club. The user can add the subscription to their bag, removed it, unsubscribe to book clubs they are already subscribed to and resubscribe to book clubs that they have already paid for that month
+
+
+#### **Subscription buttons** 
+
+Expected - - These buttons should be present on the book-club pages as well as the user's subscription page. The links should add the subscription that they have chosen to their bag as well as calculate the appropriate price of the subscription depending on how many other subscriptions they have.
+
+Result - The buttons are present on all the appropriate pages. On clicking on the button the items can be added and removed from the users bag. On inspecting the bag the prices are calculated correctly.
+
+* Subscription sections for individual users - These can be navigate to from a link at the top of the page and will allow the user to view their current subscriptions and unsubscribe if necessary. They will also be able to subscibe to any of the book clubs they are not subscribed to from this page.
+
+
+#### **Basket** 
+
+Expected - The basket/bag should be accessible from the icon at the top of the page. It should display the users current bag total for convenience if they have anything in their bag and change if they add more items. On clicking on the basket they should be taken to another page which shows them more clearly what they have in their basket, the price breakdown of each individual item and the total cost for their order if they are to pay.
+
+Result - Clicking the basket takes the user to the bag page. When the user adds items to their bag the text under the basket icon updates to show the total for their order. On the bag page the user can see a better summary and price breakdown for their order
+
+#### **Checkout page**
+
+Expected The user should not be able to check out as a guest. If they navigate to this page from the basket page they should be redirected to login. The user should be provided with a form on this page where they can provide their billing details. There should be an input where the users can enter their card details. If the user's card needs to be authenticated they should be provided with an extra form where they can authenticate it. The user should also have the option of saving their billing details for future use. Once the user has paid they should have access to download the products that they have paid for. 
+
+Result - The user can not check out as a guest. This is important as they will need to be logged in in order to access the digital goods that they have purchased. The form on the page contains the correct fields and the user is provide with a checkbox to check if they wish to save their information for future convenience. The user is provided with a further authentication form when they user a card that needs to be autheticated further. Once the order is paid for the user receives a confirmation email informing them what they now have access to on the site. On re-navigating back to the site it is now possible for the user to download the products which they have paid for.
+
+#### **Products pages**
+
+Expected - This page should contain the product image, description, price average rating and the option to download the product if it has already been paid for or to add the product to their bag if not.
+
+Result - The page contains all the appropriate information. The user can add the product to their bag using the 'add to bag' button. The various sections of the page are clear
+
+
+
+#### **Reviews section** 
+Expected - On the products page the user should be able to scroll to see a reviews section. If the user is logged in they should have the option to write a review for the individual product. Clicking the 'write review' button should navigate the user to another page containing a form for the users review. The user should be able to write a description of their feelings about the product as well as provide a rating for the product. On navigating back to the product page the user should see their review at the top of the other reviews. It should be possible for the user to edit as well as delete their review. The user should not be able to write more than one review for each product.
+
+Result - The user needs to be logged in in order to write a review. On clicking the 'write review' button the user is directed to the appropriate page. The user can rate the product and write about their experience with the product. The user sees their review when back on the product page along with edit and delete buttons. The edit button takes the user back to the form. It is prepopulated with their previous review information. The user can edit the review and see the changes on the product page. The delete button allows the user to delete their review. The user cannot write another review once they have already written one for a product.
+
+#### **Searchbar** 
+
+Expected - The search bar works as a conventional search bar. The user should be able to provide a query to search both the procuct name and description. The user should be returned a product page with the items containing mention of their search query. 
+
+Result - The search bar works as expected. In cases where the words entered are not in the title of the products, on closer inspection it can be seen that the words appear in the descriptions. If the user enters a query that returns no results they are displayed a message to notify them of this. 
+
+#### **Landing page carousel**
+Expected - This feature should contain eye catching imagery which draws the user in. The user should be able to navigate to the book clubs for the site as well as the main products page for the site.
+
+Result - The links work as expected. The imagery contained in the carousel is eye-catching and vibrant.
+
+#### **Social Media Links**
+
+Expected - These links should be present in the footer of the site. They should highlight in the relevant colours when the mouse hovers over them. On clicking the links a new tab should open with the correct page displayed.
+
+Result - The links are present in the right place on the site. They highlight correctly. A new tab is opened with the links on a new page. 
+
+
+#### **Latest books**
+ Expected - This section should be present on the landing page. The user should be presented with four of the latest books cover images. Clicking on the images should navigate the user to the product pages for these books. 
+
+ Result - The section is located in the correct place on the home page. On clicking the links the user is navigated to the correct location.
+
+#### **About section**
+Expected - This section should be located underneath the latest books section on the home page of the site. It should provide the user about the ethos of the company and the functionality of the site. It should also provide the user with information about the book clubs including the pricing.
+
+Result - The section is present in the correct location. The user can read about the company's ethos and the functionality of the site. The pricing information for the subscriptions is also clear.
+
+#### **Admin Features**
+
+Expected - The admin features for the site are as follows; pages to add and products, links to delete products and reviews, a page to edit the book clubs and a page to search for previous orders. These pages should not be accessible to users without superuser privelage. 
+
+Result - The admin features are all present and correct. From the profile icon in the navbar the user can access the add products page, order search page and book clubs edit page. The add product page allows the admin to set all the fields for the products page for a new product and to upload a product image and file. The changes are seen in the products section of the site. The edit book page allows the admin to choose which books are the books of the month for each genre as well as to add a description why they have been chose. These changes appear on the book clubs pages. The order search page correctly returns the orders by name or order number when they are entered in the search bar. The edit buttons are accessed from the product pages and allow the user to edit the products with a form similar to the add product form. The admin can also delete products from this page as well as reviews.
+
 
 
 
