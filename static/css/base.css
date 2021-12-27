@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 :root {
     --facebook-blue: #3b5998;
     --twitter-blue: #00acee;
@@ -45,7 +47,8 @@ html {
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Garamond', 'Times New Roman', serif;
+    font-weight: 500;
     width: 100%;
     padding-top: 10em !important;
 }
@@ -69,13 +72,13 @@ a>div {
 
 /* header --------------------------------------------------------------------------------------*/
 header {
-    background: slategrey;
+    background: #33819c;
 }
 
 /* footer --------------------------------------------------------------------------------------*/
 
 footer {
-    background: slategrey;
+    background: #33819c;
 }
 
 .fa-facebook-square:hover {

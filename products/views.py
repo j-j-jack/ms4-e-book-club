@@ -211,6 +211,7 @@ def download_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     owned_books = user_profile.owned_books.all()
     if product in owned_books:
+        # mananbh9 on stack overflow
         obj = Product.objects.get(id=product_id)
         filename = obj.pdf.path
         response = FileResponse(open(filename, 'rb'))
