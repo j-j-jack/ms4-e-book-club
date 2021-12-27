@@ -8,9 +8,9 @@ This is the documentation for the E-Book Club e-commerce project. E-Book Club is
 *  **[Technologies Used](#technologies-used)**
     * [Code](#code)
     * [Languages](#languages)
+    * [Validators](#validators)
     * [Frameworks and Libraries](#frameworks-and-libraries)
     * [Databases](#databases)
-    * [Validators](#validators)
     * [Other Technologies Used](#other-technologies-used)
 *  **[UX Design](#ux-design)**
     * [Strategy Plane](#strategy-plane)
@@ -36,6 +36,64 @@ This is the documentation for the E-Book Club e-commerce project. E-Book Club is
         * [Images](#images)
         * [Order and Sequence](#order-and-sequence)
         * [Identity](#identity)
+*  **[Testing](#testing)**
+    * [Code Validation](#code-validation)    
+    * [Feature Testing](#feature-testing)
+        * [Login and Register Forms](#login-and-register-forms)
+        * [Navbar](#navbar)
+        * [Book-club pages](#book-club-pages)
+        * [Subscription buttons](#subscription-buttons)
+        * [Basket](#basket)
+        * [Checkout page](#checkout-page)
+        * [Products pages](#products-pages)
+        * [Reviews Section](#reviews-section)
+        * [Searchbar](#searchbar)
+        * [Landing page carousel](#landing-page-carousel)
+        * [Social Media Links](#social-media-links)
+        * [Latest books](#latest-books)
+        * [About section](#about-section)
+        * [Admin Features](#admin-features)
+    * [User Story Testing](#user-story-testing)
+        * [User Story 1](#user-story-1)
+        * [User Story 2](#user-story-2)
+        * [User Story 3](#user-story-3)
+        * [User Story 4](#user-story-4)
+        * [User Story 5](#user-story-5)
+        * [User Story 6](#user-story-6)
+        * [User Story 7](#user-story-7)
+        * [User Story 8](#user-story-8)
+        * [User Story 9](#user-story-9)
+        * [User Story 10](#user-story-10)
+        * [User Story 11](#user-story-11)
+        * [User Story 12](#user-story-12)
+        * [User Story 13](#user-story-4)
+        * [User Story 14](#user-story-5)
+        * [User Story 15](#user-story-6)
+        * [User Story 16](#user-story-7)
+        * [User Story 17](#user-story-8)
+        * [User Story 18](#user-story-9)
+        * [User Story 19](#user-story-10)
+        * [User Story 20](#user-story-11)
+    * [Image Testing](#image-testing)
+    * [Responsivity Testing](#responsivity-testing)
+* **[Bugs and Issues](#bugs-and-issues)**
+    * [Known Issues](#known-issues)
+    * [Bugs Encountered and Fixes](#bugs-encountered-and-fixes)
+        * [Bug 1](#bug-1)
+        * [Bug 2](#bug-2)
+        * [Bug 3](#bug-3)
+        * [Bug 4](#bug-1)
+        * [Bug 5](#bug-2)
+        * [Bug 36](#bug-3)
+* **[Future Features](#future-features)**
+    * 
+* **[Deployment](#deployment)**
+    * [Heroku Deployment](#heroku-deployment)
+    * [Forking the GitHub Repository](#forking-the-github-repository)
+    * [Making a Local Clone](#making-a-local-clone)
+* **[References](#references)**
+* **[Credits](#credits)**
+* **[Acknowledgements](#acknowledgements)**
 
 ## **Technologies Used**
 
@@ -45,6 +103,7 @@ This is the documentation for the E-Book Club e-commerce project. E-Book Club is
 * VSCode - to write the code for the project
 * Git - used for version control 
 * Github - software used to store project remotely
+* Heroku - for deploying the project as a live version
 
 ### **Languages**
 
@@ -64,6 +123,10 @@ This is the documentation for the E-Book Club e-commerce project. E-Book Club is
 * JQuery
 * Google Fonts
 * Django REST framwork
+
+### **Frameworks and Libraries**
+* PostgreSQL on Heroku
+* Amazon web service for hosting media and static files
 
  ### **Other Technologies Used**
 
@@ -115,6 +178,8 @@ When completing the strategy section of the UX design for the site the business 
 * To give users information about the company philosophy
 * To have their card/address information saved for ease of use
 
+[back to contents](#table-of-contents)
+
 #### **User Needs**
 
 When completing the strategy section of the UX design for the site, several user needs were identified. The needs are as follows:
@@ -133,6 +198,8 @@ When completing the strategy section of the UX design for the site, several user
 * To read supplementary information relating to the books on the site such as a newsletter or blog
 * To view the business' social media pages
 * To understand the business philosophy
+
+[back to contents](#table-of-contents)
 
 On reviewing the business goals and user needs, a table of opportunities was created and their importance was compared with their viability to decide which opportunities should be pursued and which should be disregarded.
 
@@ -163,7 +230,7 @@ On reviewing the business goals and user needs, a table of opportunities was cre
 | To allow users to sign up for marketing  emails                                        | 3     | 1     | N       | This is not easily achievable and will expand the scope of the site too much for it to be worth undertaking                                                                      |
 | To allow users to save money by having more than one active subscription               | 4     | 3     | Y       | This is part of the company's business model and needs to be completed                                                                                                           |
 | **Total**                                                                              | 85    | 82    |         |                                                                                                                                                                                  |
-| **Adjusted total disregarding opportunities to be traded off**                         | 77    | 79    |         |                                                                                                                                      
+| **Adjusted total disregarding opportunities to be traded off**                         | 77    | 79    |         |                                                                                                                                   [back to contents](#table-of-contents)   
 
 ### **Scope Plane**
 
@@ -179,7 +246,7 @@ The site features for the current build of the site are dictated by the opportun
 
 * Subscription buttons - These buttons will be present on the book-club pages as well as the user's subscription page. These links will navigate the user to a pay-wall where they can pay for the subscription.
 
-* Subscription pages for individual users - These can be navigate to from a link at the top of the page and will allow the user to view their current subscriptions and unsubscribe if necessary. They will also be able to subscibe to any of the book clubs they are not subscribed to from this page.
+* Subscription section for individual users - This will be navigated inside the user profile and will allow the user to view their current subscriptions and unsubscribe if necessary. They will also be able to subscribe to any of the book clubs they are not subscribed to from this page.
 
 * Add to basket buttons - These buttons will be present on all pages that display products - the pages with many products displayed as well as the more detailed individual product pages.
 
@@ -207,6 +274,8 @@ The site features for the current build of the site are dictated by the opportun
 
 * Admin pages - These pages will only be available to superusers and will navigated to from links at the top of the page. These pages will allow the user to change the books in the book clubs for the month as well as upload new books to the shop.
 
+[back to contents](#table-of-contents)
+
 #### **User Stories**
 
 User stories were created to aid in the designing of the site and in testing later on. They are as follows:
@@ -232,6 +301,8 @@ User stories were created to aid in the designing of the site and in testing lat
 19. As a possible buyer of the best-selling book on the site I would like to read a proper description of the book before making a purchase
 20. As a site administrator I would like to edit the category for a mis-categorised book
 
+[back to contents](#table-of-contents)
+
 ### **Structure Plane** 
 
 #### **Interaction Design**
@@ -253,6 +324,8 @@ User stories were created to aid in the designing of the site and in testing lat
     * Buttons that link the user to other locations will highlight when the mouse is over them.
     * For links and other clickable items the cursor will change to a pointer. 
     * Messages will appear to inform the user that their actions were successful or whether errors have occurred
+
+[back to contents](#table-of-contents)
 
 #### **Information Architecture**
 
@@ -359,14 +432,12 @@ The site is a site which sells literature.The choices made in the surface plane 
 
 ### **Feature Testing**
 
-#### **Login and Register Forms**
-
-#### **Login and register forms** 
+#### **Login and Register Forms** 
 Expected - The login button should link the user to the login page and the register button should link the user to the register page. On the login page the user should be able to provide their username, email and password. After creating an account the user should be sent a confirmation email in order to verify their account. The user should then be able to log in using the login page with the details that they have provided.
 
 Result - The register button links the user to a page where they can register their account. Upon account creation the user is informed that they have been sent an email to verify their account. On checking their inbox the email has been received. The link in the email allows the user to confirm their email address. Clicking the login button allows the user to login using the details they just provided.
 
-
+[back to contents](#table-of-contents)
 
 #### **Navbar**
 
@@ -374,21 +445,22 @@ Expected - The navbar of the site should allow the user to navigate to all the m
 
 Result - The links in the navbar direct the user to the appropriate locations. The navbar on smaller screens is not visible until the burger icon is clicked. The links in the smaller navbar also take the user to the right place
 
+[back to contents](#table-of-contents)
 
-#### **Book-club pages** 
+#### **Book-Club Pages** 
 Expected - On navigating to the book club pages the user should be presented with the sub-genres for whichever wider category they have chosen - fiction, non-fiction or child/teen. The user should be presented with the books chosen for that particular month along with a description w hy they have been chose. It should be possible for the user to click on the buttons depending on whether they are subscribed to the book club or not.
 
 Result - The pages are sorted into the correct subgenres. The user is presented with the appropriate information about the books in each book club. The user can add the subscription to their bag, removed it, unsubscribe to book clubs they are already subscribed to and resubscribe to book clubs that they have already paid for that month
 
+[back to contents](#table-of-contents)
 
-#### **Subscription buttons** 
+#### **Subscription Buttons** 
 
 Expected - - These buttons should be present on the book-club pages as well as the user's subscription page. The links should add the subscription that they have chosen to their bag as well as calculate the appropriate price of the subscription depending on how many other subscriptions they have.
 
 Result - The buttons are present on all the appropriate pages. On clicking on the button the items can be added and removed from the users bag. On inspecting the bag the prices are calculated correctly.
 
-* Subscription sections for individual users - These can be navigate to from a link at the top of the page and will allow the user to view their current subscriptions and unsubscribe if necessary. They will also be able to subscibe to any of the book clubs they are not subscribed to from this page.
-
+[back to contents](#table-of-contents)
 
 #### **Basket** 
 
@@ -396,24 +468,30 @@ Expected - The basket/bag should be accessible from the icon at the top of the p
 
 Result - Clicking the basket takes the user to the bag page. When the user adds items to their bag the text under the basket icon updates to show the total for their order. On the bag page the user can see a better summary and price breakdown for their order
 
-#### **Checkout page**
+[back to contents](#table-of-contents)
+
+#### **Checkout Page**
 
 Expected The user should not be able to check out as a guest. If they navigate to this page from the basket page they should be redirected to login. The user should be provided with a form on this page where they can provide their billing details. There should be an input where the users can enter their card details. If the user's card needs to be authenticated they should be provided with an extra form where they can authenticate it. The user should also have the option of saving their billing details for future use. Once the user has paid they should have access to download the products that they have paid for. 
 
 Result - The user can not check out as a guest. This is important as they will need to be logged in in order to access the digital goods that they have purchased. The form on the page contains the correct fields and the user is provide with a checkbox to check if they wish to save their information for future convenience. The user is provided with a further authentication form when they user a card that needs to be autheticated further. Once the order is paid for the user receives a confirmation email informing them what they now have access to on the site. On re-navigating back to the site it is now possible for the user to download the products which they have paid for.
 
-#### **Products pages**
+[back to contents](#table-of-contents)
+
+#### **Products Pages**
 
 Expected - This page should contain the product image, description, price average rating and the option to download the product if it has already been paid for or to add the product to their bag if not.
 
 Result - The page contains all the appropriate information. The user can add the product to their bag using the 'add to bag' button. The various sections of the page are clear
 
+[back to contents](#table-of-contents)
 
-
-#### **Reviews section** 
+#### **Reviews Section** 
 Expected - On the products page the user should be able to scroll to see a reviews section. If the user is logged in they should have the option to write a review for the individual product. Clicking the 'write review' button should navigate the user to another page containing a form for the users review. The user should be able to write a description of their feelings about the product as well as provide a rating for the product. On navigating back to the product page the user should see their review at the top of the other reviews. It should be possible for the user to edit as well as delete their review. The user should not be able to write more than one review for each product.
 
 Result - The user needs to be logged in in order to write a review. On clicking the 'write review' button the user is directed to the appropriate page. The user can rate the product and write about their experience with the product. The user sees their review when back on the product page along with edit and delete buttons. The edit button takes the user back to the form. It is prepopulated with their previous review information. The user can edit the review and see the changes on the product page. The delete button allows the user to delete their review. The user cannot write another review once they have already written one for a product.
+
+[back to contents](#table-of-contents)
 
 #### **Searchbar** 
 
@@ -421,10 +499,14 @@ Expected - The search bar works as a conventional search bar. The user should be
 
 Result - The search bar works as expected. In cases where the words entered are not in the title of the products, on closer inspection it can be seen that the words appear in the descriptions. If the user enters a query that returns no results they are displayed a message to notify them of this. 
 
-#### **Landing page carousel**
+[back to contents](#table-of-contents)
+
+#### **Landing Page Carousel**
 Expected - This feature should contain eye catching imagery which draws the user in. The user should be able to navigate to the book clubs for the site as well as the main products page for the site.
 
 Result - The links work as expected. The imagery contained in the carousel is eye-catching and vibrant.
+
+[back to contents](#table-of-contents)
 
 #### **Social Media Links**
 
@@ -432,16 +514,21 @@ Expected - These links should be present in the footer of the site. They should 
 
 Result - The links are present in the right place on the site. They highlight correctly. A new tab is opened with the links on a new page. 
 
+[back to contents](#table-of-contents)
 
-#### **Latest books**
+#### **Latest Books**
  Expected - This section should be present on the landing page. The user should be presented with four of the latest books cover images. Clicking on the images should navigate the user to the product pages for these books. 
 
  Result - The section is located in the correct place on the home page. On clicking the links the user is navigated to the correct location.
 
-#### **About section**
+[back to contents](#table-of-contents)
+
+#### **About Section**
 Expected - This section should be located underneath the latest books section on the home page of the site. It should provide the user about the ethos of the company and the functionality of the site. It should also provide the user with information about the book clubs including the pricing.
 
 Result - The section is present in the correct location. The user can read about the company's ethos and the functionality of the site. The pricing information for the subscriptions is also clear.
+
+[back to contents](#table-of-contents)
 
 #### **Admin Features**
 
@@ -449,6 +536,7 @@ Expected - The admin features for the site are as follows; pages to add and prod
 
 Result - The admin features are all present and correct. From the profile icon in the navbar the user can access the add products page, order search page and book clubs edit page. The add product page allows the admin to set all the fields for the products page for a new product and to upload a product image and file. The changes are seen in the products section of the site. The edit book page allows the admin to choose which books are the books of the month for each genre as well as to add a description why they have been chose. These changes appear on the book clubs pages. The order search page correctly returns the orders by name or order number when they are entered in the search bar. The edit buttons are accessed from the product pages and allow the user to edit the products with a form similar to the add product form. The admin can also delete products from this page as well as reviews.
 
+[back to contents](#table-of-contents)
 
 ### **User Story Testing**
 
@@ -758,9 +846,173 @@ Analysis: The user's expectation has been met.
 
 [back to contents](#table-of-contents)
 
+### **Image Testing**
+
+The images on the site were ensured to be an appropriate size. They were resized using GIMP - [link to software website](https://www.gimp.org/). They were properly sized so they were not too small so as to appear pixelated and not too large so as to slow page loading times excessively.
+
+[back to contents](#table-of-contents)
+
+### **Responsivity Testing**
+
+The site was initially tested for responsivity within Chrome developer tools. After the site's developement was finished the site was tested for it's responsivity using responsivedesignchecker.com. The site was observed to respond well on all the screen sizes available on this site in general.
+
+[back to contents](#table-of-contents)
 
 
+## **Bugs and Issues**
 
+### **Known Issues**
+
+* There is possiby an issue with the calculation of order totals in the database. There is no issue with calculating the total in stripe and the users are always charged correctly. However an issue seems to have appeared with the correct total on the order summaries. The developer acknowledges that this is an urgent fix.
+
+* The developer is also aware of certain syling issues. As the goal of the project was to create a functional e-commerce store over a stylish one, there are some issues with the styling that have yet to be sorted. The carousel on the home page has issues with the contrast of the writing. and the logo in the navbar has some sizing issues when on smaller screens. Otherwise there could be further care taken to add some detail to the rest of the site's styling.
+
+* There was some issues validating some of the html - mainly on the update book clubs page. This was due to crispy forms adding multiple elements with the same id. The developer could not understand how to avoid this. There was also an issue assigning an alt tag to an image rendered as a custom widget. This was not fixed in the hard coded html but rather by inserting it through javascript when the document was ready.
+
+[Example of an validation issue due to crispy forms](resources/bugs/crispy-issue-example.PNG)
+
+[back to contents](#table-of-contents)
+
+### **Bugs Encountered and Fixes**
+
+#### **Bug 1**
+
+Bug: There was an issuewith media files not loading early in the project's developement.
+
+Fix: Due to a bug in django that can arise occasionally there was a missing context processor in the settings.py module. Once this was replaced the images and other media files loaded correctly.
+
+[Screenshot of bug](resources/bugs/bug-a.PNG)
+
+#### **Bug 2**
+
+Bug: There was some difficulty in getting the json fixtures file to display the products descriptions correctly on the products page. 
+
+Fix: This was eventually fixed by using a django filter - |linebreaks. This occasionally generated extra closing paragraph tags that had to be removed manually when validating.
+
+[Screenshot of bug](resources/bugs/bug-b.PNG)
+
+#### **Bug 3**
+Bug: There was an issue accessing certain functions in jquery such as ajax calls.
+
+Fix: The developer was unaware that there was a slim version of jQuery that didn't contain functions such as these and adding the full-featured version fixed this immediately
+
+[Screenshot of bug](resources/bugs/bug-c.PNG)
+
+[back to contents](#table-of-contents)
+
+#### **Bug 4**
+Bug: There was an issue in correctly rendering the template on the products page when the load more button was clicked. There were gaps appearing in between certain books due to a misalignment of the code instute horizontal rule logic. This was due to the ajax items returned being outside of the initial for loop.
+
+Fix: This was fixed by setting a variable to equal the initial amount of items on the page when the document is loaded. This acts as a continuation of the for loop. Each ajax item returned then increases this variable by 1 and it is then used to match the logic from the template.
+
+#### **Bug 5**
+Bug: There were some issues with the formatting of emails being sent from django. This went largely unnoticed until one of the titles contained escape characters.
+
+Fix: This was solved by encapsulating the emails inside the autoescape off filter in django.
+
+#### **Bug 6**
+Bug: There were some issues with javascript files loading inconsistently. This was mainly when the developer attempted to load the files below the main body of the templates
+
+Fix: This was fixed by adding the scripts in a different block at the top of templates and using the document ready function in jquery.
+
+[Screenshot of bug](resources/bugs/bug-d.PNG)
+
+[back to contents](#table-of-contents)
+
+## **Future Features**
+
+### **Product sorting**
+Due to time constraints the developer elected not to implement product sorting as it is not part of the core functionality but rather a desirable feature. This should be implemented immediately on the next build
+
+### **Owned books page**
+
+The developer acknowledges that this would be very useful for site users and would allow them to track the books they own more easily than searching for them manually. A separate page should be created to accomodate this feature in a future build.
+
+### **Likes and unlikes for product reviews**
+
+This would be another useful feature for discerning the integrity of the reviews on the product pages. 
+
+### **Name save with order form**
+
+This was omitted due to an oversight on the part of the developer and should be added as a future feature.
+
+[back to contents](#table-of-contents)
+
+## **Deployment**
+
+### **Heroku Deployment**
+The project was deployed to GitHub Pages using the following steps...
+
+1. Create a heroku account on heroku.com
+2. Create a new app on Heroku with a unique name.
+3. Select the European server if you are located closer to Europe or the United States server if you are closer to the United States.
+3. Install gunicorn and psycopg-2 using pip as they are necessary to run the project 
+4. In your IDE console type pip3 freeze -- local > requirements.txt. This creates a text file that heroku needs which includes the requirements needed for the project.
+5. Create a Procfile in your IDE By typing web: gunicorn e_book_club.wsgi:application > Procfile in your console. 
+6. Create an app password with your email provider so that you may send emails through the django app.
+7. In Heroku you need to set up your config vars. They are as follows; the secret key for django, secret and public keys for stripe, webhook secret in stripe, email host and app password variables, aws variables if you elect to use aws.
+8. In Heroku navigate to settings and click reveal config vars. Copy the config vars outlined above to Heroku and save them.
+9. In the deploy link in Heroku navigate to automatic deployment. Click on deploy from github. Use the text box provided to input your url from github and click to enable automatic deployment.
+10. Commit your changes and push them to Github
+11. The project will now be automatically deployed to Heroku. 
+12. In Heroku click on open app. 
+13. The URL for the website will be in the address bar.
+
+
+[back to contents](#table-of-contents)
+
+### **Forking the GitHub Repository**
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the GitHub Repository
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+You should now have a copy of the original repository in your GitHub account.
+
+[back to contents](#table-of-contents)
+
+## **Making a Local Clone**
+1. Log in to GitHub and locate the GitHub Repository
+Under the repository name, click "Clone or download".
+2. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+3. Open Git Bash
+4. Change the current working directory to the location where you want the cloned directory to be made.
+Type git clone, and then paste the URL you copied in Step 3.
+$ git clone https://github.com/j-j-jack/ms4-e-book-club
+Press Enter. Your local clone will be created.
+
+$ git clone https://github.com/j-j-jack/ms3-ghost-post
+> Cloning into `e-book-club-clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+
+[back to contents](#table-of-contents)
+
+## **References**
+
+**Images**
+
+* Child/Teen Carousel = Photo by Andres Iga on Unsplash
+* Non-Fiction Carousel = Photo by Dorothea OLDANI on Unsplash
+* Fiction  Carousel- Photo by Rod Long on Unsplash
+* Bestsellers background - Photo by mohammad alizade on Unsplash  
+
+
+**Site icons**
+* The icons for the site are from [fontawesome.com](https://fontawesome.com/)
+
+## Credits
+- The deployment section of the README file was adapted directly from the code provide by the code institute. <br>
+[link](https://github.com/Code-Institute-Solutions/SampleREADME)<br>
+
+- mananbh9 and Daniel Roseman on Stack Overflow
+
+[back to contents](#table-of-contents)
+
+I would like to thank my mentor Jack Wachira for his guidance during this undertaking. I often go the long way around with things and he helped me a lot with this such as pointing me towards ngrok for testing my webhooks amongst many other things. This was exactly the kind of help I needed during the completion of this project. I would also like to thank the tutors for helping me out a couple of times with great patience as well as the guys working in student care. I would like to thank my friends and family for letting me drop off the face off the earth this year. Hopefully I can make it up next year. Finally I would like to thank the whole team at code institute for making an accessible yet challenging program.
+
+[back to contents](#table-of-contents)
 
 
 
